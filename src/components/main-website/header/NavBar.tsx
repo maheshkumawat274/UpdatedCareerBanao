@@ -332,7 +332,6 @@ const Header: React.FC = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const [activeItem, setActiveItem] = useState("");
    // Add a scroll event listener to toggle `isScrolled`
    useEffect(() => {
      const handleScroll = () => {
@@ -347,22 +346,6 @@ const Header: React.FC = () => {
        window.removeEventListener("scroll", handleScroll);
      };
    }, []);
-
-   useEffect(() => {
-    // Update the active item when the URL changes
-    const handleScroll = () => {
-      const currentHash = window.location.hash;
-      setActiveItem(currentHash);
-    };
-
-    window.addEventListener("hashchange", handleScroll);
-    handleScroll(); // Call initially to set the active item
-
-    return () => {
-      window.removeEventListener("hashchange", handleScroll);
-    };
-  }, []);
-
   return (
     <header>
       {/* Top Header */}
@@ -422,28 +405,19 @@ const Header: React.FC = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-4 font-bold rounded-md bg-gradient-to-r from-[#983fd4] to-[#e46ab3]">
-      {["Home", "Admission", "Counselling", "College Finder", "Contact", "Career"].map((item) => {
-        const isActive = `#${item.toLowerCase()}` === activeItem;
-
-        return (
-          <a
-            key={item}
-            href={`#${item.toLowerCase()}`}
-            className={`px-4 py-2 rounded transition text-white ${
-              isActive
-                ? "bg-[#e4a6ca] transform scale-110 duration-300" // Animated effect for active item
-                : "hover:bg-[#e4a6ca]"
-            }`}
-            style={{
-              fontWeight: isActive ? "bold" : "normal", // Make active item bold
-            }}
-          >
-            {item}
-          </a>
-        );
-      })}
-    </nav>
+        <nav className="hidden md:flex space-x-8 font-bold rounded-md bg-gradient-to-r from-[#983fd4] to-[#e46ab3]">
+          {["Home", "Admission", "Counselling","College Finder", "Contact", "Career"].map(
+            (item) => (
+              <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="px-4 py-2 hover:bg-[#e4a6ca] text-white rounded transition"
+            >
+              {item}
+            </a>
+            )
+          )}
+        </nav>
         <div className="hidden md:block">
           <button
             className="px-4 py-2 bg-[#983fd4] text-white rounded-full hover:bg-[#e46ab3] transition"
