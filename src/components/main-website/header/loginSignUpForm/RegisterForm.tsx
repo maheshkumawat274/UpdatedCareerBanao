@@ -6,6 +6,8 @@ const registerDataInitalState = {
   password: "",
   name: "",
   phone: "",
+  stream:"",
+  level:""
 
 }
 // const headerStyle = {
@@ -121,6 +123,40 @@ export default function RegisterForm({ setShowLoginForm, setShowRegisterForm }: 
                     pattern="^[0-9]{10}$"
                     title="please enter valid number"
                   />
+                  <div className="mb-4">
+                   <select
+                     id="stream"
+                     name="stream"
+                     value={registerData.stream}
+                     onChange={handleChange}
+                     required
+                     className="mt-1 block w-full text-[#a7acb4] p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                   >
+                     {['-- Select Stream --','Engineering', 'Management', 'Commerce and Banking', 'Medical', 'Science', 'Hotel Management', 'Information Technology', 'Arts & Humanities', 'Agriculture', 'Law', 'Pharmacy', 'Education','Design', 'Media and Mass Combination', 'Medical', 'Retail', 'Arts and Humanities', 'Vocational', 'Physical Education', 'Paramedical', 'Agriculture', 'Nursing', 'Dental', 'Performing Arts', 'Others'].map((stream) => (
+                       <option key={stream} value={stream}>
+                         {stream}
+                       </option>
+                     ))}
+                   </select>
+                  </div>
+             
+                   {/* Select Level */}
+                  <div className="mb-4">
+                    <select
+                      id="level"
+                      name="level"
+                      value={registerData.level}
+                      onChange={handleChange}
+                      required
+                      className="mt-1 block text-[#a7acb4] w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    >
+                      {['-- Select Level --','Undergraduate', 'Postgraduate', 'Diploma', 'Certificate', 'Doctorate'].map((level) => (
+                        <option key={level} value={level}>
+                          {level}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                   <div className="form-footer mt-8 lg:px-5">
                     <div className="mx-2 flex items-start gap-2">
                       <input

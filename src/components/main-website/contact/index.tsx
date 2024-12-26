@@ -47,6 +47,7 @@ const Contact = () => {
     };
 
     return (
+        <>
         <div className='contact-container font-popins w-full relative top-[50px] min-h-[calc(100vh-50px)] flex justify-center items-center'>
             <div style={boxShadow} className="contact-main  gap-2 relative w-full lg:w-[50%] px-10 py-8 flex flex-col-reverse lg:flex-row  lg:bg-white">
                 <div className="contact-left font-sans my-auto w-full lg:w-2/4 text-center ">
@@ -84,8 +85,7 @@ const Contact = () => {
                 </div>
             </div>
         </div>
-
-
+        </>
 
 
 

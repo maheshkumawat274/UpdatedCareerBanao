@@ -15,7 +15,7 @@ export default {
         careerOrange: '#F89A00'
       },
       fontFamily:{
-        poppins:["kanit","sans-serif"],
+        poppins:["Poppins","sans-serif"],
       },
       fontWeight: {
         custom: '500', 

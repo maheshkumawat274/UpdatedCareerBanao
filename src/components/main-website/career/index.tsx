@@ -7,7 +7,7 @@ import JoinUs from "./JoinUs";
 
 const Career = () => {
   return (
-    <div className="relative top-[80px]">
+    <div>
       <Gallery/>
       <Heading />
       <JoinUs/>

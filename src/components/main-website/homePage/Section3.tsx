@@ -50,7 +50,7 @@
 
 const Section3 = () => {
   return (
-    <div className="bg-gradient-to-br from-gray-100 to-blue-100 rounded-lg p-12 shadow-lg">
+    <div className="rounded-lg p-12 shadow-lg">
       <div className="flex flex-wrap justify-center gap-8">
         {items.map((item, index) => (
           <div

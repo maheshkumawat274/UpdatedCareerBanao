@@ -44,7 +44,7 @@ const Section1 = () => {
   const [data] = useFetch(`${BaseUrl}/getWhatsAppUrl`);
 
   return (
-    <div className="section1 font-poppins flex pb-[5rem] bg-gradient-to-r from-blue-50 via-blue-100 to-blue-200">
+    <div className="section1 font-poppins flex pb-[5rem]">
       {/* Section Container */}
       <div className="section-container font-popins relative top-[80px] flex flex-col lg:flex-row items-center justify-center">
         {/* Left Section */}

@@ -2,7 +2,7 @@ import React from 'react';
 import './video.css'
 const VideoFinder: React.FC = () => {
   return (
-    <div className="hello relative mt-[80px] overflow-hidden h-[500px] sm:h-[400px]">
+    <div className="hello relative overflow-hidden h-[500px] sm:h-[400px]">
       {/* Background Video */}
       <video
         autoPlay

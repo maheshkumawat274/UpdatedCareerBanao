@@ -6,6 +6,8 @@ import ContactPage from "pages/main-website/contact";
 import HomePage from "pages/main-website/home";
 import PrivacyPolicyPage from "pages/main-website/privacypolicy";
 import TermsAndConditionsPage from "pages/main-website/termsconditions";
+import CounselingLayout from "src/components/main-website/counseling/CounselingLayout";
+import Counselling from "src/pages/main-website/protected/counselling";
 
 const mainRoutes = [
   {
@@ -24,6 +26,14 @@ const mainRoutes = [
   {
     path:"/admissions/apply/:college",
     element:ApplicationApplyPage,
+  },
+  {
+    path:"/counselling/:category",
+    element:Counselling
+  },
+  {
+    path:"/counselling/:category/apply/:college",
+    element:CounselingLayout
   },
   {
     path:"/contact",

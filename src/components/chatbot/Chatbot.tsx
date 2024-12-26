@@ -66,7 +66,7 @@ const Chatbot: React.FC = () => {
     <div>
       {/* Chat Icon */}
       <div
-        className="fixed bottom-10 right-5 w-14 h-14 bg-yellow-500 rounded-full flex flex-col items-center justify-center text-black text-sm font-bold cursor-pointer shadow-lg z-50 animate-bounce"
+        className="fixed bottom-10 right-5 w-14 h-14 bg-[#A044D1] rounded-full flex flex-col items-center justify-center text-black text-sm font-bold cursor-pointer shadow-lg z-50 animate-bounce"
         onClick={toggleChat}
       >
         <div className="relative">
@@ -75,7 +75,7 @@ const Chatbot: React.FC = () => {
             alt="Chat Icon"
             className="rounded-full w-12 h-12"
           />
-          <span className="absolute top-0 left-0 h-12 right-0 bg-red-500 text-white text-xs rounded-full px-1 text-center">
+          <span className="absolute top-0 left-0 h-12 right-0 bg-[#DC66B7] text-white text-xs rounded-full px-1 flex items-center  text-center">
             Chat Now
           </span>
         </div>

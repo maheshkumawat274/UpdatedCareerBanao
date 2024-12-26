@@ -1,5 +1,5 @@
 
-import NavBar from './NavBar'
+//
 import LoginSignUpPopUp from "./loginSignUpForm/LoginSignUpPopUp";
 import { useDispatch, useSelector } from 'react-redux';
 import { setShowPopUp } from 'src/redux/loginSignupSlice';
@@ -8,6 +8,7 @@ import HomePopUp from 'components/main-website/homePage/HomePopUp';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { menuConfig } from 'src/utils/constants';
+import HeaderMain from "./HeaderMain";
 
 function Header() {
   const isLoginSignUpPopUp = useSelector((state:any)=> state.loginSignUpPopUp);
@@ -28,8 +29,8 @@ function Header() {
     <div>
       <ToastContainer pauseOnHover={false}/>
       {showHomePopup && <HomePopUp/>}
-      <NavBar/>
-      {/* <MainHeader/> */}
+      {/* <NavBar/> */}
+       <HeaderMain/>
       <LoginSignUpPopUp modalIsOpen={isLoginSignUpPopUp} closeModal={closeModal}/>
     </div>
   )
