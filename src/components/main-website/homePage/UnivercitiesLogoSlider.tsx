@@ -37,7 +37,7 @@ const Card: React.FC<CardProps> = ({ logoUrl, cardHeight, cardWidth }) => {
 
 const UnivercitiesLogoSlider: React.FC<UnivercitiesLogoSliderProps> = ({
   showHeading = true, 
-  cardHeight = "12rem", 
+  cardHeight = "10rem", 
   cardWidth = "auto", 
   paddingClass = "py-10"
 }) => {
@@ -75,7 +75,7 @@ const UnivercitiesLogoSlider: React.FC<UnivercitiesLogoSliderProps> = ({
       },
       {
         breakpoint: 640,
-        settings: { slidesToShow: 2 },
+        settings: { slidesToShow: 1 },
       },
     ],
   };

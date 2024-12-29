@@ -78,6 +78,8 @@ const Section5 = () => {
     }
   };
 
+  
+
   return (
     <div className="flex flex-col lg:flex-row mt-[5rem] gap-4">
       {items.map((item, index) => (
@@ -227,34 +229,52 @@ export const ContactForm = ({
       submitHandler={validateHandler}
     >
       <MyRow>
-        <MyCol style={{ marginBottom: "30px", margin: "0 auto" }}>
-          <MyText variant="title" level={4} style={{ fontWeight: "630" }}>
+        {/* Title Section */}
+        <MyCol className="text-center flex justify-center font-poppins w-full mb-4">
+          <MyText variant="title" level={4} style={{fontWeight:'700'}}>
             {referFriend
               ? "Refer a Friend, Win Up to ₹1000 Paytm Cashback!"
               : "Shape Your Dreams: Submit Your Details Now."}
           </MyText>
         </MyCol>
-        <MyCol span={isSmallScreen ? 24 : 14}>
+      
+        {/* Image Section */}
+        <MyCol span={isSmallScreen ? 24 : 14} className="flex justify-center items-center">
           <img
             src={`/icons/home/voicecall.png`}
             alt="contactForm"
-            style={{
-              objectFit: "cover",
-              width: "300px",
-              height: "200px",
-            }}
+            className="object-cover w-full max-w-[300px] h-auto rounded-xl shadow-lg"
           />
         </MyCol>
-        <MyCol span={isSmallScreen ? 24 : 10}>
-          <MyForm form={contactForm} >
-            <FormInput name="Name" required={true} type="text" pattern={/^[a-zA-Z\s]*$/}/>
-            <FormInput name="Phone" required={true} type="tel" max={10} pattern={/^[0-9]{10}$/} />
-            <FormInput name="Email" required={true} type="email" />
-            {/* {/* {showMessage && <Alert message="Successfully send" type="success" showIcon />} */}
-            {/* { showErrorMessage && <Alert message="Try after Some time" type="error" showIcon />} */}
+      
+        {/* Form Section */}
+        <MyCol span={isSmallScreen ? 24 : 10} className="bg-purple-50 p-6 rounded-xl shadow-xl mt-2">
+          <MyForm form={contactForm}>
+            <FormInput
+              name="Name"
+              required={true}
+              type="text"
+              pattern={/^[a-zA-Z\s]*$/}
+              className="mb-4 p-3 rounded-lg border border-gray-300 shadow-sm focus:ring-2 focus:ring-purple-600 focus:outline-none w-full"
+            />
+            <FormInput
+              name="Phone"
+              required={true}
+              type="tel"
+              max={10}
+              pattern={/^[0-9]{10}$/}
+              className="mb-4 p-3 rounded-lg border border-gray-300 shadow-sm focus:ring-2 focus:ring-purple-600 focus:outline-none w-full"
+            />
+            <FormInput
+              name="Email"
+              required={true}
+              type="email"
+              className="mb-4 p-3 rounded-lg border border-gray-300 shadow-sm focus:ring-2 focus:ring-purple-600 focus:outline-none w-full"
+            />
           </MyForm>
         </MyCol>
       </MyRow>
+
     </MyModal>
   );
 };

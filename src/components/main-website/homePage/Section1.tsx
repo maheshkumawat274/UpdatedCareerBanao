@@ -35,14 +35,28 @@
 
 // export default Section1;
 
-import useFetch from "hooks/useFetch";
+
+// import useFetch from "hooks/useFetch";
 import "./home.css";
-import BaseUrl from "utils/baseurl";
-import { Link } from "react-router-dom";
+// import BaseUrl from "utils/baseurl";
+import { ContactForm } from "./Section5";
+import { useState } from "react";
 
 const Section1 = () => {
-  const [data] = useFetch(`${BaseUrl}/getWhatsAppUrl`);
+  // const [data] = useFetch(`${BaseUrl}/getWhatsAppUrl`);
 
+
+    const [showForm, setShowForm] = useState(false);
+  
+    const hideForm = () => {
+      setShowForm(false);
+    };
+  
+    const submitHandler = (values:any) => {
+      console.log("Form Submitted", values);
+      // Handle form submission here, like making an API call
+    };
+  
   return (
     <div className="section1 font-poppins flex pb-[5rem]">
       {/* Section Container */}
@@ -57,15 +71,30 @@ const Section1 = () => {
             dreams into realities through our expert admission guidance and
             counselling services.
           </p>
-          <div className="mt-6">
-            <Link to={data ? (data as any)[0]?.whatsApp_link : ""} target="_blank">
+          <div className="mt-6 bg-black">
+            {/* <Link to={data ? (data as any)[0]?.whatsApp_link : ""} target="_blank">
               <button
                 type="button"
                 className="bg-primaryBtn hover:bg-hoverBtn transition-all duration-300 ease-in-out transform hover:scale-105 btn-shadow rounded-3xl h-[3rem] w-[12rem] text-white text-[16px] font-semibold shadow-lg"
               >
                 CHAT NOW
               </button>
-            </Link>
+            </Link> */}
+
+            {/*contact form add*/}
+            <button
+            onClick={() => setShowForm(true)}
+                type="button"
+                className="bg-primaryBtn hover:bg-hoverBtn transition-all duration-300 ease-in-out transform hover:scale-105 btn-shadow rounded-3xl h-[3rem] w-[12rem] text-white text-[16px] font-semibold shadow-lg"
+              >
+                CHAT NOW
+              </button>
+              <ContactForm
+                showForm={showForm}
+                hideForm={hideForm}
+                submitHandler={submitHandler}
+                referFriend={false} 
+              />
           </div>
         </div>
 

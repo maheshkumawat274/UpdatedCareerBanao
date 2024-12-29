@@ -3,3 +3,18 @@
   padding-top: 2.4px;
   padding-left: 4.4px;
 }
+.logocard {
+  height: 12rem; /* Default height */
+}
+
+@media (max-width: 768px) {
+  .logocard {
+    height: 10rem; /* Smaller height for tablets */
+  }
+}
+
+@media (max-width: 640px) {
+  .logocard {
+    height: 8rem; /* Smaller height for mobile devices */
+  }
+}
