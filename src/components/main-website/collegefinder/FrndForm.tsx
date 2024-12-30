@@ -6,9 +6,7 @@ const FrndForm = () => {
     fullName: "",
     dob: "",
     email: "",
-    mobileNumber: "",
-    program: "",
-    state: "",
+    mobileNumber: ""
   });
 
   const [errors, setErrors] = useState({
@@ -16,14 +14,24 @@ const FrndForm = () => {
     dob: false,
     email: false,
     mobileNumber: false,
-    program: false,
-    state: false,
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  
+    // Real-time validation
+    setErrors((prevErrors:any) => ({
+      ...prevErrors,
+      [name]:
+        name === "fullName" ? value.trim() === "" :
+        name === "dob" ? value.trim() === "" :
+        name === "email" ? !/^\S+@\S+\.\S+$/.test(value) :
+        name === "mobileNumber" ? !/^\d{10}$/.test(value) :
+        prevErrors[name],
+    }));
   };
+  
 
   const validateForm = () => {
     const newErrors = {
@@ -31,8 +39,6 @@ const FrndForm = () => {
       dob: formData.dob === "",
       email: !/^\S+@\S+\.\S+$/.test(formData.email),
       mobileNumber: !/^\d{10}$/.test(formData.mobileNumber),
-      program: formData.program === "",
-      state: formData.state === "",
     };
     setErrors(newErrors);
     return !Object.values(newErrors).some((error) => error);
@@ -94,17 +100,21 @@ const FrndForm = () => {
         <div>
           <label className="block text-gray-700 font-bold mb-1">Mobile Number</label>
           <input
-            type="text"
+            type="tel"
             name="mobileNumber"
             value={formData.mobileNumber}
             onChange={handleInputChange}
-            className={`border ${
-              errors.mobileNumber ? "border-red-500" : "border-gray-300"
-            } w-full p-2 rounded-lg`}
-            placeholder="Enter your Friend mobile number"
+            onKeyPress={(e) => {
+              if (!/^\d*$/.test(e.key) && e.key !== '+') {
+                e.preventDefault();
+              }
+            }}
+            className={`border ${errors.mobileNumber ? "border-red-500" : "border-gray-300"} w-full p-2 rounded-lg`}
+            placeholder="Enter your mobile number"
           />
           {errors.mobileNumber && <p className="text-red-500 text-sm">Enter a valid 10-digit number</p>}
         </div>
+
         
       </form>
       <div className="mt-5 flex gap-2">

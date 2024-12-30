@@ -25,13 +25,24 @@
 
 // export default CollegeFound;
 
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { ContactForm } from "./Section5";
 
 const CollegeFinder: React.FC = () => {
+   const [showForm, setShowForm] = useState(false);
+    
+      const hideForm = () => {
+        setShowForm(false);
+      };
+    
+      const submitHandler = (values:any) => {
+        console.log("Form Submitted", values);
+        // Handle form submission here, like making an API call
+      };
   return (
     <div className="bg-gradient-to-r mt-5 font-poppins from-[#983fd4] to-[#e46ab3] text-white py-16 px-8 lg:px-24 rounded-lg shadow-lg">
-      <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-center">
+      <h2 className="text-4xl lg:text-5xl text-white font-semibold mb-6 text-center">
         Find Your Dream College
       </h2>
       <p className="text-lg lg:text-xl font-light text-center mb-12 max-w-3xl mx-auto">
@@ -47,9 +58,11 @@ const CollegeFinder: React.FC = () => {
             Discover detailed information about colleges, including their
             programs, campus life, rankings, and much more.
           </p>
-          <button className="bg-[#983fd4] hover:bg-[#e46ab3] text-white py-2 px-6 rounded-lg w-full">
-            Explore Now
-          </button>
+          <Link to={'/admissions/engineering/'}>
+           <button className="bg-[#983fd4] hover:bg-[#e46ab3] text-white py-2 px-6 rounded-lg w-full">
+             Explore Now
+           </button>
+          </Link>
         </div>
 
         {/* Center Button */}
@@ -68,14 +81,21 @@ const CollegeFinder: React.FC = () => {
             Get personalized career advice to help you choose the best program
             and college to achieve your goals.
           </p>
+          <div>
           <a
-            href="https://wa.me/<+91-8750092628>?text=Hi%20I%20need%20guidance%20regarding%20college%20admissions."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#983fd4] hover:bg-[#e46ab3] text-white py-2 px-6 rounded-lg w-full text-center block"
+           onClick={() => setShowForm(true)}
+            className="bg-[#983fd4] hover:bg-[#e46ab3] text-white py-2 px-6 rounded-lg w-full text-center block cursor-pointer"
           >
             Get Guidance
+            
           </a>
+          <ContactForm
+            showForm={showForm}
+            hideForm={hideForm}
+            submitHandler={submitHandler}
+            referFriend={false} 
+          />
+          </div>
         </div>
       </div>
     </div>

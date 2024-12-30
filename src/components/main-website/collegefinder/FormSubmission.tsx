@@ -20,10 +20,29 @@ const FormSubmission = ({ showHeader = true, showCourse = true, showState = true
     state: false,
   });
 
+  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  //   const { name, value } = e.target;
+  //   setFormData({ ...formData, [name]: value });
+  // };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  
+    // Real-time validation
+    setErrors((prevErrors:any) => ({
+      ...prevErrors,
+      [name]:
+        name === "fullName" ? value.trim() === "" :
+        name === "dob" ? value.trim() === "" :
+        name === "email" ? !/^\S+@\S+\.\S+$/.test(value) :
+        name === "mobileNumber" ? !/^\d{10}$/.test(value) :
+        name === "program" ? value.trim() === "" :
+        name === "state" ? value.trim() === "" :
+        prevErrors[name],
+    }));
   };
+  
 
   const validateForm = () => {
     const newErrors = {
@@ -88,15 +107,21 @@ const FormSubmission = ({ showHeader = true, showCourse = true, showState = true
         <div>
           <label className="block text-gray-700 font-bold mb-1">Mobile Number</label>
           <input
-            type="text"
+            type="tel"
             name="mobileNumber"
             value={formData.mobileNumber}
             onChange={handleInputChange}
+            onKeyPress={(e) => {
+              if (!/^\d*$/.test(e.key) && e.key !== '+') {
+                e.preventDefault();
+              }
+            }}
             className={`border ${errors.mobileNumber ? "border-red-500" : "border-gray-300"} w-full p-2 rounded-lg`}
             placeholder="Enter your mobile number"
           />
           {errors.mobileNumber && <p className="text-red-500 text-sm">Enter a valid 10-digit number</p>}
         </div>
+
         {showCourse && <div>
           <label className="block text-gray-700 font-bold mb-1">Choose Program</label>
           <input

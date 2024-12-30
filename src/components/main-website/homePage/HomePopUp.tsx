@@ -203,6 +203,7 @@
 //         </svg>
 //     );
 // }
+
 import { useState, useEffect } from "react";
 import default_img from "../../../assets/defaultCardLogo.jpeg";
 import { Link } from "react-router-dom";
@@ -244,6 +245,52 @@ const options = [
     { value: "Others", label: "Others" },
 ];
 
+const levelOptions = [
+    { value: "Undergraduate", label: "Undergraduate" },
+    { value: "Postgraduate", label: "Postgraduate" },
+    { value: "Diploma", label: "Diploma" },
+    { value: "Certificate", label: "Certificate" },
+    { value: "Doctorate", label: "Doctorate" },
+];
+const statesOptions = [
+    { value: "Andhra Pradesh", label: "Andhra Pradesh" },
+    { value: "Arunachal Pradesh", label: "Arunachal Pradesh" },
+    { value: "Assam", label: "Assam" },
+    { value: "Bihar", label: "Bihar" },
+    { value: "Chhattisgarh", label: "Chhattisgarh" },
+    { value: "Goa", label: "Goa" },
+    { value: "Gujarat", label: "Gujarat" },
+    { value: "Haryana", label: "Haryana" },
+    { value: "Himachal Pradesh", label: "Himachal Pradesh" },
+    { value: "Jharkhand", label: "Jharkhand" },
+    { value: "Karnataka", label: "Karnataka" },
+    { value: "Kerala", label: "Kerala" },
+    { value: "Madhya Pradesh", label: "Madhya Pradesh" },
+    { value: "Maharashtra", label: "Maharashtra" },
+    { value: "Manipur", label: "Manipur" },
+    { value: "Meghalaya", label: "Meghalaya" },
+    { value: "Mizoram", label: "Mizoram" },
+    { value: "Nagaland", label: "Nagaland" },
+    { value: "Odisha", label: "Odisha" },
+    { value: "Punjab", label: "Punjab" },
+    { value: "Rajasthan", label: "Rajasthan" },
+    { value: "Sikkim", label: "Sikkim" },
+    { value: "Tamil Nadu", label: "Tamil Nadu" },
+    { value: "Telangana", label: "Telangana" },
+    { value: "Tripura", label: "Tripura" },
+    { value: "Uttar Pradesh", label: "Uttar Pradesh" },
+    { value: "Uttarakhand", label: "Uttarakhand" },
+    { value: "West Bengal", label: "West Bengal" },
+    { value: "Andaman and Nicobar Islands", label: "Andaman and Nicobar Islands" },
+    { value: "Chandigarh", label: "Chandigarh" },
+    { value: "Dadra and Nagar Haveli and Daman and Diu", label: "Dadra and Nagar Haveli and Daman and Diu" },
+    { value: "Delhi", label: "Delhi" },
+    { value: "Jammu and Kashmir", label: "Jammu and Kashmir" },
+    { value: "Ladakh", label: "Ladakh" },
+    { value: "Lakshadweep", label: "Lakshadweep" },
+    { value: "Puducherry", label: "Puducherry" },
+];
+
 function HomePopUp() {
     const [form] = Form.useForm();
 
@@ -267,9 +314,12 @@ function HomePopUp() {
             name: values.name,
             email: values.email,
             phone: values.phone,
-            address: values.address,
+            // address: values.address,
+            state: values.state,
             course_query: values.interest,
+            level: values.level,
             category: "Home-popup",
+
         };
         try {
             const response = await axios.post(`${BaseUrl}userQueryAPI`, JSON.stringify(payload));
@@ -379,13 +429,26 @@ function HomePopUp() {
                                             label={"Email Address"}
                                             prefix={<Icon path={""} />}
                                         />
-                                        <MyInput
+                                        {/* <MyInput
                                             name="address"
                                             type="text"
                                             label={"Address"}
                                             prefix={<Icon path={""} />}
                                             pattern={/^[0-9A-Za-z\s,'-]+$/}
+                                        /> */}
+
+                                        <MyInput
+                                            name="state"
+                                            label="State"
+                                            select={true}
+                                            options={statesOptions}
                                         />
+                                        <MyInput
+                                             name="level"
+                                             label="Select Level"
+                                             select={true}
+                                             options={levelOptions}
+                                         />
                                     </div>
                                 </div>
                             </MyForm>

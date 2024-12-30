@@ -34,6 +34,8 @@ export type contactData = {
   name: string;
   phone: string;
   email: string;
+  state: string;
+  stream: string;
   category: string;
 };
 
@@ -59,6 +61,8 @@ const Section5 = () => {
       name: payload.Name,
       phone: payload.Phone,
       email: payload.Email,
+      state: payload.state,
+      stream: payload.stream,
       category: queryCategory == 1 ? "video/voice" : "face-session",
     };
     payload = JSON.stringify(payload);
@@ -200,6 +204,24 @@ export const ContactForm = ({
   const [contactForm] = Form.useForm();
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
+    // State options
+    const stateOptions = [
+      "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
+      "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka",
+      "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya",
+      "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim",
+      "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand",
+      "West Bengal", "Delhi", "Puducherry", "Jammu and Kashmir", "Ladakh",
+    ];
+  
+    // Stream options
+    const streamOptions = [
+      "Science", "Commerce", "Arts", "Engineering", "Medical",
+      "Law", "Management", "Education", "Other",
+    ];
+  
+
+
   const validateHandler = async () => {
     const values = await contactForm.validateFields();
     // if(contactForm.isFieldsValidating()){
@@ -255,7 +277,7 @@ export const ContactForm = ({
               required={true}
               type="text"
               pattern={/^[a-zA-Z\s]*$/}
-              className="mb-4 p-3 rounded-lg border border-gray-300 shadow-sm focus:ring-2 focus:ring-purple-600 focus:outline-none w-full"
+              
             />
             <FormInput
               name="Phone"
@@ -263,13 +285,35 @@ export const ContactForm = ({
               type="tel"
               max={10}
               pattern={/^[0-9]{10}$/}
-              className="mb-4 p-3 rounded-lg border border-gray-300 shadow-sm focus:ring-2 focus:ring-purple-600 focus:outline-none w-full"
+              
             />
             <FormInput
               name="Email"
               required={true}
               type="email"
-              className="mb-4 p-3 rounded-lg border border-gray-300 shadow-sm focus:ring-2 focus:ring-purple-600 focus:outline-none w-full"
+              
+            />
+             {/* State Dropdown */}
+             <FormInput
+              name="state"
+              required={true}
+              type="select"
+              options={stateOptions.map((state) => ({
+                value: state,
+                label: state,
+              }))}
+            />
+
+            {/* Stream Dropdown */}
+            <FormInput
+              name="stream"
+              required={true}
+              type="select"
+              options={streamOptions.map((stream) => ({
+                value: stream,
+                label: stream,
+              }))}
+              
             />
           </MyForm>
         </MyCol>

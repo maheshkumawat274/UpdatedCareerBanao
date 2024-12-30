@@ -8,7 +8,7 @@ const AdmissionTaken = () => {
   // Array of education levels
   const AddTaken = [
     { label: "Yes", path: "/Reff" },
-    { label: "No", path: "/first" }
+    { label: "No", path: "/thanku" }
   ];
 
   // Handle button click to set selected education level
