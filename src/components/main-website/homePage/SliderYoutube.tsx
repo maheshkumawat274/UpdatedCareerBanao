@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 interface VideoCardProps {
   videoUrl: string;
-  onVideoClick: () => void; // Add an onVideoClick prop to handle video clicks
+  onVideoClick: () => void; 
 }
 
 const VideoCard: React.FC<VideoCardProps> = ({ videoUrl, onVideoClick }) => {
@@ -29,7 +29,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ videoUrl, onVideoClick }) => {
 
 const SliderYoutube: React.FC = () => {
   const sliderRef = useRef<Slider | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false); // Track if a video is playing
+  const [isPlaying, setIsPlaying] = useState(false); 
 
   const videos = [
     { videoUrl: "https://www.youtube.com/embed/Ako9mZC7uJE?si=gE6TORKwq7eFPFMh" },
@@ -43,7 +43,7 @@ const SliderYoutube: React.FC = () => {
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: !isPlaying, // Autoplay is paused when a video is clicked
+    autoplay: !isPlaying,
     autoplaySpeed: 3000,
     pauseOnHover: true,
     dots: true,
@@ -66,7 +66,7 @@ const SliderYoutube: React.FC = () => {
   };
 
   const handleVideoClick = () => {
-    setIsPlaying(true); // Pause autoplay when video is clicked
+    setIsPlaying(true); 
   };
 
   return (

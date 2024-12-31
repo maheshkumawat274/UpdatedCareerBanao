@@ -11,12 +11,10 @@
 
 @media (max-width:1040px) and (min-width:769px){
     
-    .header-section{
-      h1{
-        font-size: 18px;
-        font-weight: 600;
-        padding-top: 8px;
-      }
+    .header-section h1{
+      font-size: 18px;
+      font-weight: 600;
+      padding-top: 8px;
     }
 }
 @media (min-width: 768px) and (max-width: 1000px) {
