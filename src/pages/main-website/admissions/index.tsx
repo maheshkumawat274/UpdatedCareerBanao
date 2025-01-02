@@ -1,18 +1,18 @@
 import AdmissonLayout from "components/main-website/admissions/AdmissonLayout";
-import { useNavigate, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import useFetch from 'hooks/useFetch'
 import { useDispatch, useSelector } from "react-redux";
 import { setData } from "src/redux/admissionCategorySlice";
 import { useEffect } from "react";
-import { menuConfig } from "src/utils/constants";
+// import { menuConfig } from "src/utils/constants";
 
 const Admissions = () => {
 
   const { category } = useParams();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const data = useSelector((state: any) => state.admissionCategory.data);
-  const admlist: ApplicationConfigType[] = useSelector((state: any) => state.navList.admissionList);
+  // const admlist: ApplicationConfigType[] = useSelector((state: any) => state.navList.admissionList);
 
 
   let url = "/admissions";
