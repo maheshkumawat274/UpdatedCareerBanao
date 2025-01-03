@@ -581,7 +581,7 @@ const HeaderMain: React.FC = () => {
       </div>
 
       {/* Main Header */}
-      <div className={`bg-gradient-to-r from-[#983fd4] to-[#e46ab3] py-4 px-4 flex justify-between items-center shadow transition-transform duration-300 ${isScrolled ? "fixed top-0 w-full z-50" : ""}`}>
+      <div className={`bg-gradient-to-r from-[#983fd4] to-[#e46ab3] px-4 flex justify-between items-center shadow transition-transform duration-300 ${isScrolled ? "fixed top-0 w-full z-50" : ""}`}>
         {/* Logo */}
         <div className="header-section flex justify-between items-center text-white px-4 py-3 rounded-t-lg">
             <div className="flex items-center gap-2  text-[32px] font-semibold">
@@ -590,7 +590,7 @@ const HeaderMain: React.FC = () => {
                 alt="CareerBanao"
                 className="h-10 w-10 rounded-full"
               />
-              <Link className="text-" to={"/"}>
+              <Link to={"/"}>
               <h1> CareerBanao</h1>
               </Link>
             </div>
@@ -601,7 +601,7 @@ const HeaderMain: React.FC = () => {
           {[{ name: "Home", path: "/" },
             { name: "Admission", path: "/admissions/engineering" },
             { name: "Counselling", path: "/counselling/engineering" },
-            { name: "College Finder", path: "/first" },
+            { name: "College Finder", path: "/CollegeFinder" },
             { name: "Contact", path: "/contact" },
             { name: "Career", path: "/career" }].map(
             (item,index) => (
@@ -661,7 +661,7 @@ const HeaderMain: React.FC = () => {
         {[{ name: "Home", path: "/" },
             { name: "Admission", path: "/admissions/engineering" },
             { name: "Counselling", path: "/counselling/engineering" },
-            { name: "College Finder", path: "/first" },
+            { name: "College Finder", path: "/CollegeFinder" },
             { name: "Contact", path: "/contact" },
             { name: "Career", path: "/career" }].map(
             (item,index) => (

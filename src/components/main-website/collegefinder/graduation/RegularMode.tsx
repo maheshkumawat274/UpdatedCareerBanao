@@ -7,11 +7,11 @@ const RegularMode = () => {
 
   // Array of education levels
   const educationLevels = [
-    { label: "Engineering", path: "/budget" },
-    { label: "Management", path: "/budget" },
-    { label: "Law", path: "/budget" },
-    { label: "Medical", path: "/budget" },
-    { label: "Other", path: "/budget" }
+    { label: "Engineering", path: "/CollegeFinder/budget" },
+    { label: "Management", path: "/CollegeFinder/budget" },
+    { label: "Law", path: "/CollegeFinder/budget" },
+    { label: "Medical", path: "/CollegeFinder/budget" },
+    { label: "Other", path: "/CollegeFinder/budget" }
   ];
 
   // Handle button click to set selected education level

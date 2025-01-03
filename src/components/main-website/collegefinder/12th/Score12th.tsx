@@ -15,7 +15,7 @@ const Score12th = () => {
   // Handle button click to set selected score12th range
   const handleSelection = (score12th: string) => {
     setSelectedScore12th(score12th);
-    setCanProceed(true); // Enable the "Next" button when an option is selected
+    setCanProceed(true); 
   };
 
   return (
@@ -37,12 +37,12 @@ const Score12th = () => {
         ))}
       </div>
       <div className="mt-5 flex gap-2">
-        <Link to="/first">
+        <Link to="/CollegeFinder">
           <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300">
             PREV
           </button>
         </Link>
-        <Link to="/question12th">
+        <Link to="/CollegeFinder/question12th">
           <button
             className={`${
               canProceed ? "bg-[#1F618D]" : "bg-gray-400 cursor-not-allowed"

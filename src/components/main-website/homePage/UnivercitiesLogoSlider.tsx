@@ -45,7 +45,7 @@ const UnivercitiesLogoSlider: React.FC<UnivercitiesLogoSliderProps> = ({
     { logoUrl: "./logo/Quantum_logo.png" },
     { logoUrl: "./logo/1631180032phpvUgTqj.jpeg" },
     { logoUrl: "./logo/images.png" },
-    { logoUrl: "./logo/products.png" },
+    { logoUrl: "./logo/sandip.png" },
     { logoUrl: "./logo/Slide80.jpeg" },
   ];
 

@@ -22,106 +22,103 @@ import RegularModePage from 'src/pages/main-website/collegefounder/RegularModePa
 import Score10thPage from 'src/pages/main-website/collegefounder/Score10th'
 import Score12thPage from 'src/pages/main-website/collegefounder/Score12thPage'
 import ThankuPage from 'src/pages/main-website/collegefounder/ThankuPage'
+const CollegeFoundRoutes = [
+  {
+    path: "/CollegeFinder",
+    element: CollegeFounderPage,
+  },
+  {
+    path: "/CollegeFinder/score10th",
+    element: Score10thPage,
+  },
+  {
+    path: "/CollegeFinder/score12th",
+    element: Score12thPage,
+  },
+  {
+    path: "/CollegeFinder/course10th",
+    element: Course10thPage,
+  },
+  {
+    path: "/CollegeFinder/question10th",
+    element: AdmissionQues10thPage,
+  },
+  {
+    path: "/CollegeFinder/question12th",
+    element: AdmissionQues12thPage,
+  },
+  {
+    path: "/CollegeFinder/budget",
+    element: BudgetPage,
+  },
+  {
+    path: "/CollegeFinder/emi",
+    element: EMIPage,
+  },
+  {
+    path: "/CollegeFinder/formsub",
+    element: FormPage,
+  },
+  {
+    path: "/CollegeFinder/regularmode",
+    element: RegularModePage,
+  },
+  {
+    path: "/CollegeFinder/diplomacourse",
+    element: DiplomaHolderPage,
+  },
+  {
+    path: "/CollegeFinder/diplomamode",
+    element: DiplomaModePage,
+  },
+  {
+    path: "/CollegeFinder/diplomaqus",
+    element: DiplomaQusPage,
+  },
+  {
+    path: "/CollegeFinder/diplomascore",
+    element: DiplomaDegreeScorePage,
+  },
+  {
+    path: "/CollegeFinder/diplomabudget",
+    element: BudgetDiplomaPage,
+  },
+  {
+    path: "/CollegeFinder/onlinemode",
+    element: OnlineModePage,
+  },
+  {
+    path: "/CollegeFinder/mode",
+    element: ModePage,
+  },
+  {
+    path: "/CollegeFinder/degreescore",
+    element: DegreeScorePage,
+  },
+  {
+    path: "/CollegeFinder/degreequs",
+    element: DegreeQuestionPage,
+  },
+  {
+    path: "/CollegeFinder/adtaken",
+    element: AdmissionTakenPage,
+  },
+  {
+    path: "/CollegeFinder/Reff",
+    element: ReffFrndPage,
+  },
+  {
+    path: "/CollegeFinder/frndform",
+    element: FrndFormPage,
+  },
+  {
+    path: "/CollegeFinder/thanku",
+    element: ThankuPage,
+  },
+  {
+    path: "/CollegeFinder/budget10th",
+    element: Budget10thPage,
+  },
+];
 
-  const CollegeFoundRoutes = [
-    {
-      path:"first",
-      element:CollegeFounderPage,
-    },
-    {
-      path:"score10th",
-      element:Score10thPage,
-    },
-    {
-      path:"score12th",
-      element:Score12thPage,
-    },
-    
-    {
-      path:"course10th",
-      element:Course10thPage,
-    },
-    {
-      path:"question10th",
-      element:AdmissionQues10thPage,
-    },
-    {
-      path:"question12th",
-      element:AdmissionQues12thPage,
-    },
-    {
-      path:"budget",
-      element:BudgetPage,
-    },
-    {
-      path:"emi",
-      element:EMIPage,
-    },
-    {
-      path:"formsub",
-      element:FormPage,
-    },
-    {
-      path:"regularmode",
-      element:RegularModePage,
-    },
-    {
-      path:"diplomacourse",
-      element:DiplomaHolderPage,
-    },
-    {
-      path:"diplomamode",
-      element:DiplomaModePage,
-    },
-    {
-      path:"diplomaqus",
-      element:DiplomaQusPage,
-    },
-    {
-      path:"diplomascore",
-      element:DiplomaDegreeScorePage,
-    },
-
-    {
-      path:"diplomabudget",
-      element:BudgetDiplomaPage,
-    },
-    {
-      path:"onlinemode",
-      element:OnlineModePage,
-    },
-    {
-      path:"mode",
-      element:ModePage,
-    },
-    {
-      path:"degreescore",
-      element:DegreeScorePage,
-    },
-    {
-      path:"degreequs",
-      element:DegreeQuestionPage,
-    },
-    {
-      path:"adtaken",
-      element:AdmissionTakenPage,
-    },
-    {
-      path:"Reff",
-      element:ReffFrndPage,
-    },
-    {
-      path:"frndform",
-      element:FrndFormPage,
-    },
-    {
-      path:"thanku",
-      element:ThankuPage,
-    },
-    {
-      path:"budget10th",
-      element:Budget10thPage,
-    },
-  ]
-
-export default CollegeFoundRoutes
+export default CollegeFoundRoutes;

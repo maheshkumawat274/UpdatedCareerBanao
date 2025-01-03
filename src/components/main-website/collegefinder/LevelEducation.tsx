@@ -7,11 +7,11 @@ const LevelEducation = () => {
 
   // Array of education levels
   const educationLevels = [
-    { label: "Completed 10th", path: "/score10th" },
-    { label: "Completed 12th", path: "/score12th" },
-    { label: "College Graduate", path: "/degreescore" },
-    { label: "Postgraduate", path: "/degreescore" },
-    { label: "Diploma Holder", path: "/diplomascore" },
+    { label: "Completed 10th", path: "/CollegeFinder/score10th" },
+    { label: "Completed 12th", path: "/CollegeFinder/score12th" },
+    { label: "College Graduate", path: "/CollegeFinder/degreescore" },
+    { label: "Postgraduate", path: "/CollegeFinder/degreescore" },
+    { label: "Diploma Holder", path: "/CollegeFinder/diplomascore" },
   ];
 
   // Handle button click to set selected education level
@@ -44,7 +44,7 @@ const LevelEducation = () => {
         ))}
       </div>
       <div className="mt-5 flex gap-2">
-        <Link to="/first">
+        <Link to="/CollegeFinder">
           <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300">
             PREV
           </button>
