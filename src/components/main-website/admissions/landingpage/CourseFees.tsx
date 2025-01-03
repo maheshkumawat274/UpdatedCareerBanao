@@ -29,7 +29,7 @@ const CourseFees: React.FC = () => {
   const visibleCourses = showAll ? courses : courses.slice(0, 5);
 
   return (
-    <div className="max-w-4xl mx-auto mt-8 p-4">
+    <div className="w-full bg-slate-600 mt-8 p-4">
       <h1 className="text-2xl font-bold text-center mb-6">
         Sanskriti University Mathura Fee Structure 2024
       </h1>
