@@ -37,7 +37,7 @@ const DegreeScore = () => {
         ))}
       </div>
       <div className="mt-5 flex gap-2">
-        <Link to="/first">
+        <Link to="/CollegeFinder">
           <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300">
             PREV
           </button>

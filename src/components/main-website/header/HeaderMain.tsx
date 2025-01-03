@@ -118,7 +118,7 @@ const HeaderMain: React.FC = () => {
           {[{ name: "Home", path: "/" },
             { name: "Admission", path: "/admissions" },
             { name: "Counselling", path: "/counselling/engineering" },
-            { name: "College Finder", path: "/first" },
+            { name: "College Finder", path: "/CollegeFinder" },
             { name: "Contact", path: "/contact" },
             { name: "Career", path: "/career" }].map(
             (item,index) => (
@@ -177,7 +177,7 @@ const HeaderMain: React.FC = () => {
             { name: "Home", path: "/" },
             { name: "Admission", path: "/admissions" },
             { name: "Counselling", path: "/counselling/engineering" },
-            { name: "College Finder", path: "/first" },
+            { name: "College Finder", path: "/CollegeFinder" },
             { name: "Contact", path: "/contact" },
             { name: "Career", path: "/career" },
           ].map((item, index) => (

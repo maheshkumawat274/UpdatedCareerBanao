@@ -12,7 +12,7 @@
 //           Explore a wide range of colleges and choose the one that fits your career goals and aspirations.
 //         </p>
 //         <HashLink
-//           to="/first"
+//           to="/CollegeFinder"
 //           smooth
 //           className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300"
 //         >
@@ -35,7 +35,7 @@ const CollegeFinder: React.FC = () => {
         Find Your Dream College
       </h2>
       <p className="text-lg lg:text-xl font-light text-center mb-12 max-w-3xl mx-auto">
-        Take the first step towards your future by exploring a wide range of
+        Take the CollegeFinder step towards your future by exploring a wide range of
         top-tier colleges. Compare programs, campuses, and opportunities to
         choose the one that perfectly aligns with your career goals and dreams.
       </p>
@@ -54,7 +54,7 @@ const CollegeFinder: React.FC = () => {
 
         {/* Center Button */}
         <div className="flex-shrink-0">
-          <Link to={'/first'}>
+          <Link to={'/CollegeFinder'}>
            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-12 rounded-full shadow-lg transition-transform transform hover:scale-110">
             Start College Finder
            </button>

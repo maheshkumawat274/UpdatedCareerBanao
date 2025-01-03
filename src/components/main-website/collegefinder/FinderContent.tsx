@@ -29,7 +29,7 @@ const FinderContent: React.FC = () => {
               href="#"
               className="text-blue-500 hover:text-blue-700 font-medium"
             >
-              <Link to={'/first'}>Learn More</Link>
+              <Link to={'/CollegeFinder'}>Learn More</Link>
             </a>
           </div>
 
@@ -54,7 +54,7 @@ const FinderContent: React.FC = () => {
               href="#"
               className="text-blue-500 hover:text-blue-700 font-medium"
             >
-              <Link to={'/first'}>Learn More</Link>
+              <Link to={'/CollegeFinder'}>Learn More</Link>
             </a>
           </div>
         </div>

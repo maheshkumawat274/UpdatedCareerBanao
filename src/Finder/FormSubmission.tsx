@@ -1,7 +1,23 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+interface FormSubmissionProps {
+  onButtonClick: (param: string) => void;
+  data: string;
+  showHeader?: boolean;
+  showCourse?: boolean;
+  showState?: boolean;
+}
 
-const FormSubmission = ({ showHeader = true, showCourse = true, showState = true }) => {
+const FormSubmission: React.FC<FormSubmissionProps> = ({
+  onButtonClick,
+  data,
+  showHeader = true,
+  showCourse = true,
+  showState = true,
+}) => {
+  const bhandleClick = () => {
+    onButtonClick(data); // Access onButtonClick and data directly
+  };
+
   const [formData, setFormData] = useState({
     fullName: "",
     dob: "",
@@ -152,11 +168,11 @@ const FormSubmission = ({ showHeader = true, showCourse = true, showState = true
         
       </form>
          <div className="mt-5 flex gap-2">
-           <Link to={'/CollegeFinder'}>
-             <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300">
+           <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300"
+           onClick={bhandleClick}
+           >
                PREV
              </button>
-           </Link>
            <button
              type="submit"
              onClick={handleSubmit} 
