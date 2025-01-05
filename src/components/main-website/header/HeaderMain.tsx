@@ -103,7 +103,7 @@ const HeaderMain: React.FC = () => {
 
       {/* Main Header */}
       <div className={`bg-[#EDEDE9] py-4 px-4 flex justify-between items-center shadow transition-transform duration-300 ${
-         isScrolled ? "fixed top-0 w-full z-50" : ""
+         isScrolled ? "fixed top-0 w-full z-10" : ""
         }`}>
         {/* Logo */}
         <div className="header-section flex gap-2 nav-logo-name text-[32px] font-semibold text-primaryNavText">
