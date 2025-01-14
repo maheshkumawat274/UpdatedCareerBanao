@@ -51,6 +51,7 @@ const CampusFacilities: React.FC = () => {
   
   return (
     <div className='px-4 sm:px-8 mt-8'>
+      <div className='p-4 shadow-md'>
       {aboutData.map((aboutItem, index) => (
           <div key={index}>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">{aboutItem.title}</h2>
@@ -72,6 +73,8 @@ const CampusFacilities: React.FC = () => {
             {showAll ? "View Less" : "View More"}
           </button>
         </div>
+      </div>
+        
     <div className="shadow-lg bg-gradient-to-r from-purple-400 to-pink-300 p-3 sm:p-6 mt-4">
     
       <h2 className="text-3xl font-bold text-gray-800 mb-4">Campus Facilities</h2>

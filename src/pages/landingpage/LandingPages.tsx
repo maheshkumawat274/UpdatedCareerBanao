@@ -4,7 +4,7 @@ import AdmCard2 from "src/components/main-website/admissions/landingpage/AdmCard
 import AdmissionProcess from "src/components/main-website/admissions/landingpage/AdmissionProcess"
 import CampusFacilities from "src/components/main-website/admissions/landingpage/CampusFacilities"
 import CollegeAbout from "src/components/main-website/admissions/landingpage/CollegeAbout"
-import CollegeLandingPage from "src/components/main-website/admissions/landingpage/CollegeLandingPage"
+// import CollegeLandingPage from "src/components/main-website/admissions/landingpage/CollegeLandingPage"
 import CourseFees from "src/components/main-website/admissions/landingpage/CourseFees"
 import CutOff from "src/components/main-website/admissions/landingpage/CutOff"
 import Placements from "src/components/main-website/admissions/landingpage/Placements"
@@ -18,7 +18,7 @@ const LandingPages = () => {
     <>
 
      <div className="font-poppins">
-     <CollegeLandingPage/>
+     {/* <CollegeLandingPage/> */}
      <CollegeAbout/>
      <Updates/>
      <CourseFees/>

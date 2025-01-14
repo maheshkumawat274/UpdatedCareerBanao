@@ -57,7 +57,7 @@ const Meeting: React.FC = () => {
       </div>
 
       {/* Content Section */}
-      <div className="flex flex-col py-14 md:flex-row items-center justify-between gap-5">
+      <div className="flex flex-col pb-4 md:flex-row items-center justify-between gap-5">
         {/* Left Content */}
         <div className="w-full md:w-1/2 space-y-5">
           <h2 className="text-purple-700 font-semibold text-2xl md:text-2xl">
@@ -77,7 +77,7 @@ const Meeting: React.FC = () => {
             referFriend={false} 
            />
           </div>
-          <div className=" px-5" style={{overflow: "hidden"  }}>
+          <div className=" " style={{overflow: "hidden"  }}>
         <div className="w-full">
           <UnivercitiesLogoSlider 
           showHeading={false} 
@@ -90,7 +90,7 @@ const Meeting: React.FC = () => {
         </div>
 
         {/* Right Image */}
-        <div className="w-full h-[50vh] md:w-1/2 flex justify-center relative">
+        <div className="w-full h-[50vh] my-8 md:w-1/2 flex justify-center relative">
         <video
           autoPlay
           loop
