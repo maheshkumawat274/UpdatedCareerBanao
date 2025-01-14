@@ -150,7 +150,7 @@ function AdmissionLayout({ data, loading, category }: AdmissionLayoutType) {
       className="admissionLayout relative font-popins"
       style={{ backgroundColor: "rgb(237, 237, 233)" }} // Updated background color
     >
-      <div className="layout-container min-h-[450px] w-full px-4 py-8 flex flex-col lg:flex-row gap-20 relative top-[80px]">
+      <div className="layout-container mt-4 py-10 min-h-[450px] w-full px-4 flex flex-col lg:flex-row gap-20 relative">
         {/* Left Filter Section */}
         <div className="layout-container-left w-full lg:w-[22%] flex flex-col gap-5">
           {/* Category Section */}

@@ -193,7 +193,7 @@ const Section1 = () => {
                     
 
                     <p>CIN: U72200RJ2006PTC023499</p>
- 
+
                     <p>Registered office address: Spring Meadows Business Park, Sector 63, Noida, Uttar Pradesh 201301 India</p>
                 </li>
                 

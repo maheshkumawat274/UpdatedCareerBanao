@@ -13,7 +13,7 @@ function CounselingLayout({ data, loading, category }: any) {
 
     return (
         <div className='counselingLayout relative font-popins'>
-            <div className="relative top-[80px] min-h-[70vh] pt-10">
+            <div className="relative mt-14 min-h-[70vh]">
                 <h1 className="text-[24px] font-[600] font-[Open,sans-serif] text-[#515151] text-center">Admission and Counselling</h1>
                 <div className="pb-20 flex w-full flex-col lg:flex-row lg:flex-wrap gap-5 p-8">
                     {loading ? <CardSkeleton /> : data?.filter((item: any) => item.hide_record == "0" && item.delete_status != "1")
