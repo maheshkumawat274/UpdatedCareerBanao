@@ -378,7 +378,7 @@ function HomePopUp() {
                                 </div>
                             </div>
                             <div className="pop-header-center w-[75%] flex flex-col justify-center items-center lg:items-start">
-                                <h1 className="text-primaryBtn text-lg lg:text-2xl font-semibold">
+                                <h1 className="text-purple-700 text-lg lg:text-2xl font-semibold">
                                     Register Now To Apply
                                 </h1>
                                 <h1 className="text-primaryNavText text-base lg:text-1xl">
@@ -463,6 +463,9 @@ function HomePopUp() {
                                         <Link
                                             to={"/terms-and-conditions"}
                                             className="text-blue-600"
+                                            onClick={() => {
+                                                setIsShowPopup(false);
+                                            }}
                                         >
                                             Terms of Use.
                                         </Link>

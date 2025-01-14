@@ -73,9 +73,9 @@ export default function LoginForm({ isForgot, forgotPassword, closeModal }: any)
             </div>
           </div>
           <div className="form-footer mt-10 lg:px-5">
-            <p className="text-center mb-5 text-blue-600 font-bold text-xs cursor-pointer" onClick={forgotPassword}>Forgot your password ?</p>
+            <p className="text-center mb-5 text-purple-700 font-bold text-xs cursor-pointer" onClick={forgotPassword}>Forgot your password ?</p>
             <div className="submit-btn w-full mt-10 flex justify-center">
-              <button className="popUpDropBox w-3/4 h-10 lg:h-12 font-bold rounded-[5px] border-[#e3e3e3] border-[1px] shadow-md bg-[#fefefe] text-blue-500 hover:text-[#e67e22]transition-all duration-500 " type="submit">
+              <button className="popUpDropBox w-3/4 h-10 lg:h-12 font-bold rounded-[5px] border-[#e3e3e3] border-[1px] shadow-md bg-[#fefefe] text-purple-700 hover:text-[#e67e22]transition-all duration-500 " type="submit">
                 Sign In
               </button>
             </div>

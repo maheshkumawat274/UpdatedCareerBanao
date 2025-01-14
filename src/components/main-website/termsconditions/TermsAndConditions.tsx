@@ -8,7 +8,7 @@ function TermsAndConditions() {
         window.scrollTo(0, 0);
     }, [location]);
     return (
-        <div className='privacy-policy-section1 px-3 lg:px-[50px] relative top-[80px] pt-5 bg-[#f7f7f7]'>
+        <div className='privacy-policy-section1 px-3 lg:px-[50px] relative  pt-5 bg-[#f7f7f7]'>
             <div className="privacy-header">
                 <div className="privacy-heading">
                     <h1 className="lg:text-3xl text-2xl ">Terms & Conditions</h1>

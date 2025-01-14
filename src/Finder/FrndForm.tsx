@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
   interface FrndFormProps {
     onButtonClick: (param: string) => void;
     Form_sub: (param: string) => void;
@@ -13,6 +14,9 @@ import React, { useState } from "react";
     const bhandleClick = () => {
       onButtonClick(data); // Access onButtonClick and data directly
     };
+
+    const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     fullName: "",
     dob: "",
@@ -83,6 +87,7 @@ const validateField = (name: string, value: string) => {
       console.log(formData);
       const jsonData = JSON.stringify(formData);
         Form_sub(jsonData);
+        navigate('/')
     }
   };
 

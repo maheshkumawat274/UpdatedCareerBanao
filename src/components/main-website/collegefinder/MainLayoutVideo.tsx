@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import VideoFinder from './VideoFinder';
 import FinderContent from './FinderContent';
 import UnivercitiesLogoSlider from '../homePage/UnivercitiesLogoSlider';
-import ScrollTop from './ScrollTop';
+import ScrollTop from '../ScrollTop';
 
 const MainLayoutVideo: React.FC = () => {
   return (

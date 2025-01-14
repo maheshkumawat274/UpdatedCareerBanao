@@ -10,8 +10,8 @@ import { Form as MyForm } from "antd";
 const Candidate = () => {
 
   return (
-    <div className="candidateForm">
-      <h1 className="formHeading">Basic Details</h1>
+    <div className="px-4 sm:px-8 pt-6">
+      <h1 className="font-semibold text-center text-3xl font-poppins">Basic Details</h1>
       <Form />
     </div>
   );

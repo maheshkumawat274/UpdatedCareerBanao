@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 interface FormSubmissionProps {
   onButtonClick: (param: string) => void;
   Form_sub: (param: string) => void;
@@ -19,6 +21,8 @@ const FormSubmission: React.FC<FormSubmissionProps> = ({
   const bhandleClick = () => {
     onButtonClick(data); // Access onButtonClick and data directly
   };
+
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -95,6 +99,7 @@ const FormSubmission: React.FC<FormSubmissionProps> = ({
         console.log(formData);
         const jsonData = JSON.stringify(formData);
         Form_sub(jsonData);
+        navigate("/");
       }
     };
 

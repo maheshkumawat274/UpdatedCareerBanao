@@ -71,28 +71,15 @@ export default function LoginSignUpPopUp({ modalIsOpen, closeModal }: any) {
       >
         <div className="flex flex-col-reverse md:flex-row gap-5">
           {/* Left Side Content */}
-          <div className="w-full md:w-1/2 p-6 bg-gray-100 rounded-lg shadow-md custom-video">
+          <div className="w-full md:w-1/2 p-6 bg-purple-700 rounded-lg shadow-md custom-video">
             <div className="relative w-full h-full object-cover overflow-hidden">
-            {/* Background Video */}
-              <video
-                autoPlay
-                loop
-                muted
-                className="absolute top-0 left-0 w-full h-full custom-video"
-                >
-                <source src="./logo/7683446-hd_1080_1920_30fps.mp4" type="video/mp4" />
-              </video>
-         
               {/* Text Overlay */}
-              <div className="relative font-poppins w-full md:w-1/2 opacity-100 z-10 rounded-lg shadow-md mx-auto custom-text">
+              <div className="relative font-poppins w-full md:w-1/2 opacity-100 z-10 rounded-lg mx-auto custom-text">
                <h2 className="text-3xl text-white font-bold mb-4">Welcome Back!</h2>
                <p className="text-white">
                Login or register to access exclusive features, manage your account, and explore more.
                </p>
               </div>
-         
-             {/* Optional Overlay for Dimming the Video */}
-             <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 z-0"></div>
            </div>
           </div>
   

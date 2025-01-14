@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./privacypolic.css"
+import PrivacyData from "./PrivacyData";
 const Section1 = () => {
     const location = useLocation();
 
@@ -186,44 +187,21 @@ const Section1 = () => {
             <p>Particulars of corporate entity, Data Protection Officer/Grievance Officer pursuant to the provisions of Companies Act, 2013 and The Indian Information Technology Act, 2000 and rules made and applicable laws thereunder:</p>
 
             <p>The particulars of various corporate entities of Career Banao for the above purposes are as under:</p>
-
-            <ol>
+            <p className="text-3xl"><strong>Career Banao Private Limited</strong></p>
+            <ul>
                 <li>
-                    <p><strong>Career Banao Private Limited</strong></p>
+                    
 
                     <p>CIN: U72200RJ2006PTC023499</p>
 
                     <p>Registered office address: Spring Meadows Business Park, Sector 63, Noida, Uttar Pradesh 201301 India</p>
                 </li>
                 
-            </ol>
+            </ul>
 
             <p>If you have any concern related to this Privacy Policy or collection, storage, retention or disclosure of Your Information under the terms of this Privacy Policy or Terms of Use or any other terms and conditions of Career Banao or its other business entities including any queries or grievances, You can contact to Career Banao through its Data Protection Officer/Grievance Redressal Officer at the below given details:</p>
 
-            <table className="shadow-lg bg-white border-separate w-full text-sm">
-
-                <tr className="w-fit lg:w-full">
-                    <td className="border p-1 lg:px-8 lg:py-4">Name</td>
-                    <td className="border  p-1 lg:px-8 lg:py-4">Mr. Karan Prasad</td>
-                </tr>
-                <tr>
-                    <td className="border  p-1 lg:px-8 lg:py-4">E-mail</td>
-                    <td className="border  p-1 lg:px-8 lg:py-4">compliance@careerbanao.org</td>
-                </tr>
-                <tr>
-                    <td className="border  p-1 lg:px-8 lg:py-4">Contact Number</td>
-                    <td className="border  p-1 lg:px-8 lg:py-4">8750092628</td>
-                </tr>
-                <tr>
-                    <td className="border  p-1 lg:px-8 lg:py-4">Working Days</td>
-                    <td className="border  p-1 lg:px-8 lg:py-4">Monday to Friday</td>
-                </tr>
-                <tr>
-                    <td className="border  p-1 lg:px-8 lg:py-4">Working Hours</td>
-                    <td className="border  p-1 lg:px-8 lg:py-4">10:30 am to 6:30 pm</td>
-                </tr>
-
-            </table>
+            <PrivacyData/>
 
 
             <p>We will strive to address your feedback and concerns in a timely and effective manner.</p>

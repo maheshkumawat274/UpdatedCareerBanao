@@ -136,7 +136,7 @@ function PrivacyForm() {
 
 
     return (
-        <div className="Contact-for bg-[#EDEDE9] mt-[5rem] py-[3rem]">
+        <div className="Contact-for bg-[#EDEDE9] py-[3rem]">
             <h2 className="font-normal m-0  text-[32px] text-center">Get in touch with our </h2>
             <h2 className="text-[32px] m-0 font-semibold text-center">expert counsellors</h2>
 
@@ -165,7 +165,7 @@ function PrivacyForm() {
                         </div>
                     </MyForm>
                     <div className="w-full text-center">
-                        <button onClick={submitHandler} type="submit" disabled={!isSubmitActive} className={`bg-purple-700 h-[3rem] rounded-3xl text-white text-[16px] font-semibold px-[2rem] ${!isSubmitActive && "cursor-not-allowed bg-slate-500"}`}>Request for a callback</button>
+                        <button onClick={submitHandler} type="submit" disabled={!isSubmitActive} className={`bg-purple-700 hover:bg-hoverBtn h-[3rem] rounded-3xl text-white text-[16px] font-semibold px-[2rem] ${!isSubmitActive && "cursor-not-allowed bg-slate-500"}`}>Request for a callback</button>
                     </div>
                 </div>
             </div >

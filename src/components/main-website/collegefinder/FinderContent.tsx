@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const FinderContent: React.FC = () => {
   return (
-    <section className="w-full py-16 #EDEDE9">
+    <section className="w-full">
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="text-center mb-12">

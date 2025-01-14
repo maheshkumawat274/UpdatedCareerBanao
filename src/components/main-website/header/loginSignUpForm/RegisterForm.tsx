@@ -16,7 +16,7 @@ const registerDataInitalState = {
 //   boder: "1px solid #fff",
 // }
 
-export default function RegisterForm({ setShowLoginForm, setShowRegisterForm }: any) {
+export default function RegisterForm({ setShowLoginForm, setShowRegisterForm, closeModal }: any) {
   const [next, setNext] = useState(false);
   const [registerData, setRegisterData] = useState(registerDataInitalState);
   const [isChecked, setIsChecked] = useState(false);
@@ -75,6 +75,9 @@ export default function RegisterForm({ setShowLoginForm, setShowRegisterForm }: 
   function handleCheckboxChange() {
     setIsChecked(!isChecked);
     setErrorMessage(""); // Clear error when checkbox is checked
+  }
+  function CloseModelHandler(){
+    closeModal();
   }
   return (
     <div>
@@ -192,8 +195,8 @@ export default function RegisterForm({ setShowLoginForm, setShowRegisterForm }: 
                       />
                       <label htmlFor="termsCheckbox" className="text-xs text-slate-600">
                         By submitting this form, you accept and agree to our{" "}
-                        <Link to={"/terms-and-conditions"}>
-                          <span className="text-xs text-blue-600">terms and conditions</span>
+                        <Link to={"/terms-and-conditions"} onClick={CloseModelHandler}>
+                          <span className="text-xs text-purple-700" >terms and conditions</span>
                         </Link>
                       </label>
                     </div>
@@ -203,7 +206,7 @@ export default function RegisterForm({ setShowLoginForm, setShowRegisterForm }: 
               </div>
               <div className="form-footer mt-8 lg:px-5">
                 <div className="submit-btn w-full flex justify-center">
-                  <button type="submit" className="popUpDropBox w-3/4 h-10 lg:h-12 font-bold rounded-[5px] border-[#e3e3e3] border-[1px] shadow-md bg-[#fefefe] text-blue-500 hover:text-[#e67e22]transition-all duration-500 ">
+                  <button type="submit" className="popUpDropBox w-3/4 h-10 lg:h-12 font-bold rounded-[5px] border-[#e3e3e3] border-[1px] shadow-md bg-[#fefefe] text-purple-700 hover:text-[#e67e22]transition-all duration-500 ">
                     Sign Up
                   </button>
                 </div>
@@ -238,10 +241,10 @@ export default function RegisterForm({ setShowLoginForm, setShowRegisterForm }: 
               </div>
               <div className="form-footer mt-8 lg:px-5">
                 <div className="mx-2">
-                  <p className="text-xs text-slate-600">By submitting this form , you accept and agree to our <Link to={"/terms-and-conditions"}><span className="text-xs text-blue-600">terms and conditions</span></Link></p>
+                  <p className="text-xs text-slate-600">By submitting this form , you accept and agree to our <Link to={"/terms-and-conditions"} onClick={CloseModelHandler}><span className="text-xs text-purple-700">terms and conditions</span></Link></p>
                 </div>
                 <div className="submit-btn w-full mt-8 flex justify-center">
-                  <button type="submit" className="popUpDropBox w-3/4 h-10 lg:h-12 font-bold rounded-[5px] border-[#e3e3e3] border-[1px] shadow-md bg-[#fefefe] text-blue-500 hover:text-[#e67e22]transition-all duration-500 ">
+                  <button type="submit" className="popUpDropBox w-3/4 h-10 lg:h-12 font-bold rounded-[5px] border-[#e3e3e3] border-[1px] shadow-md bg-[#fefefe] text-purple-700 hover:text-[#e67e22]transition-all duration-500 ">
                     Sign Up
                   </button>
                 </div>

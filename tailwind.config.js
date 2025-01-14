@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors:{
-        primaryBtn:"#ff8c28",
-        hoverBtn:"#e67e22",
+        primaryBtn:"#983FD3",
+        hoverBtn:"#E068B4",
         footerBg:"#1f618d",
         primaryNavBackground:"#34495e",
         primaryNavText:"#2c3e50",

@@ -264,7 +264,7 @@ function ExamCard({ data, isLoading }: ExamCardType) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="relative flex flex-col p-6 rounded-lg shadow-md border border-purple-500 hover:shadow-lg transition-transform transform hover:scale-105 mb-5 font-poppins bg-white"
+      className="relative flex flex-col p-6 rounded-lg shadow-md border  hover:shadow-lg transition-transform transform hover:scale-105 mb-5 font-poppins bg-white"
     >
       {/* Last Date Badge */}
       <div

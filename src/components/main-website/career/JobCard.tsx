@@ -24,7 +24,7 @@ function JobCard({ data }: any) {
           <p>Published : <span>{data.job_published}</span></p>
         </div>
         <div className="jobcard-right">
-          <button className="rounded-3xl hover:bg-hoverBtn bg-primaryBtn text-sm py-[7px] px-[12px] text-white "><Link to={`/career/jobapply/${data.job_id}`}>Apply Now</Link></button>
+          <button className="rounded-3xl hover:bg-pink-500 bg-purple-700 text-sm py-[7px] px-[12px] text-white "><Link to={`/career/jobapply/${data.job_id}`}>Apply Now</Link></button>
         </div>
       </div>
     </div>

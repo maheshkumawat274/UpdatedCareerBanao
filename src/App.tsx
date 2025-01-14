@@ -16,6 +16,7 @@ import WhatsAppBtn from "./components/whatsappbtn/WhatsAppBtn";
 import CollegeFoundRoutes from "./routes/CollegeFoundRoutes";
 import MainLayoutVideo from "./components/main-website/collegefinder/MainLayoutVideo";
 import LandingPages from "./pages/landingpage/LandingPages";
+import ScrollTop from "./components/main-website/ScrollTop";
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const dispatch = useDispatch();
@@ -63,7 +64,7 @@ function App() {
     <Loader />
   ) : (
     <MainLayout>
-     
+    <ScrollTop/>
       <Routes>
       
         {
