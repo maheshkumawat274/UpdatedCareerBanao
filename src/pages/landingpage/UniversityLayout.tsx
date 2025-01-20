@@ -1,4 +1,4 @@
-import Sidebar from "src/components/main-website/admissions/landingpage/Sidebar"
+import Sidebar from "src/components/main-website/admissions/landingpage/sidebar/Sidebar"
 import LandingPages from "./LandingPages"
 import CollegeLandingPage from "src/components/main-website/admissions/landingpage/CollegeLandingPage"
 
@@ -6,20 +6,33 @@ const UniversityLayout = () => {
   return (
     <>
       <div>
-        <CollegeLandingPage/>
-        <div className="flex flex-col md:flex-row h-screen">
-         {/* Sidebar */}
-         <div className="w-full md:w-1/4 h-1/4 md:h-full">
-          <Sidebar />
-         </div>
-         {/* Main Content */}
-         <div className="w-full md:w-3/4 h-3/4 md:h-full overflow-y-auto">
-          <LandingPages/>
-         </div>
-       </div>
+        <CollegeLandingPage />
+        <div className="flex flex-col md:flex-row">
+          {/* Main Content */}
+          <div
+            className="w-full md:w-4/5 h-auto sm:h-screen md:h-auto overflow-y-auto"
+            style={{
+              scrollbarWidth: "thin",
+            }}
+          >
+            <LandingPages />
+          </div>
+          {/* Sidebar */}
+          <div
+            className="hidden md:block w-full md:w-2/5 h-auto"
+            style={{
+              position: "sticky",
+              top: "10vh", // Sidebar top se fix rahega jab tak scroll na ho.
+              height: "90vh", // Full height tak fix.
+              overflowY: "auto",
+            }}
+          >
+            <Sidebar />
+          </div>
+        </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default UniversityLayout
+export default UniversityLayout;
