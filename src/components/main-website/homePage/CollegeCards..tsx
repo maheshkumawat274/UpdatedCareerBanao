@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaMapMarkerAlt, FaStar, FaUniversity, FaAward } from 'react-icons/fa';
 import { MdSchool } from 'react-icons/md';
+import {Link} from 'react-router-dom';
 // Dummy data array for 20 colleges (can be replaced with API data)
 const colleges = [
   {
@@ -10,6 +11,7 @@ const colleges = [
     logo: 'https://seekvectors.com/files/download/Amity%20University%20-04.png',
     highlights: ['Ranked #1 in Engineering', '50+ Programs', '90% Placement Rate'],
     location: ' University in North India',
+    route: '/UniversityLandingPage'
   },
   {
     id: 2,
@@ -18,6 +20,7 @@ const colleges = [
     logo: 'https://upload.wikimedia.org/wikipedia/en/a/a9/Sanskriti_University_logo.png',
     highlights: ['World-Class Faculty', 'State-of-the-art Campus', '85% Placement Rate'],
     location: 'University in Mathura, Uttar Pradesh',
+    route: '/UniversityLandingPage'
   },
   {
     id: 1,
@@ -26,6 +29,7 @@ const colleges = [
     logo: 'https://seekvectors.com/files/download/Amity%20University%20-04.png',
     highlights: ['Ranked #1 in Engineering', '50+ Programs', '90% Placement Rate'],
     location: ' University in North India',
+    route: '/UniversityLandingPage'
   },
   {
     id: 2,
@@ -34,6 +38,7 @@ const colleges = [
     logo: 'https://upload.wikimedia.org/wikipedia/en/a/a9/Sanskriti_University_logo.png',
     highlights: ['World-Class Faculty', 'State-of-the-art Campus', '85% Placement Rate'],
     location: 'University in Mathura, Uttar Pradesh',
+    route: '/UniversityLandingPage'
   },
   {
     id: 1,
@@ -42,6 +47,7 @@ const colleges = [
     logo: 'https://seekvectors.com/files/download/Amity%20University%20-04.png',
     highlights: ['Ranked #1 in Engineering', '50+ Programs', '90% Placement Rate'],
     location: ' University in North India',
+    route: '/UniversityLandingPage'
   },
   {
     id: 2,
@@ -50,6 +56,7 @@ const colleges = [
     logo: 'https://upload.wikimedia.org/wikipedia/en/a/a9/Sanskriti_University_logo.png',
     highlights: ['World-Class Faculty', 'State-of-the-art Campus', '85% Placement Rate'],
     location: 'University in Mathura, Uttar Pradesh',
+    route: '/UniversityLandingPage'
   },
   {
     id: 1,
@@ -58,6 +65,7 @@ const colleges = [
     logo: 'https://seekvectors.com/files/download/Amity%20University%20-04.png',
     highlights: ['Ranked #1 in Engineering', '50+ Programs', '90% Placement Rate'],
     location: ' University in North India',
+    route: '/UniversityLandingPage'
   },
   {
     id: 2,
@@ -66,6 +74,7 @@ const colleges = [
     logo: 'https://upload.wikimedia.org/wikipedia/en/a/a9/Sanskriti_University_logo.png',
     highlights: ['World-Class Faculty', 'State-of-the-art Campus', '85% Placement Rate'],
     location: 'University in Mathura, Uttar Pradesh',
+    route: '/UniversityLandingPage'
   },
   {
     id: 1,
@@ -74,6 +83,7 @@ const colleges = [
     logo: 'https://seekvectors.com/files/download/Amity%20University%20-04.png',
     highlights: ['Ranked #1 in Engineering', '50+ Programs', '90% Placement Rate'],
     location: ' University in North India',
+    route: '/UniversityLandingPage'
   },
   {
     id: 2,
@@ -82,6 +92,7 @@ const colleges = [
     logo: 'https://upload.wikimedia.org/wikipedia/en/a/a9/Sanskriti_University_logo.png',
     highlights: ['World-Class Faculty', 'State-of-the-art Campus', '85% Placement Rate'],
     location: 'University in Mathura, Uttar Pradesh',
+    route: '/UniversityLandingPage'
   },
   {
     id: 1,
@@ -90,6 +101,7 @@ const colleges = [
     logo: 'https://seekvectors.com/files/download/Amity%20University%20-04.png',
     highlights: ['Ranked #1 in Engineering', '50+ Programs', '90% Placement Rate'],
     location: ' University in North India',
+    route: '/UniversityLandingPage'
   },
   {
     id: 2,
@@ -98,6 +110,7 @@ const colleges = [
     logo: 'https://upload.wikimedia.org/wikipedia/en/a/a9/Sanskriti_University_logo.png',
     highlights: ['World-Class Faculty', 'State-of-the-art Campus', '85% Placement Rate'],
     location: 'University in Mathura, Uttar Pradesh',
+    route: '/UniversityLandingPage'
   },
   {
     id: 1,
@@ -106,6 +119,7 @@ const colleges = [
     logo: 'https://seekvectors.com/files/download/Amity%20University%20-04.png',
     highlights: ['Ranked #1 in Engineering', '50+ Programs', '90% Placement Rate'],
     location: ' University in North India',
+    route: '/UniversityLandingPage'
   },
   {
     id: 2,
@@ -114,6 +128,7 @@ const colleges = [
     logo: 'https://upload.wikimedia.org/wikipedia/en/a/a9/Sanskriti_University_logo.png',
     highlights: ['World-Class Faculty', 'State-of-the-art Campus', '85% Placement Rate'],
     location: 'University in Mathura, Uttar Pradesh',
+    route: '/UniversityLandingPage'
   },
   {
     id: 1,
@@ -122,6 +137,7 @@ const colleges = [
     logo: 'https://seekvectors.com/files/download/Amity%20University%20-04.png',
     highlights: ['Ranked #1 in Engineering', '50+ Programs', '90% Placement Rate'],
     location: ' University in North India',
+    route: '/UniversityLandingPage'
   },
   {
     id: 2,
@@ -130,6 +146,7 @@ const colleges = [
     logo: 'https://upload.wikimedia.org/wikipedia/en/a/a9/Sanskriti_University_logo.png',
     highlights: ['World-Class Faculty', 'State-of-the-art Campus', '85% Placement Rate'],
     location: 'University in Mathura, Uttar Pradesh',
+    route: '/UniversityLandingPage'
   },
   {
     id: 1,
@@ -138,6 +155,7 @@ const colleges = [
     logo: 'https://seekvectors.com/files/download/Amity%20University%20-04.png',
     highlights: ['Ranked #1 in Engineering', '50+ Programs', '90% Placement Rate'],
     location: ' University in North India',
+    route: '/UniversityLandingPage'
   },
   {
     id: 2,
@@ -146,6 +164,7 @@ const colleges = [
     logo: 'https://upload.wikimedia.org/wikipedia/en/a/a9/Sanskriti_University_logo.png',
     highlights: ['World-Class Faculty', 'State-of-the-art Campus', '85% Placement Rate'],
     location: 'University in Mathura, Uttar Pradesh',
+    route: '/UniversityLandingPage'
   },
   {
     id: 1,
@@ -154,6 +173,7 @@ const colleges = [
     logo: 'https://seekvectors.com/files/download/Amity%20University%20-04.png',
     highlights: ['Ranked #1 in Engineering', '50+ Programs', '90% Placement Rate'],
     location: ' University in North India',
+    route: '/UniversityLandingPage'
   },
   {
     id: 2,
@@ -162,6 +182,7 @@ const colleges = [
     logo: 'https://upload.wikimedia.org/wikipedia/en/a/a9/Sanskriti_University_logo.png',
     highlights: ['World-Class Faculty', 'State-of-the-art Campus', '85% Placement Rate'],
     location: 'University in Mathura, Uttar Pradesh',
+    route: '/UniversityLandingPage'
   },
   {
     id: 1,
@@ -170,6 +191,7 @@ const colleges = [
     logo: 'https://seekvectors.com/files/download/Amity%20University%20-04.png',
     highlights: ['Ranked #1 in Engineering', '50+ Programs', '90% Placement Rate'],
     location: ' University in North India',
+    route: '/UniversityLandingPage'
   },
   {
     id: 2,
@@ -178,6 +200,7 @@ const colleges = [
     logo: 'https://upload.wikimedia.org/wikipedia/en/a/a9/Sanskriti_University_logo.png',
     highlights: ['World-Class Faculty', 'State-of-the-art Campus', '85% Placement Rate'],
     location: 'University in Mathura, Uttar Pradesh',
+    route: '/UniversityLandingPage'
   },
   {
     id: 1,
@@ -186,6 +209,7 @@ const colleges = [
     logo: 'https://seekvectors.com/files/download/Amity%20University%20-04.png',
     highlights: ['Ranked #1 in Engineering', '50+ Programs', '90% Placement Rate'],
     location: ' University in North India',
+    route: '/UniversityLandingPage'
   },
   {
     id: 2,
@@ -194,6 +218,7 @@ const colleges = [
     logo: 'https://upload.wikimedia.org/wikipedia/en/a/a9/Sanskriti_University_logo.png',
     highlights: ['World-Class Faculty', 'State-of-the-art Campus', '85% Placement Rate'],
     location: 'University in Mathura, Uttar Pradesh',
+    route: '/UniversityLandingPage'
   },
   {
     id: 1,
@@ -202,6 +227,7 @@ const colleges = [
     logo: 'https://seekvectors.com/files/download/Amity%20University%20-04.png',
     highlights: ['Ranked #1 in Engineering', '50+ Programs', '90% Placement Rate'],
     location: ' University in North India',
+    route: '/UniversityLandingPage'
   },
   {
     id: 2,
@@ -210,6 +236,7 @@ const colleges = [
     logo: 'https://upload.wikimedia.org/wikipedia/en/a/a9/Sanskriti_University_logo.png',
     highlights: ['World-Class Faculty', 'State-of-the-art Campus', '85% Placement Rate'],
     location: 'University in Mathura, Uttar Pradesh',
+    route: '/UniversityLandingPage'
   },
   
 ];
@@ -218,7 +245,7 @@ const CollegeCards: React.FC = () => {
   return (
     <div className="bg-[#EDEDE9] font-poppins mt-14 px-0 sm:px-4">
       <h1 className="text-2xl sm:text-3xl font-semibold text-center text-gray-800 mb-8">
-        <MdSchool className="inline-block text-blue-500 text-4xl mr-2" />
+        <MdSchool className="inline-block text-primaryBtn text-5xl mr-2" />
         Top Colleges & Universities
       </h1>
       <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 mx-0 pb-3 sm:mx-4">
@@ -241,7 +268,7 @@ const CollegeCards: React.FC = () => {
               </div>
               <div className="p-4">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2 flex items-center">
-                  <FaUniversity className="text-blue-500 mr-2" />
+                  <FaUniversity className="text-primaryBtn mr-2" />
                   {college.name}
                 </h3>
                 <p className="text-sm text-gray-600 flex items-center mb-3">
@@ -255,9 +282,11 @@ const CollegeCards: React.FC = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-2 px-4 rounded-lg text-sm font-medium w-full hover:from-blue-600 hover:to-blue-800 transition">
-                  <FaAward className="inline-block mr-2" /> Visit More
-                </button>
+                <Link to={college.route}>
+                 <button className="bg-primaryBtn hover:bg-hoverBtn  text-white py-2 px-4 rounded-lg text-sm font-medium w-full  transition">
+                   <FaAward className="inline-block mr-2" /> Visit More
+                 </button>
+                </Link>
               </div>
             </div>
           ))}

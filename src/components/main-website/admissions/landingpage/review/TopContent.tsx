@@ -1,7 +1,7 @@
 import React from 'react';
 const TopContent: React.FC = () => {
   return (
-    <div className="relative overflow-hidden h-[300px] sm:h-[400px] bg-red-700">
+    <div className="relative overflow-hidden h-[300px] sm:h-[400px]">
       {/* Background img */}
       <img className='w-full h-[300px] sm:h-[400px]' src='./logo/WWT-34-hands-laptop.jpg'/>
 
