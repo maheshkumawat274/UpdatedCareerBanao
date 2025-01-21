@@ -34,7 +34,7 @@ import "./home.css";
 
 const Section2 = () => {
   return (
-    <div className="section2 font-poppins flex flex-col lg:flex-row w-full lg:p-8 py-10 px-5 my-16 bg-gradient-to-r from-[#983fd4] to-[#e46ab3] text-white rounded-lg shadow-lg">
+    <div className="section2 font-poppins flex flex-col lg:flex-row w-full lg:p-8 py-10 px-5 my-8 bg-gradient-to-r from-[#983fd4] to-[#e46ab3] text-white rounded-lg shadow-lg">
       {/* Left Section */}
       <div className="section2-left w-full lg:w-[55%] p-5 flex flex-col justify-center gap-5">
         <p className="lg:text-4xl text-xl font-bold tracking-wide leading-snug">

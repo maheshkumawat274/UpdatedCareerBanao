@@ -73,7 +73,7 @@ const SliderYoutube: React.FC = () => {
   };
 
   return (
-    <section className="py-10 bg-[#EDEDE9] relative">
+    <section className="py-6 bg-[#EDEDE9] relative">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-poppins text-center mb-6 text-gray-800">
           YouTube Videos

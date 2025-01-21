@@ -16,7 +16,6 @@ const MainLayoutVideo: React.FC = () => {
         <Outlet /> 
       </div>
       <FinderContent/>
-      
       <div className='px-4'><UnivercitiesLogoSlider/></div>
       <PrivacyForm/>
     </div>
