@@ -21,7 +21,7 @@ const CutOff: React.FC = () => {
   };
 
   return (
-    <div className="px-4 sm:px-8 mt-4 bg-[#EDEDE9]">
+    <div className="px-2 sm:px-8 mt-4 bg-[#EDEDE9]">
       {/* Section */}
       <div className="shadow-md p-4 mb-8">
         {cutoffData.map((aboutItem, index) => (

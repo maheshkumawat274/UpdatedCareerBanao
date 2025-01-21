@@ -57,7 +57,7 @@ const UnivercitiesLogoSlider: React.FC<UnivercitiesLogoSliderProps> = ({
     slidesToScroll: 1,
     autoplay: true,
     speed:500,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 2000,
     pauseOnHover: true,
     dots: true,
     arrows: false,

@@ -50,7 +50,7 @@ const CampusFacilities: React.FC = () => {
     const toggleView = () => setShowAll(!showAll);
   
   return (
-    <div className='px-4 sm:px-8 mt-8'>
+    <div className='px-2 sm:px-8 mt-8'>
       <div className='p-4 shadow-md'>
       {aboutData.map((aboutItem, index) => (
           <div key={index}>

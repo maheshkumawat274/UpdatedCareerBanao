@@ -39,7 +39,7 @@ const CourseFees: React.FC = () => {
   const visibleCourses = showAll ? courses : courses.slice(0, 5);
 
   return (
-    <div className="px-4 sm:px-8 bg-[#EDEDE9] mt-4">
+    <div className="px-2 sm:px-8 bg-[#EDEDE9] mt-4">
     <div className="w-full mt-8 p-4 shadow-md">
      {aboutData.map((aboutItem, index) => (
           <div key={index}>

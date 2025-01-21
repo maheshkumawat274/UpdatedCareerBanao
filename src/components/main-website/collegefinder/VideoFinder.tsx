@@ -3,19 +3,10 @@ import React from 'react';
 import './video.css'
 const VideoFinder: React.FC = () => {
   return (
-    <div className="hello relative overflow-hidden h-[500px] sm:h-[400px]">
+    <div className="hello relative overflow-hidden h-[500px] sm:h-[600px]">
       {/* Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-80"
-        style={{
-          height: '500px',
-        }}
-      >
-        <source src="./logo/video.mp4" type="video/mp4" />
-      </video>
+      <img className='absolute top-0 left-0 w-full h-full object-cover opacity-80' src='./logo/pexels-emily-ranquist-493228-1205651.jpg'></img>
+      
 
       {/* Black Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-8"></div>
@@ -24,7 +15,7 @@ const VideoFinder: React.FC = () => {
  
      
 
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-[300px] sm:w-[500px] md:w-[700px] text-white z-10">
  
         <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">
           Find Your Perfect College

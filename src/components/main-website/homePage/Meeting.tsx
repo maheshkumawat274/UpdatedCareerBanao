@@ -102,8 +102,8 @@ const Meeting: React.FC = () => {
         </div>
       </div>
       <div className="text-center text-gray-600">
-        <p>Powered by Career Banao</p>
-        <p>Upskilling India, One Career at a Time</p>
+        <p>Powered by CareerBanao</p>
+        <p>Multi Career at a Time</p>
       </div>
     </div>
   );

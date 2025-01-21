@@ -12,6 +12,7 @@ import HomeFaq from "src/components/main-website/homePage/HomeFaq";
 import SliderYoutube from "src/components/main-website/homePage/SliderYoutube";
 import UnivercitiesLogoSlider from "src/components/main-website/homePage/UnivercitiesLogoSlider";
 import PrivacyForm from "src/components/main-website/privacypolicy/PrivacyForm";
+import Section7 from "src/components/main-website/homePage/Section7";
 function HomePage() {
   return (
     <div className="relative p-[20px] overflow-x-hidden">
@@ -26,7 +27,10 @@ function HomePage() {
       <Section5 />
       <div className="mt-3"><SliderYoutube/></div>
       <Section6 />
+      <Section7/>
+      <div className="mt-3">
       <PrivacyForm/>
+      </div>
       <HomeFaq/>
     </div>
   );

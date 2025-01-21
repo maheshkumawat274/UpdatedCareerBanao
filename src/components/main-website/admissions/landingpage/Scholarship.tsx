@@ -93,7 +93,7 @@ const Scholarship: React.FC = () => {
   };
 
   return (
-    <div className="px-4 sm:px-8">
+    <div className="px-2 sm:px-8">
       <div className="w-full shadow-md mt-8 p-4">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">
           {content.title}

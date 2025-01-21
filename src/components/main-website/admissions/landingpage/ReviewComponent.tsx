@@ -68,7 +68,7 @@ const ReviewComponent: React.FC = () => {
     universityData;
 
   return (
-    <div className="px-4 sm:px-8 mt-4">
+    <div className="px-2 sm:px-8 mt-4">
     <div className="container shadow-md p-4 sm:p-6">
       <h1 className="text-3xl font-bold text-gray-800 mb-6">{universityName} Reviews</h1>
 

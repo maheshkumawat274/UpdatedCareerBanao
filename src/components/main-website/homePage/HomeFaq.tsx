@@ -61,9 +61,9 @@ const HomeFaq: React.FC = () => {
   };
 
   return (
-    <div className="px-4 py-8 max-w-7xl mx-auto">
+    <div className="px-0 md:px-4 py-8 w-full md:max-w-7xl mx-auto">
       <h2 className="text-3xl font-poppins text-center mb-8">Frequently Asked Questions</h2>
-      <div className="space-y-4">
+      <div className="space-y-4 w-full">
         {faqs.map((faq, index) => (
           <div key={index} className="bg-white shadow-lg font-poppins rounded-lg">
             <button

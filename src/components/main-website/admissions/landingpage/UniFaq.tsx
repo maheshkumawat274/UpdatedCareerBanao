@@ -20,8 +20,8 @@ const UniFaq: React.FC = () => {
   ];
 
   return (
-    <div className="px-4 sm:px-8 mt-6">
-    <div className="shadow-md p-4 ">
+    <div className="px-2 sm:px-8 mt-6">
+    <div className="shadow-md p-2 sm:p-4 ">
       {/* Render dynamic headings */}
       {headings.map((heading, index) => (
         <h1

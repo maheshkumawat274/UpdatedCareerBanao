@@ -20,9 +20,10 @@ const LandingPages = () => {
      <div className="font-poppins">
      {/* <CollegeLandingPage/> */}
      <CollegeAbout/>
+     <AdmissionProcess/>
      <Updates/>
      <CourseFees/>
-     <AdmissionProcess/>
+     
      <AdmCard/>
      <Scholarship/>
      <Placements/>
@@ -31,7 +32,7 @@ const LandingPages = () => {
      <CampusFacilities/>
      <ReviewComponent/>
      <UniFaq/>
-     <div className="px-4 sm:px-8">
+     <div className="px-4 pt-5 sm:px-8">
      <PrivacyForm/>
      </div>
      </div>
