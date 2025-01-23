@@ -225,7 +225,7 @@ const Chatbot: React.FC = () => {
 
       {/* Chatbot */}
       <CSSTransition in={isOpen} timeout={300} classNames="chatbot" unmountOnExit>
-        <div className="fixed bottom-24 right-5 font-poppins w-full max-w-[90%] sm:max-w-[60%] md:max-w-[50%] lg:max-w-[40%] xl:max-w-[30%] bg-white border border-gray-300 rounded-lg shadow-lg z-50">
+        <div className="fixed bottom-24 right-5 font-poppins w-full max-w-[90%] sm:max-w-[60%] md:max-w-[50%] lg:max-w-[20%] xl:max-w-[25%] bg-white border border-gray-300 rounded-lg shadow-lg z-50">
           {/* Chat Header */}
           <div className="flex justify-between items-center bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-3 rounded-t-lg">
             <div className="text-lg font-bold flex items-center gap-2">
@@ -259,7 +259,7 @@ const Chatbot: React.FC = () => {
 
           {/* Chat Footer */}
           {step < 4 && (
-            <div className="flex items-center px-4 py-2 bg-gray-100 rounded-b-lg">
+            <div className="flex items-center px-2 sm:px-4 py-2 bg-gray-100 rounded-b-lg">
               <input
                 type="text"
                 className="flex-grow border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
