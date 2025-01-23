@@ -48,10 +48,10 @@ const FormInput = (props: childreProps) => {
 
     >
       {
-        props.textArea && <TextArea placeholder={"Enter your " + props.name} style={{ height: 120, resize: 'none', }} />
+        props.textArea && <TextArea placeholder={" " + props.name} style={{ height: 120, resize: 'none', }} />
       }
       {
-        !props.textArea && !props.select && <MyInput placeholder={"Enter your " + props.name} onChange={props.onChange} className={props.className} prefix={props.prefix} disabled={props.disabled} value={props.value} />
+        !props.textArea && !props.select && <MyInput placeholder={"" + props.name} onChange={props.onChange} className={props.className} prefix={props.prefix} disabled={props.disabled} value={props.value} />
       }
       {
         props.select && <Select

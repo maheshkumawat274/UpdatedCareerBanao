@@ -26,7 +26,7 @@ const Meeting: React.FC = () => {
   ];
 
   return (
-    <div className="bg-[#dfdfde] p-2 mt-5 md:p-10 font-poppins">
+    <div className="bg-[#dfdfde] p-2 md:p-10 font-poppins">
       {/* Top Heading */}
       <div className="text-center md:text-left">
         <h1 className="text-2xl md:text-4xl font-bold text-purple-700 ">

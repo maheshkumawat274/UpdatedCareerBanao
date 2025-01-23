@@ -13,16 +13,17 @@ const VideoCard: React.FC<VideoCardProps> = ({ videoUrl, onVideoClick }) => {
   return (
     <div className="p-5 pb-8" onClick={onVideoClick}>
       <div className="bg-white shadow-md rounded-lg overflow-hidden">
-        <div className="relative w-full" style={{ paddingTop: "75.25%" }}>
-          <iframe
-            className="absolute top-0 left-0 w-full h-full"
-            style={{ objectFit: 'contain' }}
-            src={videoUrl}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
+      <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+        <iframe
+          className="absolute top-0 left-0 w-full h-full"
+          style={{ objectFit: 'contain' }}
+          src={videoUrl}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+
       </div>
     </div>
   );

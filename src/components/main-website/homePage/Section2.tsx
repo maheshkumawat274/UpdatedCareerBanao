@@ -34,9 +34,9 @@ import "./home.css";
 
 const Section2 = () => {
   return (
-    <div className="section2 font-poppins flex flex-col lg:flex-row w-full lg:p-8 py-10 px-5 my-8 bg-gradient-to-r from-[#983fd4] to-[#e46ab3] text-white rounded-lg shadow-lg">
+    <div className="section2 font-poppins flex flex-col md:flex-row w-full lg:p-8 py-10 px-5 my-8 bg-gradient-to-r from-[#983fd4] to-[#e46ab3] text-white rounded-lg shadow-lg">
       {/* Left Section */}
-      <div className="section2-left w-full lg:w-[55%] p-5 flex flex-col justify-center gap-5">
+      <div className="section2-left w-full lg:w-[55%] p-0 sm:p-5 flex flex-col justify-center gap-5">
         <p className="lg:text-4xl text-xl font-bold tracking-wide leading-snug">
           Empowering Institutions,{" "}
           <span className="text-[#f9e8ff]">Elevating Success</span>
@@ -55,30 +55,31 @@ const Section2 = () => {
       {/* Right Section */}
       <div className="section2-right flex flex-col my-3 gap-6 px-5 w-full lg:w-[45%]">
         {/* Row 1 */}
-        <div className="section-2-row flex gap-5 flex-col lg:flex-row items-center lg:justify-between">
-          <div className="img-card flex justify-center items-center w-full h-[150px] lg:h-[180px] bg-[#ffffff] rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300">
+        <div className="section-2-row  flex gap-5 flex-col md:flex-row items-center lg:justify-between">
+          <div className="img-card flex justify-center items-center w-full h-[150px] md:h-[180px] bg-[#ffffff] rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300">
             <img
               className="w-full h-full object-cover"
               src="./logo/bennett.jpeg"
               alt="Bennett University"
             />
           </div>
-          <div className="img-card flex justify-center items-center w-full h-[150px] lg:h-[180px] bg-[#ffffff] rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300">
+          
+          <div className="img-card flex justify-center items-center w-full h-[150px] lg:h-[200px] bg-[#ffffff] rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300">
             <img
               className="w-full h-full object-cover"
-              src="./logo/iilm.png"
-              alt="Products"
+              src="https://seekvectors.com/files/download/Amity%20University%20-04.png"
+              alt="Institution"
             />
           </div>
         </div>
 
         {/* Row 2 */}
-        <div className="section-2-row flex justify-center">
-          <div className="img-card flex justify-center items-center w-full h-[150px] lg:h-[200px] bg-[#ffffff] rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300">
+        <div className="section-2-row flex justify-center w-full ">
+        <div className="img-card flex justify-center items-center w-full h-[150px] md:h-[180px] bg-[#ffffff] rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300" id="imgcard2">
             <img
               className="w-full h-full object-cover"
-              src="./logo/images.png"
-              alt="Institution"
+              src="./logo/iilm.png"
+              alt="Products"
             />
           </div>
         </div>

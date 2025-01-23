@@ -1,86 +1,27 @@
-
-import MyCol from "ui/MyCol";
-import "./home.css";
+import { FaShieldAlt, FaHeadset, FaLaptop, FaUserTie } from "react-icons/fa"; // Import React Icons
 import MyRow from "ui/MyRow";
-import MyText from "ui/MyText";
-import MyFlex from "ui/MyFlex";
 
 const Section3 = () => {
   return (
     <MyRow
       justify="center"
-      gutter={24}
-      className="section-3-gradient"
+      className=" py-12 px-6"
       align="middle"
-      style={{ padding: 50 }}
     >
-      {items.map((item, index) => (
-        <MyCol key={index}>
-          <MyFlex gap={10} vertical>
-            <img style={{ height: 70 }} src={`/icons/home/${item.icon}.svg`} />
-            <MyText
-              style={{ width: "95%", textAlign: "center" }}
-              variant="title"
-              level={5}
-            >
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-6xl">
+        {items.map((item, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center bg-white rounded-xl shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-2xl"
+          >
+            <div className="text-4xl text-blue-600 mb-4">{item.icon}</div>
+            <h5 className="text-lg font-semibold text-center text-gray-800">
               {item.text}
-            </MyText>
-          </MyFlex>
-        </MyCol>
-      ))}
+            </h5>
+          </div>
+        ))}
+      </div>
     </MyRow>
-
-// import MyCol from "ui/MyCol";
-// import "./home.css";
-// import MyRow from "ui/MyRow";
-// import MyText from "ui/MyText";
-// import MyFlex from "ui/MyFlex";
-
-// const Section3 = () => {
-//   return (
-//     <MyRow
-//       justify="center"
-//       gutter={24}
-//       className="section-3-gradient"
-//       align="middle"
-//       style={{ padding: 50 }}
-//     >
-//       {items.map((item, index) => (
-//         <MyCol key={index}>
-//           <MyFlex gap={10} vertical>
-//             <img style={{ height: 70 }} src={`/icons/home/${item.icon}.svg`} />
-//             <MyText
-//               style={{ width: "95%", textAlign: "center" }}
-//               variant="title"
-//               level={5}
-//             >
-//               {item.text}
-//             </MyText>
-//           </MyFlex>
-//         </MyCol>
-//       ))}
-//     </MyRow>
-//   );
-// };
-
-// export default Section3;
-
-// const items = [
-//   {
-//     text: "Safe and Secure",
-//     icon: "safeIcon",
-//   },
-//   {
-//     text: "24X7 Counselling Support",
-//     icon: "supportIcon",
-//   },
-//   {
-//     text: "Conducted 1 Lakh+ Sessions",
-//     icon: "laptopIcon",
-//   },
-// ];
-
-
   );
 };
 
@@ -89,14 +30,18 @@ export default Section3;
 const items = [
   {
     text: "Safe and Secure",
-    icon: "safeIcon",
+    icon: <FaShieldAlt />, // React Icon for shield
   },
   {
     text: "24X7 Counselling Support",
-    icon: "supportIcon",
+    icon: <FaHeadset />, // React Icon for headset
   },
   {
     text: "Conducted 1 Lakh+ Sessions",
-    icon: "laptopIcon",
+    icon: <FaLaptop />, // React Icon for laptop
+  },
+  {
+    text: "Expert Guidance at Every Step",
+    icon: <FaUserTie />, // React Icon for guidance
   },
 ];

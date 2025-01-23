@@ -89,10 +89,23 @@
     height: 250px;
     justify-content: center;
     margin-inline: .78rem;
-    width: 250px;
+    width: 260px;
   }
   .img-card img{
     width: 60%;
     height: 60%;
   }
 }
+
+
+@media (max-width:390px) {
+  .img-card{
+    width: 210px;
+  }
+  #imgcard2{
+    width: 100%;
+    padding: 50px;
+  }
+  #imgcard2 img {
+    width: 300px;
+  }}

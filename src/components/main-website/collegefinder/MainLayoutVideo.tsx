@@ -3,9 +3,9 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import VideoFinder from './VideoFinder';
 import FinderContent from './FinderContent';
-import UnivercitiesLogoSlider from '../homePage/UnivercitiesLogoSlider';
 import ScrollTop from '../ScrollTop';
 import PrivacyForm from '../privacypolicy/PrivacyForm';
+import CollegeCards from '../homePage/CollegeCards.';
 
 const MainLayoutVideo: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ const MainLayoutVideo: React.FC = () => {
         <Outlet /> 
       </div>
       <FinderContent/>
-      <div className='px-4'><UnivercitiesLogoSlider/></div>
+      <div className='px-4'><CollegeCards/></div>
       <PrivacyForm/>
     </div>
   );

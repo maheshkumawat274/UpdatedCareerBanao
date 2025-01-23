@@ -7,7 +7,7 @@ const FinderContent: React.FC = () => {
     <section className="w-full">
       <div className="container mx-auto px-4">
         {/* Section Title */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 sm-px-0">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
             Find Your Ideal College with Ease
           </h2>

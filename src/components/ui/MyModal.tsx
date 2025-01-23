@@ -1,6 +1,7 @@
 import { ButtonProps, Modal, ModalProps } from "antd";
-import React from "react";
+import React, { useState } from "react";
 import "./Modal.css";
+
 
 interface childreProps {
   children?: React.ReactNode;
@@ -27,13 +28,24 @@ const MyModal = ({
   submitHandler,
   cancelHandler,
 }: childreProps) => {
+  const [isHovered, setIsHovered] = useState(false);
   return (
+    
     <Modal
+    
       open={open}
       onCancel={cancelHandler}
       onOk={submitHandler}
       confirmLoading={loading}
-      okButtonProps={{ icon: okIcon }}
+      okButtonProps={{
+        icon: okIcon,
+        style: {
+          backgroundColor: isHovered ? "#D461BA" : "#983fd4", // Change color on hover
+          transition: "background-color 0.3s ease", // Smooth transition
+        },
+        onMouseEnter: () => setIsHovered(true), // Set hover state to true
+        onMouseLeave: () => setIsHovered(false), // Reset hover state to false
+      }}
       cancelButtonProps={{ icon: cancelIcon }}
       okText={okText}
       cancelText={cancelText}

@@ -60,7 +60,7 @@ const Section1 = () => {
   return (
     <div className="section1 font-poppins flex pb-[5rem]">
       {/* Section Container */}
-      <div className="section-container font-popins relative top-[20px] flex flex-col lg:flex-row items-center justify-center">
+      <div className="section-container font-popins relative  flex flex-col md:flex-row items-center justify-center">
 
         {/* Left Section */}
         <div className="section-left flex flex-col p-5 gap-6 justify-center w-full lg:w-[60%] text-center lg:text-left">

@@ -20,16 +20,17 @@ function HomePage() {
       <Section1 />
       <Meeting/>
       <Section2 />
-      <Section3 />
+      <CollegeCards/>
+      
       <FinderContent/>
       <CollegeFound/>
       <Section4 />
       <div className="mt-5"><UnivercitiesLogoSlider/></div>
       <Section5 />
-      <CollegeCards/>
+      
       <div className="mt-3"><SliderYoutube/></div>
       <Section6 />
-      
+      <Section3 />
       <Section7/>
       <div className="mt-7">
       <PrivacyForm/>

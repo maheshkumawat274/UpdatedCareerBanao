@@ -139,20 +139,21 @@
 // };
 
 // export default Chatbot;
-
 import React, { useState } from "react";
-import { TbMessageChatbot } from "react-icons/tb";
+import { TbMessageChatbot, TbSend } from "react-icons/tb";
 import "./Chatbot.css"; // Custom CSS for animations
 import { CSSTransition } from "react-transition-group";
 
 const Chatbot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<
-    { sender: string; text: string }[]
-  >([
+  const [messages, setMessages] = useState<{
+    sender: string;
+    text: string;
+  }[]>([
     {
       sender: "chatbot",
-      text: 'Greetings from CareerBanao Education!<br>Guidance regarding course?<br>Connect to us at +91-8750092628',
+      text:
+        "Greetings from CareerBanao Education!<br>Guidance regarding course?<br>Connect to us at +91-8750092628",
     },
   ]);
   const [inputValue, setInputValue] = useState("");
@@ -223,13 +224,8 @@ const Chatbot: React.FC = () => {
       </div>
 
       {/* Chatbot */}
-      <CSSTransition
-        in={isOpen}
-        timeout={300}
-        classNames="chatbot"
-        unmountOnExit
-      >
-        <div className="fixed bottom-24 right-5 font-poppins w-80 max-w-full bg-white border border-gray-300 rounded-lg shadow-lg z-50">
+      <CSSTransition in={isOpen} timeout={300} classNames="chatbot" unmountOnExit>
+        <div className="fixed bottom-24 right-5 font-poppins w-full max-w-[90%] sm:max-w-[60%] md:max-w-[50%] lg:max-w-[40%] xl:max-w-[30%] bg-white border border-gray-300 rounded-lg shadow-lg z-50">
           {/* Chat Header */}
           <div className="flex justify-between items-center bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-3 rounded-t-lg">
             <div className="text-lg font-bold flex items-center gap-2">
@@ -273,10 +269,10 @@ const Chatbot: React.FC = () => {
                 onKeyDown={(e) => e.key === "Enter" && sendMessage()}
               />
               <button
-                className="ml-2 bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600"
+                className="ml-2 bg-primaryBtn text-white px-4 py-2 flex justify-center rounded-lg hover:bg-hoverBtn !w-full !max-w-xs"
                 onClick={sendMessage}
               >
-                Send
+                <TbSend className="text-white" />
               </button>
             </div>
           )}

@@ -99,8 +99,8 @@ const ReffFrnd = () => {
             key={index}
             onClick={() => handleSelection(level.label)}
             className={`${
-              selectedLevel === level.label ? "bg-[#F89A00] text-white" : "bg-white text-gray-800"
-            } border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300`}
+              selectedLevel === level.label ? "bg-primaryBtn text-white" : "bg-white text-gray-800"
+            } border border-gray-300 py-2 px-[80px] rounded-lg hover:bg-hoverBtn hover:text-white transition duration-300`}
           >
             {level.label}
           </button>
@@ -108,7 +108,7 @@ const ReffFrnd = () => {
       </div>
       <div className="mt-5 flex gap-2">
         <Link to="/adtaken">
-          <button className="bg-[#1F618D] text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-[#F89A00] hover:text-white transition duration-300">
+          <button className="bg-primaryBtn text-white border font-bold border-gray-300 py-2 px-[50px] rounded-lg hover:bg-hoverBtn hover:text-white transition duration-300">
             PREV
           </button>
         </Link>
