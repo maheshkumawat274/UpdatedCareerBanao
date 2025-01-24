@@ -88,8 +88,8 @@ const HeaderMain: React.FC = () => {
     { name: "Home", path: "/" },
     { name: "Admission", path: "/admissions" },
     { name: "College Finder", path: "/CollegeFinder" },
-    { name: "Contact", path: "/contact" },
-    { name: "Career", path: "/career" },
+    { name: "Join Us", path: "/joinus" },
+    { name: "Contact Us", path: "/contact" },
   ];
   return (
     <header>
@@ -256,8 +256,8 @@ const HeaderMain: React.FC = () => {
               { name: "Admission", path: "/admissions" },
               { name: "College Finder", path: "/CollegeFinder" },
               { name: "Counselling", path: "#", dropdown: true },  // This is for Counselling dropdown
-              { name: "Contact", path: "/contact" },
-              { name: "Career", path: "/career" }]
+              { name: "Join Us", path: "/joinus" },
+              { name: "Contact Us", path: "/contact" }]
               .map((item, index) => (
                 item.dropdown ? (
                   // Counselling dropdown

@@ -2,15 +2,15 @@ import "./career.css"
 import CurrentOpening from "./CurrentOpening";
 import Gallery from "./Gallery";
 import Heading from "./Heading";
-import JoinUs from "./JoinUs";
+import WhyJoinUs from "./WhyJoinUs";
 
 
 const Career = () => {
   return (
     <div>
       <Gallery/>
+      <WhyJoinUs/>
       <Heading/>
-      <JoinUs/>
       <CurrentOpening/>
     </div>
   );

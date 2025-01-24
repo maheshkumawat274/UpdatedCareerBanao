@@ -49,7 +49,7 @@ const mainRoutes = [
     element:ContactPage,
   },
   {
-    path:"/career",
+    path:"/joinus",
     element:Career,
   },
   {

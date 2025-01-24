@@ -24,14 +24,15 @@ function CurrentOpening() {
   const [data, loading] = useFetch("/getCurrentJob");
 
   return (
-    <div className="CurrentOpening" id="currentOpening">
-      <div className="opening-container">
-        <h2>Current Openings</h2>
-        <p>
-          Check out all the openings here. We'll be happy to hear from you. If
-          you're intersted to work with us, just send across your resume to us.
-        </p>
-      </div>
+     <div className="bg-[#EDEDE9] p-6">
+        <div id="currentOpening" className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Current Openings</h2>
+          <p className="text-gray-600 text-lg">
+            Check out all the openings here. We'll be happy to hear from you. If
+            you're interested to work with us, just send across your resume to us.
+          </p>
+        </div>
+      <div className="flex flex-wrap justify-center gap-6">
       {/* ---------------- when needen it will we uncommented ---------------- */}
       {/* <div className="search-container flex w-full justify-center gap-1 lg:gap-3 items-center">
         <Input
@@ -62,6 +63,7 @@ function CurrentOpening() {
       }
 
     </div>
+   </div>
   );
 }
 
