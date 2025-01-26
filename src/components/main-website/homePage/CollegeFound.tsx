@@ -16,7 +16,7 @@ const CollegeFinder: React.FC = () => {
       };
   return (
     <div className="bg-gradient-to-r mt-5 font-poppins from-[#983fd4] to-[#e46ab3] text-white py-16 px-4 sm:px-8 lg:px-24 rounded-lg shadow-lg">
-      <h2 className="text-3xl md:text-5xl text-white font-semibold mb-6 text-center">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl text-white font-semibold mb-6 text-center">
         Find Your Dream College
       </h2>
       <p className="text-lg lg:text-xl font-light text-left sm:text-center mb-12 max-w-3xl mx-auto">

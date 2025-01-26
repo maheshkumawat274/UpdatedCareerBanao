@@ -88,7 +88,7 @@ const ReviewSection4: React.FC<ReviewSection4Props> = ({ onComplete }) => {
 
   return (
     <div className='flex justify-center font-poppins w-full pt-1 sm:pt-8'>
-      <div className="flex flex-col items-center p-8 px-4 sm:px-14 w-full sm:w-1/2 rounded-md bg-transparent sm:bg-white">
+      <div className="w-full p-8 sm:w-1/2 rounded-md bg-transparent sm:bg-white">
         <div className="w-full">
           {/* Placements Section */}
           <div className="mb-8">

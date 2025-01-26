@@ -123,7 +123,7 @@ const Form = () => {
   };
 
   return (
-    <div className="mt-8">
+    <div className="mt-8 px-4 sm:px-14">
       <MyForm onFinish={handleSubmit} form={form} className="space-y-4">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2">
           <div>
@@ -187,7 +187,8 @@ const Form = () => {
             />
           </div>
           <div>
-            <label htmlFor="resume">Upload Resume <span className="text-red-500 text-sm ml-1">*</span></label>
+            <label htmlFor="resume">Upload Resume <span className="text-red-500 text-sm ml-1">*</span></label><br/>
+            <div className="mt-4">
             <input
               style={{ display: "none" }}
               type="file"
@@ -200,6 +201,7 @@ const Form = () => {
               <span className="border border-gray-800 p-1 mr-2">Choose File</span>
               {file ? file.name : "No File Chosen"}
             </label>
+            </div>
           </div>
           <div>
             <label htmlFor="address">Address <span className="text-red-500 text-sm ml-1">*</span></label>
@@ -209,7 +211,7 @@ const Form = () => {
             <button
               type="submit"
               disabled={isSubmitted}
-              className={`bg-primaryBtn text-white px-4 py-2 rounded-md mr-2 ${isSubmitted ? "bg-gray-500 cursor-not-allowed" : ""}`}
+              className={`bg-primaryBtn hover:bg-hoverBtn text-white px-4 py-2 rounded-md mr-2 ${isSubmitted ? "bg-gray-500 cursor-not-allowed" : ""}`}
 
             >
               {isSubmitted ? "Please Wait" : "Submit"}

@@ -23,6 +23,8 @@ export default {
       animation: {
         blink: "blink 1s steps(2, start) infinite",
         'border-color': 'borderColorChange 5s infinite alternate',
+        'fade-in': 'fade-in 0.3s ease-in-out',
+
       },
       keyframes: {
         blink: {
@@ -35,7 +37,11 @@ export default {
           '50%': { borderColor: '#ff9800' }, // Amber
           '75%': { borderColor: '#e91e63' }, // Pink
           '100%': { borderColor: '#4caf50' }, // Back to Green
-        }
+        },
+        'fade-in': {
+          from: { opacity: '0', transform: 'translateY(-10px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
       },
       
     },

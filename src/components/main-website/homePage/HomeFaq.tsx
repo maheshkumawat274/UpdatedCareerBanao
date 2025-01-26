@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
 interface FAQItem {
   question: string;
@@ -61,27 +62,36 @@ const HomeFaq: React.FC = () => {
   };
 
   return (
-    <div className="px-0 md:px-4 py-8 w-full md:max-w-7xl mx-auto">
-      <h2 className="text-3xl font-poppins text-center mb-8">Frequently Asked Questions</h2>
-      <div className="space-y-4 w-full">
-        {faqs.map((faq, index) => (
-          <div key={index} className="bg-white shadow-lg font-poppins rounded-lg">
-            <button
-              className="w-full text-left p-4 text-lg bg-gray-100 rounded-t-lg focus:outline-none flex items-center justify-between"
-              onClick={() => toggleFAQ(index)}
+    <div className=" px-2 sm:px-14 pt-12 w-full mx-auto font-poppins">
+    <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 text-gray-800 font-poppins">
+      Frequently Asked Questions
+    </h2>
+    <div className="space-y-6">
+      {faqs.map((faq, index) => (
+        <div
+          key={index}
+          className="bg-white shadow-md rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl"
+        >
+          <button
+            className="w-full flex justify-between items-center px-3 sm:px-6 py-5 text-left font-medium text-gray-800 bg-gradient-to-r from-purple-200 to-pink-50 focus:outline-none"
+            onClick={() => toggleFAQ(index)}
+          >
+            <span className='text-lg'>{faq.question}</span>
+            <span className="text-2xl text-primaryBtn">
+              {selectedIndex === index ? <FiChevronUp /> : <FiChevronDown />}
+            </span>
+          </button>
+          {selectedIndex === index && (
+            <div
+              className="px-6 py-4 text-gray-700 bg-gray-50 border-t border-gray-200 text-md sm:text-lg leading-relaxed animate-fade-in"
             >
-              {faq.question}
-              <span className="text-xl">+</span> {/* Plus Icon */}
-            </button>
-            {selectedIndex === index && (
-              <div className="p-4 bg-gray-50 text-gray-700 rounded-b-lg">
-                {faq.answer}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
+              {faq.answer}
+            </div>
+          )}
+        </div>
+      ))}
     </div>
+  </div>
   );
 };
 

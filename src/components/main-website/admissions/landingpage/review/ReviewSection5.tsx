@@ -88,7 +88,7 @@ const ReviewSection5: React.FC = () => {
 
   return (
     <div className="flex justify-center pt-1 sm:pt-8 w-full font-poppins">
-      <div className="mx-auto p-6 px-4 sm:px-14 w-full sm:w-1/2 rounded-md bg-transparent sm:bg-white">
+      <div className="p-8 w-full sm:w-1/2 rounded-md bg-transparent sm:bg-white">
         <h1 className="text-2xl font-bold mb-4 text-primaryBtn">Contact Information</h1>
         <div className="grid grid-cols-2 gap-6">
           {/* Name */}

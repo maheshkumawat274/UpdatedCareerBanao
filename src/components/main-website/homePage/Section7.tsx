@@ -12,7 +12,7 @@ const Section7: React.FC = () => {
 
   return (
     <div className="bg-gradient-to-br from-purple-700 via-purple-500 to-pink-500 lg:min-h-[70vh] flex items-center justify-center p-10 md:p-8 mt-4 font-poppins">
-      <div className=" bg-white shadow-2xl rounded-3xl p-8 relative transform hover:scale-105 transition-transform duration-500 md:mx-14">
+      <div className=" bg-white shadow-2xl rounded-3xl p-4 sm:p-8 relative transform hover:scale-105 transition-transform duration-500 md:mx-14">
         {/* Decorative Icons */}
         <div className="absolute -top-8 -left-5 md:-left-8 bg-purple-600 text-white p-4 md:p-5 rounded-full shadow-lg transform rotate-12">
           <FaPenFancy className="text-2xl sm:text-4xl" />
@@ -25,9 +25,9 @@ const Section7: React.FC = () => {
         </div>
 
         {/* Content */}
-        <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-800 text-center mb-6">
+        <h1 className="text-2xl sm:text-4xl font-extrabold text-gray-800 text-center mb-6">
           Write Your College Review
-        </h2>
+        </h1>
         <p className="text-md sm:text-lg text-gray-600 text-center mb-8">
           Share your experiences and help thousands of students make informed decisions about their future. Your voice matters!
         </p>

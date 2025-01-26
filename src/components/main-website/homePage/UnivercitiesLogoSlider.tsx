@@ -88,7 +88,7 @@ const UnivercitiesLogoSlider: React.FC<UnivercitiesLogoSliderProps> = ({
   return (
     <section className={`${paddingClass} bg-[#EDEDE9] relative`}>
       {showHeading && (
-        <h1 className="text-center font-poppins mb-6 text-3xl md:text-4xl font-bold text-gray-800">
+        <h1 className="text-center font-poppins mb-6 text-2xl sm:text-4xl font-bold text-gray-800">
           Top Ranked Institutes & Universities
         </h1>
       )}

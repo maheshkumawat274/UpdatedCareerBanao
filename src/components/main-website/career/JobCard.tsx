@@ -63,7 +63,7 @@ const JobCard = ({ data }: any) => {
             <strong>Published:</strong> {data.job_published}
           </p>
           <Link to={`/career/jobapply/${data.job_id}`}>
-          <button className="bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors">
+          <button className="bg-primaryBtn text-white py-2 px-4 rounded-lg hover:bg-hoverBtn transition-colors">
             Apply Now
           </button>
           </Link>

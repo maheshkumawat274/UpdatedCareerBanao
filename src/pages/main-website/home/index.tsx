@@ -2,7 +2,6 @@
 import Section1 from "components/main-website/homePage/Section1";
 import Section2 from "components/main-website/homePage/Section2";
 import Section3 from "components/main-website/homePage/Section3";
-import Section4 from "components/main-website/homePage/Section4";
 import Section5 from "components/main-website/homePage/Section5";
 import Section6 from "components/main-website/homePage/Section6";
 import FinderContent from "src/components/main-website/collegefinder/FinderContent";
@@ -14,6 +13,7 @@ import UnivercitiesLogoSlider from "src/components/main-website/homePage/Univerc
 import PrivacyForm from "src/components/main-website/privacypolicy/PrivacyForm";
 import Section7 from "src/components/main-website/homePage/Section7";
 import CollegeCards from "src/components/main-website/homePage/CollegeCards.";
+import StagesSection from "src/components/main-website/homePage/StagesSection";
 function HomePage() {
   return (
     <div className="relative p-[20px] overflow-x-hidden">
@@ -24,7 +24,7 @@ function HomePage() {
       
       <FinderContent/>
       <CollegeFound/>
-      <Section4 />
+      <StagesSection/>
       <div className="mt-5"><UnivercitiesLogoSlider/></div>
       <Section5 />
       
