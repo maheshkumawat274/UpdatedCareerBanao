@@ -13,7 +13,7 @@ const WhatsAppBtn: React.FC = () => {
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-[70px] left-5 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-transform transform hover:scale-110 z-20"
+            className="fixed bottom-[140px] right-5 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-transform transform hover:scale-110 z-20"
             aria-label="Chat on WhatsApp"
           >
             <FaWhatsapp size={32} />

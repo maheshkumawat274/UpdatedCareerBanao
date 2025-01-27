@@ -25,12 +25,17 @@ export default function StagesSection() {
     <div className="pt-8">
       <h1 className="text-center text-2xl sm:text-4xl font-semibold"><span className="font-poppins text-gray-700">CareerBanao can assist you in 3 stages</span></h1>
       <div className="relative flex flex-wrap justify-center items-center gap-14 py-10 ">
+        
       {stages.map((item, i) => (
         /* Individual card */
+        
         <div
           key={i}
           className="relative group cursor-pointer overflow-hidden duration-500 w-64 h-80 bg-primaryBtn text-gray-50 p-5 rounded-lg"
         >
+          <div className="absolute top-2 left-2 bg-white text-primaryBtn text-lg font-bold w-8 h-8 flex items-center justify-center rounded-full shadow-lg z-10">
+              {item.id}
+            </div>
           <div>
             {/* Card image */}
             <div className="group-hover:scale-110 w-full h-60 duration-500 rounded-t-lg">

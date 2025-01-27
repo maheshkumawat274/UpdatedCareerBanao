@@ -15,7 +15,7 @@ const CollegeFinder: React.FC = () => {
         // Handle form submission here, like making an API call
       };
   return (
-    <div className="bg-gradient-to-r mt-5 font-poppins from-[#983fd4] to-[#e46ab3] text-white py-16 px-4 sm:px-8 lg:px-24 rounded-lg shadow-lg">
+    <div className="bg-gradient-to-r mt-5 font-poppins from-[#983fd4] to-[#e46ab3] text-white pt-4 sm:pt-16 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-24 rounded-lg shadow-lg">
       <h2 className="text-2xl sm:text-3xl md:text-4xl text-white font-semibold mb-6 text-center">
         Find Your Dream College
       </h2>

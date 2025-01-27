@@ -45,6 +45,29 @@ const HeaderMain: React.FC = () => {
    }, []);
 
 
+   let admissionItems= [
+    {
+      key: "1",
+      label: <Link to={"/admissions/regular-mode"} onClick={() => setIsMenuOpen(false)}>Regular Mode</Link>,
+      title:menuConfig.admEng
+    },
+    {
+      key: "2",
+      label: <Link to={"/admissions/online-mode"} onClick={() => setIsMenuOpen(false)}>Online Mode</Link>,
+      title:menuConfig.admManag
+    },
+    {
+      key: "3",
+      label: <Link to={"/admissions/study-abroad"} onClick={() => setIsMenuOpen(false)}>Study Abroad</Link>,
+      title:menuConfig.admMed
+    },
+    {
+      key: "4",
+      label: <Link to={"/admissions/study-in-india"} onClick={() => setIsMenuOpen(false)}>Study in India</Link>,
+      title:menuConfig.admMed
+    },
+  ]
+
    let counsellingItems = [
        {
          key: "1",
@@ -76,8 +99,15 @@ const HeaderMain: React.FC = () => {
      ]
 
   // Fetch the list from Redux state
+  const admlist = useSelector((state: any) => state.navList.admissionList);
   const couslist = useSelector((state: any) => state.navList.counsellingList);
 
+  
+  if(admlist){
+    admissionItems = admissionItems?.filter((item)=>(
+      admlist?.find((listItem:ApplicationConfigType)=> item.title == listItem.module_name)
+    ))
+  }
   // Filter items based on couslist
   if (couslist) {
     counsellingItems = counsellingItems.filter((item) =>
@@ -168,7 +198,21 @@ const HeaderMain: React.FC = () => {
 
         <nav className="hidden nav-header font-semibold md:flex gap-8 text-[18px]">
       {menuItems.map((item, index) => {
-
+  if (item.name === "Admission") {
+    return (
+      <Dropdown
+        key={index}
+        overlayClassName="custom-dropdown"
+        menu={{ items: admissionItems }}
+        trigger={["hover"]}
+        placement="bottomCenter"
+      >
+        <div className="px-4 py-2 hover:bg-[#983fd4] text-white rounded transition cursor-pointer">
+          <p>{item.name}</p>
+        </div>
+      </Dropdown>
+    );
+  }
         if (item.name === "College Finder") {
           return (
             <React.Fragment key={index}>
@@ -251,45 +295,62 @@ const HeaderMain: React.FC = () => {
         </div>
 
         {/* Mobile Menu Items */}
-          <nav className="flex flex-col space-y-4 px-4 py-6">
-            {[{ name: "Home", path: "/" },
-              { name: "Admission", path: "/admissions" },
-              { name: "College Finder", path: "/CollegeFinder" },
-              { name: "Counselling", path: "#", dropdown: true },  // This is for Counselling dropdown
-              { name: "Join Us", path: "/joinus" },
-              { name: "Contact Us", path: "/contact" }]
-              .map((item, index) => (
-                item.dropdown ? (
-                  // Counselling dropdown
-                  <Dropdown
-                    key={index}
-                    overlayClassName="custom-dropdown"
-                    menu={{ items: counsellingItems }}
-                    trigger={["click"]}
-                    placement="bottomCenter"
-                  >
-                    <div className="flex items-center justify-between px-2 py-2 hover:bg-purple-700 rounded cursor-pointer">
-                      <span className="text-lg">{item.name}</span>
-                      <FiArrowRight />
-                    </div>
-                  </Dropdown>
-                ) : (
-                  // Regular menu items
-                  <Link
-                    key={index}
-                    to={item.path}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setIsMenuOpen(false);
-                    }}
-                    className="flex items-center justify-between px-2 py-2 hover:bg-purple-700 rounded"
-                  >
+        <nav className="flex flex-col space-y-4 px-4 py-6">
+          {[
+            { name: "Home", path: "/" },
+            { name: "Admission", path:"#", dropdown: true },
+            { name: "College Finder", path: "/CollegeFinder" },
+            { name: "Counselling", path:'#', dropdown: true },
+            { name: "Join Us", path: "/joinus" },
+            { name: "Contact Us", path: "/contact" },
+          ].map((item, index) => {
+            if (item.dropdown && item.name === "Admission") {
+              return (
+                <Dropdown
+                  key={index}
+                  overlayClassName="custom-dropdown"
+                  menu={{ items: admissionItems }}
+                  trigger={["click"]}
+                  placement="bottomCenter"
+                >
+                  <div className="flex items-center justify-between px-2 py-2 hover:bg-purple-700 rounded cursor-pointer">
                     <span className="text-lg">{item.name}</span>
                     <FiArrowRight />
-                  </Link>
-                )
-              ))}
-          </nav>
+                  </div>
+                </Dropdown>
+              );
+            }
+
+            if (item.dropdown && item.name === "Counselling") {
+              return (
+                <Dropdown
+                  key={index}
+                  overlayClassName="custom-dropdown"
+                  menu={{ items: counsellingItems }}
+                  trigger={["click"]}
+                  placement="bottomCenter"
+                >
+                  <div className="flex items-center justify-between px-2 py-2 hover:bg-purple-700 rounded cursor-pointer">
+                    <span className="text-lg">{item.name}</span>
+                    <FiArrowRight />
+                  </div>
+                </Dropdown>
+              );
+            }
+
+            return (
+              <Link
+                key={index}
+                to={item.path}
+                onClick={() => setIsMenuOpen(false)}
+                className="flex items-center justify-between px-2 py-2 hover:bg-purple-700 rounded"
+              >
+                <span className="text-lg">{item.name}</span>
+                <FiArrowRight />
+              </Link>
+            );
+          })}
+        </nav>
 
 
       </div>

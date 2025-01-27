@@ -15,26 +15,26 @@ const mainRoutes = [
     element:HomePage,
   },
   
-  // {
-  //   path:"/admissions/:category",
-  //   element:Admissions,
-  // },
-  // {
-  //   path:"/admissions/:category/apply/:college",
-  //   element:ApplicationApplyPage,
-  // },
-  // {
-  //   path:"/admissions/apply/:college",
-  //   element:ApplicationApplyPage,
-  // },
   {
-    path: "/admissions",
-    element: Admissions,
+    path:"/admissions/:category",
+    element:Admissions,
   },
   {
-    path: "/admissions/apply/:college",
-    element: ApplicationApplyPage,
+    path:"/admissions/:category/apply/:college",
+    element:ApplicationApplyPage,
   },
+  {
+    path:"/admissions/apply/:college",
+    element:ApplicationApplyPage,
+  },
+  // {
+  //   path: "/admissions",
+  //   element: Admissions,
+  // },
+  // {
+  //   path: "/admissions/apply/:college",
+  //   element: ApplicationApplyPage,
+  // },
   
   {
     path:"/counselling/:category",

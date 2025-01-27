@@ -1,19 +1,35 @@
-// import React, { useState } from "react";
-// import { TbMessageChatbot } from "react-icons/tb";
+
+// import { TbSend } from "react-icons/tb";
+// import "./Chatbot.css"; // Custom CSS for animations
+// import { CSSTransition } from "react-transition-group";
+// import { useEffect, useState } from "react";
+
 // const Chatbot: React.FC = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-//   const [messages, setMessages] = useState<
-//     { sender: string; text: string }[]
-//   >([
+//   const [isOpen, setIsOpen] = useState(false); // Chatbot body visibility
+//   const [showPopup, setShowPopup] = useState(true); // Auto-popup visibility
+//   const [messages, setMessages] = useState<{
+//     sender: string;
+//     text: string;
+//   }[]>([
 //     {
 //       sender: "chatbot",
-//       text: 'Greetings from CareerBanao Education!<br>Guidance regarding course?<br>Connect to us at +91-8750092628',
+//       text:
+//         "Greetings from CareerBanao Education!<br>Guidance regarding course?<br>Connect to us at +91-8750092628",
 //     },
 //   ]);
 //   const [inputValue, setInputValue] = useState("");
 //   const [step, setStep] = useState(0);
 
-//   const toggleChat = () => setIsOpen(!isOpen);
+//   // Auto-hide popup after 10 seconds
+//   useEffect(() => {
+//     const timer = setTimeout(() => setShowPopup(false), 20000);
+//     return () => clearTimeout(timer);
+//   }, []);
+
+//   const toggleChat = () => {
+//     setIsOpen(!isOpen);
+//     setShowPopup(false); // Hide popup if chat is opened
+//   };
 
 //   const sendMessage = () => {
 //     if (!inputValue.trim()) return;
@@ -64,24 +80,47 @@
 
 //   return (
 //     <div>
+//       {/* Auto-triggered Popup */}
+//       {showPopup && (
+//         <div className="fixed bottom-24 right-14 bg-white border border-gray-300 shadow-lg rounded-lg p-4 flex items-center gap-3 z-50 animate-bounce-in">
+//           <div className="relative w-12 h-12">
+//             <img
+//               src="./logo/Default_WHO_Introduces_AI_Chatbot_SARAH_Despite_Flaws_0.webp"
+//               alt="Niaa Avatar"
+//               className="w-full h-full rounded-full border-2 border-primaryBtn"
+//             />
+//           </div>
+//           <p className="text-sm font-medium">
+//             Hello, I am Riya, <br /> your Admission Assistant.
+//           </p>
+//           <button
+//             className="absolute top-1 right-2 text-red-500 text-xl"
+//             onClick={() => setShowPopup(false)}
+//           >
+//             &times;
+//           </button>
+//         </div>
+//       )}
+
 //       {/* Chat Icon */}
 //       <div
-//         className="fixed bottom-10 right-5 w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-bold cursor-pointer shadow-lg z-50 transition-transform transform hover:scale-110"
+//         className="fixed bottom-[70px] right-5 w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-bold cursor-pointer shadow-lg z-50 transition-transform transform hover:scale-110"
 //         onClick={toggleChat}
 //       >
 //         <div className="relative">
-          
-//           <TbMessageChatbot className="rounded-full w-10 h-10 border-2 border-white"/>
+//           <img
+//             src="./logo/Default_WHO_Introduces_AI_Chatbot_SARAH_Despite_Flaws_0.webp"
+//             className="rounded-full w-11 h-11 border-2 border-white"
+//           />
 //           <span className="absolute top-0 left-0 h-4 w-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
 //             1
 //           </span>
 //         </div>
 //       </div>
 
-//       {/* Chatbot */}
-
-//       {isOpen && (
-//         <div className="fixed bottom-24 right-5 font-poppins w-80 max-w-full bg-white border border-gray-300 rounded-lg shadow-lg z-50">
+//       {/* Chatbot Body */}
+//       <CSSTransition in={isOpen} timeout={300} classNames="chatbot" unmountOnExit>
+//         <div className="fixed bottom-24 right-5 font-poppins w-full max-w-[90%] sm:max-w-[60%] md:max-w-[50%] lg:max-w-[20%] xl:max-w-[25%] bg-white/90 border border-gray-300 rounded-lg shadow-lg z-50">
 //           {/* Chat Header */}
 //           <div className="flex justify-between items-center bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-3 rounded-t-lg">
 //             <div className="text-lg font-bold flex items-center gap-2">
@@ -115,7 +154,7 @@
 
 //           {/* Chat Footer */}
 //           {step < 4 && (
-//             <div className="flex items-center px-4 py-2 bg-gray-100 rounded-b-lg">
+//             <div className="flex items-center px-2 sm:px-4 py-2 bg-gray-100 rounded-b-lg">
 //               <input
 //                 type="text"
 //                 className="flex-grow border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
@@ -125,27 +164,29 @@
 //                 onKeyDown={(e) => e.key === "Enter" && sendMessage()}
 //               />
 //               <button
-//                 className="ml-2 bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600"
+//                 className="ml-2 bg-primaryBtn text-white px-4 py-2 flex justify-center rounded-lg hover:bg-hoverBtn !w-full !max-w-xs"
 //                 onClick={sendMessage}
 //               >
-//                 Send
+//                 <TbSend className="text-white" />
 //               </button>
 //             </div>
 //           )}
 //         </div>
-//       )}
+//       </CSSTransition>
 //     </div>
 //   );
 // };
 
 // export default Chatbot;
-import React, { useState } from "react";
-import { TbMessageChatbot, TbSend } from "react-icons/tb";
+
+import { TbSend } from "react-icons/tb";
 import "./Chatbot.css"; // Custom CSS for animations
 import { CSSTransition } from "react-transition-group";
+import { useEffect, useState, useRef } from "react";
 
 const Chatbot: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // Chatbot body visibility
+  const [showPopup, setShowPopup] = useState(true); // Auto-popup visibility
   const [messages, setMessages] = useState<{
     sender: string;
     text: string;
@@ -158,8 +199,25 @@ const Chatbot: React.FC = () => {
   ]);
   const [inputValue, setInputValue] = useState("");
   const [step, setStep] = useState(0);
+  const chatBodyRef = useRef<HTMLDivElement | null>(null); // Ref for chat body
 
-  const toggleChat = () => setIsOpen(!isOpen);
+  // Auto-hide popup after 10 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setShowPopup(false), 20000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Scroll to the bottom of the chat body whenever messages change
+  useEffect(() => {
+    if (chatBodyRef.current) {
+      chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
+    }
+  }, [messages]);
+
+  const toggleChat = () => {
+    setIsOpen(!isOpen);
+    setShowPopup(false); // Hide popup if chat is opened
+  };
 
   const sendMessage = () => {
     if (!inputValue.trim()) return;
@@ -210,22 +268,47 @@ const Chatbot: React.FC = () => {
 
   return (
     <div>
+      {/* Auto-triggered Popup */}
+      {showPopup && (
+        <div className="fixed bottom-24 right-14 bg-white border border-gray-300 shadow-lg rounded-lg p-4 flex items-center gap-3 z-50 animate-bounce-in">
+          <div className="relative w-12 h-12">
+            <img
+              src="./logo/Default_WHO_Introduces_AI_Chatbot_SARAH_Despite_Flaws_0.webp"
+              alt="Niaa Avatar"
+              className="w-full h-full rounded-full border-2 border-primaryBtn"
+            />
+          </div>
+          <p className="text-sm font-medium">
+            Hello, I am Riya, <br /> your Admission Assistant.
+          </p>
+          <button
+            className="absolute top-1 right-2 text-red-500 text-xl"
+            onClick={() => setShowPopup(false)}
+          >
+            &times;
+          </button>
+        </div>
+      )}
+
       {/* Chat Icon */}
       <div
         className="fixed bottom-[70px] right-5 w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-bold cursor-pointer shadow-lg z-50 transition-transform transform hover:scale-110"
         onClick={toggleChat}
       >
         <div className="relative">
-          <TbMessageChatbot className="rounded-full w-10 h-10 border-2 border-white" />
+          <img
+            src="./logo/Default_WHO_Introduces_AI_Chatbot_SARAH_Despite_Flaws_0.webp"
+            className="rounded-full w-11 h-11 border-2 border-white"
+          />
           <span className="absolute top-0 left-0 h-4 w-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
             1
           </span>
         </div>
       </div>
 
-      {/* Chatbot */}
+      {/* Chatbot Body */}
       <CSSTransition in={isOpen} timeout={300} classNames="chatbot" unmountOnExit>
-        <div className="fixed bottom-24 right-5 font-poppins w-full max-w-[90%] sm:max-w-[60%] md:max-w-[50%] lg:max-w-[20%] xl:max-w-[25%] bg-white border border-gray-300 rounded-lg shadow-lg z-50">
+        <div className="fixed bottom-24 right-5 font-poppins w-full max-w-[90%] sm:max-w-[60%] md:max-w-[50%] lg:max-w-[20%] xl:max-w-[25%] bg-white/90 border border-gray-300 rounded-lg shadow-lg z-50">
           {/* Chat Header */}
           <div className="flex justify-between items-center bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-3 rounded-t-lg">
             <div className="text-lg font-bold flex items-center gap-2">
@@ -242,7 +325,10 @@ const Chatbot: React.FC = () => {
           </div>
 
           {/* Chat Body */}
-          <div className="h-64 overflow-y-auto px-4 py-2 bg-gray-50">
+          <div
+            className="h-64 overflow-y-auto px-4 py-2 bg-gray-50"
+            ref={chatBodyRef}
+          >
             {messages.map((message, index) => (
               <div
                 key={index}
