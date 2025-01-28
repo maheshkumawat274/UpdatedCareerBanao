@@ -59,25 +59,53 @@ const Form = () => {
   const [file, setFile] = useState<any | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  async function fileUpload() {
-    const fileData = new FormData();
-    fileData.append("file", (file as any));
+  // async function fileUpload() {
+  //   const fileData = new FormData();
+  //   fileData.append("file", (file as any));
 
+  //   if (file == null) {
+  //     toast.error("please upload resume first")
+  //     setFile(null)
+  //     setIsSubmitted(false)
+  //   } else {
+  //     try {
+  //       const response = await axios.post(FileUploadUrl, fileData);
+  //       return response.data.url;
+  //     } catch (error) {
+  //       toast.error("please upload resume in only pdf format")
+  //       console.log(error);
+  //       return null;
+  //     }
+  //   }
+  // }
+  async function fileUpload() {
     if (file == null) {
-      toast.error("please upload resume first")
-      setFile(null)
-      setIsSubmitted(false)
-    } else {
-      try {
-        const response = await axios.post(FileUploadUrl, fileData);
-        return response.data.url;
-      } catch (error) {
-        toast.error("please upload resume in only pdf format")
-        console.log(error);
-        return null;
-      }
+      toast.error("Please upload a resume first.");
+      setIsSubmitted(false);
+      return null;
+    }
+  
+    // Check the file type
+    if (file.type !== "application/pdf") {
+      toast.error("Please upload a valid PDF file.");
+      setFile(null);
+      setIsSubmitted(false);
+      return null;
+    }
+  
+    const fileData = new FormData();
+    fileData.append("file", file);
+  
+    try {
+      const response = await axios.post(FileUploadUrl, fileData);
+      return response.data.url;
+    } catch (error) {
+      toast.error("An error occurred while uploading. Please try again.");
+      console.error(error);
+      return null;
     }
   }
+  
   const handleSubmit = async () => {
     setIsSubmitted(true)
     const fileUploadUrl = await fileUpload();
