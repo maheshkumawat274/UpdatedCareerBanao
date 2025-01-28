@@ -270,7 +270,7 @@ const Chatbot: React.FC = () => {
     <div>
       {/* Auto-triggered Popup */}
       {showPopup && (
-        <div className="fixed bottom-24 right-14 bg-white border border-gray-300 shadow-lg rounded-lg p-4 flex items-center gap-3 z-50 animate-bounce-in">
+        <div className="fixed bottom-16 right-20 bg-white border border-gray-300 shadow-lg rounded-lg p-4 flex items-center gap-3 z-50 animate-bounce-in font-poppins">
           <div className="relative w-12 h-12">
             <img
               src="./logo/Default_WHO_Introduces_AI_Chatbot_SARAH_Despite_Flaws_0.webp"
@@ -282,7 +282,7 @@ const Chatbot: React.FC = () => {
             Hello, I am Riya, <br /> your Admission Assistant.
           </p>
           <button
-            className="absolute top-1 right-2 text-red-500 text-xl"
+            className="absolute top-1 right-2 text-red-500 text-2xl hover:bg-purple-200 rounded-lg w-6 h-7"
             onClick={() => setShowPopup(false)}
           >
             &times;
@@ -346,22 +346,25 @@ const Chatbot: React.FC = () => {
           {/* Chat Footer */}
           {step < 4 && (
             <div className="flex items-center px-2 sm:px-4 py-2 bg-gray-100 rounded-b-lg">
-              <input
-                type="text"
-                className="flex-grow border border-gray-300 rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
-                placeholder="Type a message..."
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-              />
-              <button
-                className="ml-2 bg-primaryBtn text-white px-4 py-2 flex justify-center rounded-lg hover:bg-hoverBtn !w-full !max-w-xs"
-                onClick={sendMessage}
-              >
-                <TbSend className="text-white" />
-              </button>
+              <div className="relative flex-grow">
+                <input
+                  type="text"
+                  className="w-full border border-gray-300 rounded-lg p-2 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  placeholder="Type a message..."
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+                />
+                <button
+                  className="absolute top-1/2 right-2 transform -translate-y-1/2 text-purple-500 hover:text-purple-700"
+                  onClick={sendMessage}
+                >
+                  <TbSend className="text-xl" />
+                </button>
+              </div>
             </div>
           )}
+
         </div>
       </CSSTransition>
     </div>

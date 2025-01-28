@@ -24,7 +24,7 @@ function CurrentOpening() {
   const [data, loading] = useFetch("/getCurrentJob");
 
   return (
-     <div className="bg-[#EDEDE9] p-6">
+     <div className="bg-[#EDEDE9] p-6 font-poppins">
         <div id="currentOpening" className="text-center mb-8">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Current Openings</h2>
           <p className="text-gray-600 text-lg">

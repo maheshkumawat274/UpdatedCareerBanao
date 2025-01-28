@@ -100,7 +100,7 @@
 
 @media (max-width:390px) {
   .img-card{
-    width: 210px;
+    width: 230px;
   }
   #imgcard2{
     width: 100%;
@@ -109,3 +109,13 @@
   #imgcard2 img {
     width: 300px;
   }}
+@media (max-width:370px) {
+    .img-card{
+      width: 220px;
+    }
+  }
+  @media (max-width:360px) {
+    .img-card{
+      width: 215px;
+    }
+  }
