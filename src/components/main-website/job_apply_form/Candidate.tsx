@@ -121,7 +121,7 @@ const Form = () => {
       education: values.education,
       experience: values.experience,
       address: values.address,
-      resume: fileUploadUrl,
+      // resume: fileUploadUrl,
       job_id: jobId
     };
     try {

@@ -250,7 +250,8 @@ export default function RegisterForm({ setShowLoginForm, setShowRegisterForm, cl
                 </div>
               </div>
             </div>
-          </>}
+          </>
+          }
       </form>
 
     </div>
@@ -258,13 +259,6 @@ export default function RegisterForm({ setShowLoginForm, setShowRegisterForm, cl
   )
 }
 
-// function MyInput({ type = "text", placeholder, ...props }: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>) {
-//   return (
-//     <div className="mb-4">
-//       <input {...props} className="shadow appearance-none border h-[2.5rem] rounded-[5px] w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type={type} placeholder={placeholder} />
-//     </div>
-//   );
-// }
 function MyInput({ type = "text", placeholder, value, onChange, ...props }: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>) {
   return (
     <div className="mb-4 relative">

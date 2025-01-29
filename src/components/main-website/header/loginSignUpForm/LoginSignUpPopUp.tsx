@@ -5,8 +5,8 @@ import { Modal,Button } from "antd";
 import { setUserData } from "src/redux/userSlice";
 import { useDispatch } from "react-redux";
 import LoginForm from "./LoginForm";
-import RegisterForm from "./RegisterForm";
 import './login.css'
+import Signup from "./Signup";
 
 export default function LoginSignUpPopUp({ modalIsOpen, closeModal }: any) {
 
@@ -121,7 +121,7 @@ export default function LoginSignUpPopUp({ modalIsOpen, closeModal }: any) {
               />
             )}
             {showRegisterForm && (
-              <RegisterForm
+              <Signup
                 handleGoogleClick={handleGoogleClick}
                 setShowLoginForm={setShowLoginForm}
                 setShowRegisterForm={setShowRegisterForm}

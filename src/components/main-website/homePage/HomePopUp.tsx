@@ -280,14 +280,9 @@ const statesOptions = [
     { value: "Uttar Pradesh", label: "Uttar Pradesh" },
     { value: "Uttarakhand", label: "Uttarakhand" },
     { value: "West Bengal", label: "West Bengal" },
-    { value: "Andaman and Nicobar Islands", label: "Andaman and Nicobar Islands" },
     { value: "Chandigarh", label: "Chandigarh" },
-    { value: "Dadra and Nagar Haveli and Daman and Diu", label: "Dadra and Nagar Haveli and Daman and Diu" },
     { value: "Delhi", label: "Delhi" },
     { value: "Jammu and Kashmir", label: "Jammu and Kashmir" },
-    { value: "Ladakh", label: "Ladakh" },
-    { value: "Lakshadweep", label: "Lakshadweep" },
-    { value: "Puducherry", label: "Puducherry" }
 ];
 
 function HomePopUp() {
@@ -314,9 +309,9 @@ function HomePopUp() {
             email: values.email,
             phone: values.phone,
             // address: values.address,
-            state: values.state,
-            course_query: values.interest,
-            level: values.level,
+            // state: values.state,
+            // course_query: values.interest,
+            // level: values.level,
             category: "Home-popup",
 
         };
@@ -370,8 +365,8 @@ function HomePopUp() {
                     </div>
         
                     {/* Right Section */}
-                    <div className="popup-right w-full lg:w-2/3 p-5">
-                        <div className="popup-header max-h-[60px] lg:max-h-full mt-5 flex">
+                    <div className="popup-right w-full lg:w-2/3 p-2 sm:p-5">
+                        <div className="popup-header max-h-[60px] lg:max-h-full mt-5 flex sm:gap-2">
                             <div className="pop-header-left w-[15%] lg:w-[20%] flex justify-center items-center">
                                 <div className="w-[70px] h-[50px] lg:w-[100px] flex items-center lg:h-[100px] rounded-full">
                                     <img src={default_img} alt="logo" className="rounded-full" />
@@ -385,9 +380,9 @@ function HomePopUp() {
                                     Get details and latest updates
                                 </h1>
                             </div>
-                            <div className="pop-header-right w-[5%]">
+                            <div className="pop-header-right">
                                 <span
-                                    className="text-4xl cursor-pointer"
+                                    className="text-3xl sm:text-4xl cursor-pointer text-purple-500 hover:text-hoverBtn"
                                     onClick={() => {
                                         setIsShowPopup(false);
                                     }}
@@ -396,7 +391,7 @@ function HomePopUp() {
                                 </span>
                             </div>
                         </div>
-                        <div className="px-5">
+                        <div className="px-0 sm:px-5">
                             <MyForm form={form}>
                                 <div className="popup-form-inputs mt-8 flex flex-col lg:flex-row lg:gap-5">
                                     <div className="popup-form-left w-full lg:w-2/4">
