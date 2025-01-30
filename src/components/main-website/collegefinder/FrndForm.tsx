@@ -199,7 +199,7 @@ const FrndForm = () => {
             className={`border ${
               errors.fullName ? "border-red-500" : "border-gray-300"
             } w-full p-2 rounded-lg`}
-            placeholder="Enter your Friend full name"
+            placeholder="Friends Full Name"
           />
           {errors.fullName && <p className="text-red-500 text-sm">Full name is required</p>}
         </div>
@@ -226,7 +226,7 @@ const FrndForm = () => {
             className={`border ${
               errors.email ? "border-red-500" : "border-gray-300"
             } w-full p-2 rounded-lg`}
-            placeholder="Enter your Friend email"
+            placeholder="Friend Email"
           />
           {errors.email && <p className="text-red-500 text-sm">Invalid email address</p>}
         </div>
@@ -240,7 +240,7 @@ const FrndForm = () => {
             className={`border ${
               errors.mobileNumber ? "border-red-500" : "border-gray-300"
             } w-full p-2 rounded-lg`}
-            placeholder="Enter your Friend mobile number"
+            placeholder="Friend Mobile Number"
           />
           {errors.mobileNumber && <p className="text-red-500 text-sm">Enter a valid 10-digit number</p>}
         </div>

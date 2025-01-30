@@ -263,7 +263,7 @@ const FormSubmission = ({ showHeader = true, showCourse = true, showState = true
             value={formData.fullName}
             onChange={handleInputChange}
             className={`border ${errors.fullName ? "border-red-500" : "border-gray-300"} w-full p-2 rounded-lg`}
-            placeholder="Enter your full name"
+            placeholder="Full name"
           />
           {errors.fullName && <p className="text-red-500 text-sm">Full name is required</p>}
         </div>
@@ -298,7 +298,7 @@ const FormSubmission = ({ showHeader = true, showCourse = true, showState = true
             value={formData.mobileNumber}
             onChange={handleInputChange}
             className={`border ${errors.mobileNumber ? "border-red-500" : "border-gray-300"} w-full p-2 rounded-lg`}
-            placeholder="Enter your mobile number"
+            placeholder="Enter your Mobile Number"
           />
           {errors.mobileNumber && <p className="text-red-500 text-sm">Enter a valid 10-digit number</p>}
         </div>
@@ -310,7 +310,7 @@ const FormSubmission = ({ showHeader = true, showCourse = true, showState = true
             value={formData.program}
             onChange={handleInputChange}
             className={`border ${errors.program ? "border-red-500" : "border-gray-300"} w-full p-2 rounded-lg`}
-            placeholder="Enter your preferred program"
+            placeholder="Enter your Preferred Program"
           />
           {errors.program && <p className="text-red-500 text-sm">Program is required</p>}
         </div>}
