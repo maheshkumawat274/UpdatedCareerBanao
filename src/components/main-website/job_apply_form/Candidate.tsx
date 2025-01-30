@@ -129,7 +129,7 @@ const Form = () => {
           <div>
             <label htmlFor="firstName">First Name <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
-              name="fname"
+              name="First Name"
               showName="First Name"
               required={true}
               type="text"
@@ -140,7 +140,7 @@ const Form = () => {
           <div>
             <label htmlFor="lastName">Last Name <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
-              name="lname"
+              name="Last Name"
               showName="Last Name"
               required={true}
               type="text"
@@ -151,7 +151,7 @@ const Form = () => {
           <div>
             <label htmlFor="email">Email <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
-              name="email"
+              name="Email"
               required={true}
               type="email"
               className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1"
@@ -160,7 +160,7 @@ const Form = () => {
           <div>
             <label htmlFor="phoneNumber">Phone Number <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
-              name="phone"
+              name="Phone No"
               required={true}
               type="text"
               pattern={/^[0-9]{10}$/}
@@ -171,14 +171,14 @@ const Form = () => {
           <div>
             <label htmlFor="education">Education <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
-              name="education"
+              name="Education"
               select={true}
               required={true}
               options={EducationOptions}
             />
           </div>
           <div>
-            <label htmlFor="experience">Years of Experience <span className="text-red-500 text-sm ml-1">*</span></label>
+            <label htmlFor="Experience">Years of Experience <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
               name="experience"
               select={true}
@@ -205,7 +205,7 @@ const Form = () => {
           </div>
           <div>
             <label htmlFor="address">Address <span className="text-red-500 text-sm ml-1">*</span></label>
-            <FormInput name="address" required={true} type="text" pattern={/^[0-9A-Za-z\s,'-]+$/} textArea={true} />
+            <FormInput name="Enter your Address" required={true} type="text" pattern={/^[0-9A-Za-z\s,'-]+$/} textArea={true} />
           </div>
           <div className="flex justify-end">
             <button
