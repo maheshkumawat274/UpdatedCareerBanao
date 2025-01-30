@@ -114,13 +114,13 @@ const Form = () => {
     const values = await form.validateFields();
 
     const payload = {
-      first_name: values.fname,
-      last_name: values.lname,
-      email: values.email,
-      phone: values.phone,
-      education: values.education,
-      experience: values.experience,
-      address: values.address,
+      first_name: values.Fname,
+      last_name: values.Lname,
+      email: values.Email,
+      phone: values.PhoneNo,
+      education: values.Education,
+      experience: values.Experience,
+      address: values.Address,
       // resume: fileUploadUrl,
       job_id: jobId
     };  
@@ -157,7 +157,9 @@ const Form = () => {
           <div>
             <label htmlFor="firstName">First Name <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
-              name="First Name"
+
+              name="Fname"
+
               showName="First Name"
               required={true}
               type="text"
@@ -168,7 +170,9 @@ const Form = () => {
           <div>
             <label htmlFor="lastName">Last Name <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
-              name="Last Name"
+
+              name="Lname"
+
               showName="Last Name"
               required={true}
               type="text"
@@ -188,7 +192,9 @@ const Form = () => {
           <div>
             <label htmlFor="phoneNumber">Phone Number <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
-              name="Phone No"
+
+              name="PhoneNo"
+
               required={true}
               type="text"
               pattern={/^[0-9]{10}$/}
@@ -208,7 +214,7 @@ const Form = () => {
           <div>
             <label htmlFor="Experience">Years of Experience <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
-              name="experience"
+              name="Experience"
               select={true}
               required={true}
               options={ExperienceOptions}
@@ -233,7 +239,9 @@ const Form = () => {
           </div>
           <div>
             <label htmlFor="address">Address <span className="text-red-500 text-sm ml-1">*</span></label>
-            <FormInput name="Enter your Address" required={true} type="text" pattern={/^[0-9A-Za-z\s,'-]+$/} textArea={true} />
+
+            <FormInput name="Address" required={true} type="text" pattern={/^[0-9A-Za-z\s,'-]+$/} textArea={true} />
+
           </div>
           <div className="flex justify-end">
             <button

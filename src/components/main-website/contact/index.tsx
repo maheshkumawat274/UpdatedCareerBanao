@@ -25,10 +25,10 @@ const Contact = () => {
         e.preventDefault()
         const values = await contactForm.validateFields();
         const payload = {
-            name: values.name,
-            email: values.email,
-            phone: values.phone,
-            user_query: values.message,
+            name: values.Name,
+            email: values.Email,
+            phone: values.Phone,
+            user_query: values.Message,
             category: "contact",
         }
         try {
@@ -72,10 +72,10 @@ const Contact = () => {
                     <h1 style={style} className='letterSpace text-[18px] text-center lg:text-start lg:text-[23px] text-purple-700 font-[600]'>SEND US A MESSAGE</h1>
                     <form onSubmit={submitHandler} className='flex mt-0 lg:mt-3 flex-col gap-2'>
                         <MyForm form={contactForm} >
-                            <FormInput name="name" required={true} type="text" pattern={/^[a-zA-Z\s]*$/} className='h-[50px]' />
-                            <FormInput name="phone" required={true} type="tel" pattern={/^[0-9]{10}$/} className='h-[50px]' />
-                            <FormInput name="email" required={true} type="email" className='h-[50px]' />
-                            <FormInput name="message" required={true} type="text" pattern={/^[a-zA-Z\s]*$/} textArea={true} />
+                            <FormInput name="Name" required={true} type="text" pattern={/^[a-zA-Z\s]*$/} className='h-[50px]' />
+                            <FormInput name="Phone" required={true} type="tel" pattern={/^[0-9]{10}$/} className='h-[50px]' />
+                            <FormInput name="Email" required={true} type="email" className='h-[50px]' />
+                            <FormInput name="Message" required={true} type="text" pattern={/^[a-zA-Z\s]*$/} textArea={true} />
                         </MyForm>
 
                         <div className='w-full mt-2 lg:text-start text-center'>
