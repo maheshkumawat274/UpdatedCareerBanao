@@ -270,7 +270,7 @@ const Chatbot: React.FC = () => {
     <div>
       {/* Auto-triggered Popup */}
       {showPopup && (
-        <div className="fixed bottom-16 right-20 bg-white border border-gray-300 shadow-lg rounded-lg p-4 flex items-center gap-3 z-50 animate-bounce-in font-poppins">
+        <div className="fixed bottom-16 right-20 bg-white border border-gray-300 shadow-lg rounded-lg p-4 flex items-center gap-1 smLgap-3 z-50 animate-bounce-in font-poppins">
           <div className="relative w-12 h-12">
             <img
               src="./logo/Default_WHO_Introduces_AI_Chatbot_SARAH_Despite_Flaws_0.webp"
