@@ -123,7 +123,7 @@ const Form = () => {
       address: values.address,
       // resume: fileUploadUrl,
       job_id: jobId
-    };
+    };  
     try {
       const response = await axios.post(
         `${BaseUrl}/postJobApplication`,
