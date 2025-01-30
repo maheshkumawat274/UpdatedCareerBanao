@@ -112,9 +112,9 @@ function PrivacyForm() {
         const values = await form.validateFields();
 
         const payload = {
-            name:values.name,
-            email:values.email,
-            phone: values.phone,
+            name:values.Name,
+            email:values.Email,
+            phone: values.Phone,
             category: "expert-counsellors",
             user_query: values.interest
         }
@@ -145,13 +145,13 @@ function PrivacyForm() {
                     <MyForm form={form}>
                         <div className="flex flex-col lg:gap-5 lg:flex-row justify-evenly lg:px-3">
                             <div className="w-[100%] lg:w-[23%]">
-                                <FormInput onChange={validateHandler} name="name" required={true} type="text" pattern={/^[a-zA-Z\s]*$/} className="h-[40px]" />
+                                <FormInput onChange={validateHandler} name="Name" required={true} type="text" pattern={/^[a-zA-Z\s]*$/} className="h-[40px]" />
                             </div>
                             <div className="w-[100%] lg:w-[23%]">
-                                <FormInput onChange={validateHandler}  name="phone" required={true} type="tel" pattern={/^[0-9]{10}$/} className="h-[40px]" />
+                                <FormInput onChange={validateHandler}  name="Phone" required={true} type="tel" pattern={/^[0-9]{10}$/} className="h-[40px]" />
                             </div>
                             <div className="w-[100%] lg:w-[23%]">
-                                <FormInput onChange={validateHandler}  name="email" required={true} type="email" className="h-[40px]" />
+                                <FormInput onChange={validateHandler}  name="Email" required={true} type="email" className="h-[40px]" />
                             </div>
                             <div className="w-[100%] lg:w-[23%]">
                                 <FormInput

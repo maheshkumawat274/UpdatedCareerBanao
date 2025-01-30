@@ -305,9 +305,9 @@ function HomePopUp() {
         e.preventDefault();
         const values = await form.getFieldsValue();
         const payload = {
-            name: values.name,
-            email: values.email,
-            phone: values.phone,
+            name: values.Name,
+            email: values.Email,
+            phone: values.Phone,
             // address: values.address,
             // state: values.state,
             // course_query: values.interest,
@@ -396,13 +396,13 @@ function HomePopUp() {
                                 <div className="popup-form-inputs mt-8 flex flex-col lg:flex-row lg:gap-5">
                                     <div className="popup-form-left w-full lg:w-2/4">
                                         <MyInput
-                                            name="name"
+                                            name="Name"
                                             label={"Full Name"}
                                             pattern={/^[a-zA-Z\s]*$/}
                                             prefix={<Icon path={personIconPath} />}
                                         />
                                         <MyInput
-                                            name="phone"
+                                            name="Phone"
                                             type="tel"
                                             max={10}
                                             pattern={/^[0-9]{10}$/}
@@ -418,7 +418,7 @@ function HomePopUp() {
                                     </div>
                                     <div className="popup-form-right w-full lg:w-2/4">
                                         <MyInput
-                                            name="email"
+                                            name="Email"
                                             type="email"
                                             label={"Email Address"}
                                             prefix={<Icon path={""} />}
@@ -506,7 +506,7 @@ function MyInput({ label, type = "text", ...props }:any) {
                     required={true}
                     type={type}
                     pattern={props.pattern}
-                    className="bg-[#f7f7f7] border border-gray-200 text-gray-900 text-sm rounded-lg focus-visible:outline-none focus:ring-blue-700 focus:border-blue-700 w-full flex p-2.5"
+                    className=" border border-gray-200 text-gray-900 text-md rounded-lg focus-visible:outline-none focus:ring-purple-700 focus:border-purple-700 w-full flex p-2.5"
                     prefix={props.prefix}
                     select={props.select}
                     options={props.options}
