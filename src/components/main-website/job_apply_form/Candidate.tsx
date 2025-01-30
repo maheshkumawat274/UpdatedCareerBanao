@@ -123,7 +123,7 @@ const Form = () => {
       address: values.Address,
       // resume: fileUploadUrl,
       job_id: jobId
-    };
+    };  
     try {
       const response = await axios.post(
         `${BaseUrl}/postJobApplication`,
@@ -157,7 +157,9 @@ const Form = () => {
           <div>
             <label htmlFor="firstName">First Name <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
+
               name="Fname"
+
               showName="First Name"
               required={true}
               type="text"
@@ -168,7 +170,9 @@ const Form = () => {
           <div>
             <label htmlFor="lastName">Last Name <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
+
               name="Lname"
+
               showName="Last Name"
               required={true}
               type="text"
@@ -188,7 +192,9 @@ const Form = () => {
           <div>
             <label htmlFor="phoneNumber">Phone Number <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
+
               name="PhoneNo"
+
               required={true}
               type="text"
               pattern={/^[0-9]{10}$/}
@@ -233,7 +239,9 @@ const Form = () => {
           </div>
           <div>
             <label htmlFor="address">Address <span className="text-red-500 text-sm ml-1">*</span></label>
+
             <FormInput name="Address" required={true} type="text" pattern={/^[0-9A-Za-z\s,'-]+$/} textArea={true} />
+
           </div>
           <div className="flex justify-end">
             <button
