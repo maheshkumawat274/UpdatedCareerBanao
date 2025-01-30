@@ -1,4 +1,4 @@
-@media (max-width:1148px) and (min-width:1000px){
+@media (max-width:1188px) and (min-width:1014px){
   .header-section h1{
     font-size: 25px;
     font-weight: 600;
@@ -19,7 +19,7 @@
       margin-bottom: 5px;
     }
 }
-@media (max-width: 1000px) and (min-width: 768px) {
+@media (max-width: 1014px) and (min-width: 768px) {
   .nav-header {
     gap: 0px; 
   }
@@ -91,5 +91,12 @@
   .ant-dropdown-menu {
     min-width: 0px;
     display: block;
+  }
+}
+@media (max-width:1000px) and (min-width:768px) {
+  .ant-dropdown-menu::before{
+    position: absolute;
+    top: -8px;
+    left: 40%;
   }
 }
