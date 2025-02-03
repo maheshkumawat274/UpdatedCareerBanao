@@ -25,7 +25,6 @@ const ReviewSection2: React.FC<ReviewSection2Props> = ({ onComplete }) => {
   const validateForm = () => {
     const infraValid =
       Boolean(Overall.title.trim()) &&
-      Overall.review.length >= 150 &&
       Overall.rating > 0 &&
       Overall.file !== null;
 
@@ -84,13 +83,7 @@ const ReviewSection2: React.FC<ReviewSection2Props> = ({ onComplete }) => {
                 value={Overall.review}
                 onChange={(e) => handleInputChange(e, 'review')}
                 className="border p-2 w-full rounded"
-                minLength={150}
               />
-              <p className="text-sm text-red-500">
-                {Overall.review.length < 150
-                  ? 'Description cannot be less than 150 characters.'
-                  : ''}
-              </p>
               <div className="flex items-center">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <span
@@ -116,3 +109,4 @@ const ReviewSection2: React.FC<ReviewSection2Props> = ({ onComplete }) => {
 };
 
 export default ReviewSection2;
+
