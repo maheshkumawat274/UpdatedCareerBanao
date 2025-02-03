@@ -31,13 +31,11 @@ const ReviewSection3: React.FC<ReviewSectionProps> = ({ onComplete }) => {
   useEffect(() => {
     const infraValid =
       Boolean(infrastructure.title.trim()) &&
-      infrastructure.review.length >= 150 &&
       infrastructure.rating > 0 &&
       infrastructure.file !== null;
 
     const facultyValid =
       Boolean(faculty.title.trim()) &&
-      faculty.review.length >= 150 &&
       faculty.rating > 0 &&
       faculty.file !== null;
 
@@ -106,13 +104,7 @@ const ReviewSection3: React.FC<ReviewSectionProps> = ({ onComplete }) => {
                 value={infrastructure.review}
                 onChange={(e) => handleInputChange(e, 'review', 'infrastructure')}
                 className="border p-2 w-full rounded"
-                minLength={150}
               />
-              <p className="text-sm text-red-500">
-                {infrastructure.review.length < 150
-                  ? 'Description cannot be less than 150 characters.'
-                  : ''}
-              </p>
               <div className="flex items-center">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <span
@@ -152,13 +144,7 @@ const ReviewSection3: React.FC<ReviewSectionProps> = ({ onComplete }) => {
                 value={faculty.review}
                 onChange={(e) => handleInputChange(e, 'review', 'faculty')}
                 className="border p-2 w-full rounded"
-                minLength={150}
               />
-              <p className="text-sm text-red-500">
-                {faculty.review.length < 150
-                  ? 'Description cannot be less than 150 characters.'
-                  : ''}
-              </p>
               <div className="flex items-center">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <span
@@ -188,3 +174,4 @@ const ReviewSection3: React.FC<ReviewSectionProps> = ({ onComplete }) => {
 };
 
 export default ReviewSection3;
+
