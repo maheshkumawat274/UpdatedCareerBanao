@@ -31,13 +31,13 @@ const ReviewSection4: React.FC<ReviewSection4Props> = ({ onComplete }) => {
   useEffect(() => {
     const placementsValid =
       Boolean(Placements.title.trim()) &&
-      Placements.review.length >= 150 &&
+      // Placements.review.length >= 150 &&
       Placements.rating > 0 &&
       Placements.file !== null;
 
     const hostelValid =
       Boolean(Hostel.title.trim()) &&
-      Hostel.review.length >= 150 &&
+      // Hostel.review.length >= 150 &&
       Hostel.rating > 0 &&
       Hostel.file !== null;
 
@@ -106,13 +106,13 @@ const ReviewSection4: React.FC<ReviewSection4Props> = ({ onComplete }) => {
                 value={Placements.review}
                 onChange={(e) => handleInputChange(e, 'review', 'Placements')}
                 className="border p-2 w-full rounded"
-                minLength={150}
+                // minLength={150}
               />
-              <p className="text-sm text-red-500">
+              {/* <p className="text-sm text-red-500">
                 {Placements.review.length < 150
                   ? 'Description cannot be less than 150 characters.'
                   : ''}
-              </p>
+              </p> */}
               <div className="flex items-center">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <span
@@ -152,13 +152,13 @@ const ReviewSection4: React.FC<ReviewSection4Props> = ({ onComplete }) => {
                 value={Hostel.review}
                 onChange={(e) => handleInputChange(e, 'review', 'Hostel')}
                 className="border p-2 w-full rounded"
-                minLength={150}
+                // minLength={150}
               />
-              <p className="text-sm text-red-500">
+              {/* <p className="text-sm text-red-500">
                 {Hostel.review.length < 150
                   ? 'Description cannot be less than 150 characters.'
                   : ''}
-              </p>
+              </p> */}
               <div className="flex items-center">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <span

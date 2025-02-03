@@ -5,8 +5,8 @@ interface FormData {
   name: string;
   email: string;
   contactNumber: string;
-  workingDays: string;
-  workingHours: string;
+  // workingDays: string;
+  // workingHours: string;
 }
 
 const ReviewSection5: React.FC = () => {
@@ -15,8 +15,8 @@ const ReviewSection5: React.FC = () => {
     name: "",
     email: "",
     contactNumber: "",
-    workingDays: "",
-    workingHours: "",
+    // workingDays: "",
+    // workingHours: "",
   });
 
   const [errors, setErrors] = useState<any>({});
@@ -61,15 +61,15 @@ const ReviewSection5: React.FC = () => {
     }
 
     // Working days and hours validation (should not be empty)
-    if (!formData.workingDays.trim()) {
-      formErrors.workingDays = "Working days are required";
-      isValid = false;
-    }
+    // if (!formData.workingDays.trim()) {
+    //   formErrors.workingDays = "Working days are required";
+    //   isValid = false;
+    // }
 
-    if (!formData.workingHours.trim()) {
-      formErrors.workingHours = "Working hours are required";
-      isValid = false;
-    }
+    // if (!formData.workingHours.trim()) {
+    //   formErrors.workingHours = "Working hours are required";
+    //   isValid = false;
+    // }
 
     setErrors(formErrors);
     return isValid;
@@ -133,7 +133,7 @@ const ReviewSection5: React.FC = () => {
             )}
           </div>
           {/* Working Days */}
-          <div>
+          {/* <div>
             <label className="block text-sm font-medium mb-1">Working Days</label>
             <input
               type="text"
@@ -144,9 +144,9 @@ const ReviewSection5: React.FC = () => {
               placeholder="e.g., Monday to Friday"
             />
             {errors.workingDays && <p className="text-red-500 text-xs">{errors.workingDays}</p>}
-          </div>
+          </div> */}
           {/* Working Hours */}
-          <div>
+          {/* <div>
             <label className="block text-sm font-medium mb-1">Working Hours</label>
             <input
               type="text"
@@ -157,7 +157,7 @@ const ReviewSection5: React.FC = () => {
               placeholder="e.g., 10:30 am to 6:30 pm"
             />
             {errors.workingHours && <p className="text-red-500 text-xs">{errors.workingHours}</p>}
-          </div>
+          </div> */}
         </div>
         <p className="mt-4 text-sm text-gray-600">
           We will strive to address your feedback and concerns in a timely and effective manner.
