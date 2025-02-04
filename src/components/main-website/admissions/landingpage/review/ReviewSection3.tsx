@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 interface FormData {
   title: string;
@@ -27,26 +27,29 @@ const ReviewSection3: React.FC<ReviewSectionProps> = ({ onComplete }) => {
 
   const [isFormValid, setIsFormValid] = useState(false);
 
+  // Memoize the onComplete function to prevent unnecessary re-renders
+  const memoizedOnComplete = useCallback(onComplete, []);
+
   // Validate form whenever the state changes
   useEffect(() => {
     const infraValid =
       Boolean(infrastructure.title.trim()) &&
-      infrastructure.rating > 0 &&
-      infrastructure.file !== null;
+      infrastructure.rating > 0;
+      // Removed file validation
 
     const facultyValid =
       Boolean(faculty.title.trim()) &&
-      faculty.rating > 0 &&
-      faculty.file !== null;
+      faculty.rating > 0;
+      // Removed file validation
 
     setIsFormValid(infraValid && facultyValid);
   }, [infrastructure, faculty]);
 
   useEffect(() => {
     if (isFormValid) {
-      onComplete(); // Notify parent that this section is complete
+      memoizedOnComplete(); // Notify parent that this section is complete
     }
-  }, [isFormValid, onComplete]);
+  }, [isFormValid, memoizedOnComplete]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -174,4 +177,3 @@ const ReviewSection3: React.FC<ReviewSectionProps> = ({ onComplete }) => {
 };
 
 export default ReviewSection3;
-
