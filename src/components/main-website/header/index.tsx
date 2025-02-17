@@ -1,14 +1,13 @@
 
-//
-import LoginSignUpPopUp from "./loginSignUpForm/LoginSignUpPopUp";
 import { useDispatch, useSelector } from 'react-redux';
 import { setShowPopUp } from 'src/redux/loginSignupSlice';
 import { ToastContainer } from 'react-toastify';
-import HomePopUp from 'components/main-website/homePage/HomePopUp';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { menuConfig } from 'src/utils/constants';
 import HeaderMain from "./HeaderMain";
+import HomePopUp2 from "src/components/merito/HomePopup2";
+import SignPopup from "src/components/merito/SignPopup";
 
 function Header() {
   const isLoginSignUpPopUp = useSelector((state:any)=> state.loginSignUpPopUp);
@@ -28,10 +27,10 @@ function Header() {
   return ( 
     <div>
       <ToastContainer pauseOnHover={false}/>
-      {showHomePopup && <HomePopUp/>}
+      {showHomePopup && <HomePopUp2/>}
       {/* <NavBar/> */}
        <HeaderMain/>
-      <LoginSignUpPopUp modalIsOpen={isLoginSignUpPopUp} closeModal={closeModal}/>
+      <SignPopup modalIsOpen={isLoginSignUpPopUp} closeModal={closeModal}/>
     </div>
   )
 }

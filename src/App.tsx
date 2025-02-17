@@ -19,6 +19,7 @@ import ScrollTop from "./components/main-website/ScrollTop";
 import UniversityLayout from "./pages/landingpage/UniversityLayout";
 import TopContent from "./components/main-website/admissions/landingpage/review/TopContent";
 import ReviewRoutes from "./routes/ReviewRoutes";
+import FloatingEnquiryButton from "./components/merito/FloatingEnquiryButton";
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const dispatch = useDispatch();
@@ -102,6 +103,7 @@ function App() {
       </Routes>
       <Chatbot/>
       <WhatsAppBtn/>
+      <FloatingEnquiryButton/>
     </MainLayout>
   )
 }
