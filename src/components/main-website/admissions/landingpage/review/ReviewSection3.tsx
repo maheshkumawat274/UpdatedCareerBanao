@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 interface FormData {
   title: string;
@@ -27,28 +27,29 @@ const ReviewSection3: React.FC<ReviewSectionProps> = ({ onComplete }) => {
 
   const [isFormValid, setIsFormValid] = useState(false);
 
+  // Memoize the onComplete function to prevent unnecessary re-renders
+  const memoizedOnComplete = useCallback(onComplete, []);
+
   // Validate form whenever the state changes
   useEffect(() => {
     const infraValid =
       Boolean(infrastructure.title.trim()) &&
-      infrastructure.review.length >= 150 &&
-      infrastructure.rating > 0 &&
-      infrastructure.file !== null;
+      infrastructure.rating > 0;
+      // Removed file validation
 
     const facultyValid =
       Boolean(faculty.title.trim()) &&
-      faculty.review.length >= 150 &&
-      faculty.rating > 0 &&
-      faculty.file !== null;
+      faculty.rating > 0;
+      // Removed file validation
 
     setIsFormValid(infraValid && facultyValid);
   }, [infrastructure, faculty]);
 
   useEffect(() => {
     if (isFormValid) {
-      onComplete(); // Notify parent that this section is complete
+      memoizedOnComplete(); // Notify parent that this section is complete
     }
-  }, [isFormValid, onComplete]);
+  }, [isFormValid, memoizedOnComplete]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -106,13 +107,7 @@ const ReviewSection3: React.FC<ReviewSectionProps> = ({ onComplete }) => {
                 value={infrastructure.review}
                 onChange={(e) => handleInputChange(e, 'review', 'infrastructure')}
                 className="border p-2 w-full rounded"
-                minLength={150}
               />
-              <p className="text-sm text-red-500">
-                {infrastructure.review.length < 150
-                  ? 'Description cannot be less than 150 characters.'
-                  : ''}
-              </p>
               <div className="flex items-center">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <span
@@ -152,13 +147,7 @@ const ReviewSection3: React.FC<ReviewSectionProps> = ({ onComplete }) => {
                 value={faculty.review}
                 onChange={(e) => handleInputChange(e, 'review', 'faculty')}
                 className="border p-2 w-full rounded"
-                minLength={150}
               />
-              <p className="text-sm text-red-500">
-                {faculty.review.length < 150
-                  ? 'Description cannot be less than 150 characters.'
-                  : ''}
-              </p>
               <div className="flex items-center">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <span

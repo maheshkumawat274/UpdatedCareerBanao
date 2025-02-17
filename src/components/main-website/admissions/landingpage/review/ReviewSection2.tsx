@@ -23,13 +23,12 @@ const ReviewSection2: React.FC<ReviewSection2Props> = ({ onComplete }) => {
 
   // Function to validate the form fields
   const validateForm = () => {
-    const infraValid =
+    const isValid =
       Boolean(Overall.title.trim()) &&
-      Overall.review.length >= 150 &&
-      Overall.rating > 0 &&
-      Overall.file !== null;
+      Overall.rating > 0;
+      // Removed the check for Overall.file !== null
 
-    setIsFormValid(infraValid);
+    setIsFormValid(isValid);
   };
 
   // useEffect hook to run validation whenever form data changes
@@ -66,7 +65,7 @@ const ReviewSection2: React.FC<ReviewSection2Props> = ({ onComplete }) => {
 
   return (
     <div className="flex justify-center pt-1 sm:pt-8 w-full font-poppins">
-      <div className=" p-8  w-full sm:w-1/2 rounded-md bg-transparent sm:bg-white">
+      <div className="p-8 w-full sm:w-1/2 rounded-md bg-transparent sm:bg-white">
         <div className="w-full">
           {/* Overall Section */}
           <div className="mb-8">
@@ -84,13 +83,7 @@ const ReviewSection2: React.FC<ReviewSection2Props> = ({ onComplete }) => {
                 value={Overall.review}
                 onChange={(e) => handleInputChange(e, 'review')}
                 className="border p-2 w-full rounded"
-                minLength={150}
               />
-              <p className="text-sm text-red-500">
-                {Overall.review.length < 150
-                  ? 'Description cannot be less than 150 characters.'
-                  : ''}
-              </p>
               <div className="flex items-center">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <span
