@@ -30,7 +30,7 @@ export default function SignPopup({ modalIsOpen, closeModal }: any) {
           </div>
   
           {/* Right Side - Forms */}
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2 sm:w-full">
           <h1 className="text-3xl font-poppins font-semibold text-center pt-4">Registration Form</h1>
           <div className="pt-5">
           <Static/>

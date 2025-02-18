@@ -55,7 +55,7 @@
   font-weight: 600;
   font-size: 15px;
   display:flex;
-  padding: 12px 20px !important;
+  padding: 2px 1px !important;
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 

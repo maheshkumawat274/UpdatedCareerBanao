@@ -35,7 +35,7 @@ const FloatingEnquiryButton = () => {
   }
 
   return (
-    <div className="fixed top-[30vh] right-0 transform -translate-y-1/2 bg-purple-700 text-white font-bold px-4 py-2 rounded-l-lg shadow-lg hover:bg-pink-500 transition-all rotate-[-90deg] origin-bottom-right flex items-center gap-2">
+    <div className="fixed top-[30vh] z-20 right-0 transform -translate-y-1/2 bg-purple-700 text-white font-bold px-4 py-2 rounded-l-lg shadow-lg hover:bg-pink-500 transition-all rotate-[-90deg] origin-bottom-right flex items-center gap-2">
       <button onClick={Contacthandle} type="button" className="npfWidgetButton npfWidget-b214bb41b7025009877617366f69b11c">
         Enquire Now!
       </button>

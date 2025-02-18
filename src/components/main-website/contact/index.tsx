@@ -116,9 +116,9 @@ const Contact = () => {
       <div className="contact-container font-popins w-full relative flex justify-center items-center mt-0 sm:mt-14">
         <div
           style={boxShadow}
-          className="contact-main gap-2 relative w-full sm:w-1/2 px-10 py-8 flex flex-col-reverse lg:flex-row lg:bg-white"
+          className="contact-main gap-2 relative lg:w-[50rem] xl:w-1/2 px-2 sm:px-10 py-8 flex flex-col-reverse lg:flex-row lg:bg-white"
         >
-          <div className="contact-left font-sans my-auto w-full lg:w-2/4 text-center">
+          <div className="contact-left font-sans my-auto w-full  lg:w-2/4 text-center">
             <div className="w-full lg:w-3/4">
               <IoLocation size={20} className="inline-block text-center text-purple-700" />
               <h2 className="text-black m-0 mt-1 text-[18px] font-[500]">Address</h2>
