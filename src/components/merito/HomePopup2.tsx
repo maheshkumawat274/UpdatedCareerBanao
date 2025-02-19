@@ -18,7 +18,7 @@ function HomePopUp2() {
 
     const interval = setTimeout(() => {
       showPopup();
-      setDelay((prevDelay) => prevDelay + 20000); // Increase delay by 10 sec
+      setDelay((prevDelay) => prevDelay + 2000000); // Increase delay by 10 sec
     }, delay);
 
     return () => clearTimeout(interval);
