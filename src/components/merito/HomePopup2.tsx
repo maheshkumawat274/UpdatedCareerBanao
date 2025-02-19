@@ -34,10 +34,10 @@ function HomePopUp2() {
     <div className="pop-container fixed top-0 left-0 w-full h-full flex justify-center items-center z-[1000] bg-black bg-opacity-50 p-5 overflow-y-auto">
       <div
         style={customStyle}
-        className="main-popup w-full lg:w-[65rem] xl:w-4/6 bg-[#f7f7f7] p-2 pb-5 rounded-lg max-h-[90vh] overflow-y-auto"
+        className="main-popup w-full lg:w-[65rem] xl:w-[55rem] bg-[#f7f7f7] p-2 pb-5 rounded-lg max-h-[90vh] overflow-y-auto"
       >
         <div className="popup-content lg:h-[32rem] xl:h-[32rem] flex flex-col-reverse md:flex-row">
-          <div className="popup-left-content bg-[#983fd4] p-5 justify-center items-center rounded-l-lg hidden md:flex">
+          <div className="popup-left-content bg-[#983fd4] xl:w-[40rem] p-5 justify-center items-center rounded-l-lg hidden md:flex">
             <div className="why-register font-poppins mt-4 p-4 rounded-lg text-sm text-white">
               <h1 className="font-semibold text-white text-2xl mb-2">Why register with us?</h1>
               <ul className="list-disc pl-5 space-y-4">
@@ -49,7 +49,7 @@ function HomePopUp2() {
             </div>
           </div>
 
-          <div className="popup-right w-full lg:w-2/3 p-0 sm:p-5">
+          <div className="popup-right w-full lg:w-2/3 p-0 sm:p-5 xl:p-3">
             <div className="popup-header max-h-[60px] lg:max-h-full mt-5 lg:mt-0 xl:mt-0 flex sm:gap-2">
               <div className="pop-header-left w-[15%] lg:w-[20%] flex justify-center items-center">
                 <div className="w-[70px] h-[50px] lg:w-[100px] flex items-center lg:h-[100px] rounded-full">
