@@ -20,6 +20,8 @@ import UniversityLayout from "./pages/landingpage/UniversityLayout";
 import TopContent from "./components/main-website/admissions/landingpage/review/TopContent";
 import ReviewRoutes from "./routes/ReviewRoutes";
 import FloatingEnquiryButton from "./components/merito/FloatingEnquiryButton";
+import Contact from "./components/main-website/contact";
+
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const dispatch = useDispatch();
@@ -100,6 +102,7 @@ function App() {
             }
           />
         ))}
+        <Route path="/apply_now" element={<Contact/>}/>
       </Routes>
       <Chatbot/>
       <WhatsAppBtn/>

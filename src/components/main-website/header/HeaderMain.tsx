@@ -15,22 +15,26 @@ import {
 } from "react-icons/fa";
 import { SiQuora, SiThreads } from "react-icons/si";
 import { HiMenu } from "react-icons/hi";
-import { CgProfile } from "react-icons/cg";
+// import { CgProfile } from "react-icons/cg";
 import { IoClose } from "react-icons/io5";
 import { FiArrowRight } from "react-icons/fi";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { setShowPopUp } from "src/redux/loginSignupSlice";
+import { Link, useNavigate } from "react-router-dom";
+import {useSelector } from "react-redux";
+// import { setShowPopUp } from "src/redux/loginSignupSlice";
 import { Dropdown } from "antd"
 import { menuConfig } from "src/utils/constants";
+import Applybtn from "./Applybtn";
 const HeaderMain: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const [isScrolled, setIsScrolled] = useState(false);
+  
+  const navigate = useNavigate(); // Initialize navigation function
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
    // Add a scroll event listener to toggle `isScrolled`
    useEffect(() => {
+    
      const handleScroll = () => {
        if (window.scrollY > 50) {
          setIsScrolled(true);
@@ -118,8 +122,7 @@ const HeaderMain: React.FC = () => {
     { name: "Home", path: "/" },
     { name: "Admission", path: "/admissions" },
     { name: "College Finder", path: "/CollegeFinder" },
-    { name: "Join Us", path: "/joinus" },
-    { name: "Contact Us", path: "/contact" },
+    { name: "Contact Us", path: "/contact" }
   ];
   return (
     <header>
@@ -253,7 +256,7 @@ const HeaderMain: React.FC = () => {
         );
       })}
     </nav>
-        <div className="hidden md:block">          
+        {/* <div className="hidden md:block">          
           <button
             onClick={() => { dispatch(setShowPopUp()) }}                
             type="button"
@@ -262,9 +265,12 @@ const HeaderMain: React.FC = () => {
             <CgProfile size={30} className="cursor-pointer"  />
           </button> 
               
-        </div>
+        </div> */}
 
         {/* Mobile Menu Toggle */}
+        <div className="hidden md:block" onClick={()=>navigate('/apply_now')}>
+        <Applybtn/>
+        </div>
         <div className="md:hidden">
           <button
             onClick={() => setIsMenuOpen(true)}
@@ -301,8 +307,7 @@ const HeaderMain: React.FC = () => {
             { name: "Admission", path:"#", dropdown: true },
             { name: "College Finder", path: "/CollegeFinder" },
             { name: "Counselling", path:'#', dropdown: true },
-            { name: "Join Us", path: "/joinus" },
-            { name: "Contact Us", path: "/contact" },
+            { name: "Contact Us", path: "/contact" }
           ].map((item, index) => {
             if (item.dropdown && item.name === "Admission") {
               return (
@@ -350,10 +355,12 @@ const HeaderMain: React.FC = () => {
               </Link>
             );
           })}
+          
         </nav>
-
-
+        <div className="px-5" onClick={()=>navigate('/apply_now')}><Applybtn/></div>
+        
       </div>
+      
 
       {/* Overlay (Closes Menu on Click) */}
       {isMenuOpen && (

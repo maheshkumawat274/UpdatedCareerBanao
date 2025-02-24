@@ -95,13 +95,15 @@
 // export default Contact;
 
 // import "./contact.css";
-
 import { IoLocation } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMailSharp } from "react-icons/io5";
+import { useLocation } from "react-router-dom"; // Import useLocation
 import Static from "src/components/merito/Static";
 
 const Contact = () => {
+  const location = useLocation(); // Get the current route
+
   const style = {
     letterSpacing: "2px",
   };
@@ -118,7 +120,7 @@ const Contact = () => {
           style={boxShadow}
           className="contact-main gap-2 relative lg:w-[50rem] xl:w-1/2 px-2 sm:px-10 py-8 flex flex-col-reverse lg:flex-row lg:bg-white"
         >
-          <div className="contact-left font-sans my-auto w-full  lg:w-2/4 text-center">
+          <div className="contact-left font-sans my-auto w-full lg:w-2/4 text-center hidden md:block">
             <div className="w-full lg:w-3/4">
               <IoLocation size={20} className="inline-block text-center text-purple-700" />
               <h1 className="text-black m-0 mt-1 text-[18px] font-[500]">Address</h1>
@@ -142,14 +144,18 @@ const Contact = () => {
               style={style}
               className="letterSpace text-[18px] text-center lg:text-start lg:text-[23px] text-purple-700 font-[600]"
             >
-              SEND US A MESSAGE
+              {location.pathname === "/apply_now"
+                ? "Register Now To Apply\nGet details and latest updates"
+                : "SEND US A MESSAGE"}
             </h1>
             {/* Contact Form */}
-            <Static/>
+            <div className="mt-2">
+            <Static />
+            </div>
           </div>
         </div>
       </div>
-      </>
+    </>
   );
 };
 
