@@ -30,7 +30,7 @@ const joinUsData = [
 function JoinUs() {
   return (
     <div className="JoinUs">
-      <h2>Join us ! Why?</h2>
+      <h1>Join us ! Why?</h1>
 
 
        <div className="join-us-container flex flex-wrap justify-evenly p-10">

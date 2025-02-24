@@ -148,10 +148,10 @@ const CollegeCards: React.FC = () => {
                 <img src={college.logo} alt={`${college.name} Logo`} className="absolute top-3 left-3 w-12 h-12 rounded-full border-2 border-white shadow-md" />
               </div>
               <div className="p-4">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2 flex items-center">
+                <h1 className="text-lg font-semibold text-gray-800 mb-2 flex items-center">
                   <FaUniversity className="text-primaryBtn mr-2" />
                   {college.name}
-                </h3>
+                </h1>
                 <p className="text-sm text-gray-600 flex items-center mb-3">
                   <FaMapMarkerAlt className="text-red-500 mr-2" /> {college.location}
                 </p>

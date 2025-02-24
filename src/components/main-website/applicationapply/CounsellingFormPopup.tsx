@@ -139,10 +139,10 @@ function CounsellingFormPopup({ collegeName }: any) {
                     </MyForm>
                     <div className="form-footer flex flex-col lg:flex-row">
                         <div className="form-footer-left w-full lg:w-3/4">
-                            <h3 className="text-primaryNavText text-sm lg:text-base font-semibold">
+                            <h1 className="text-primaryNavText text-sm lg:text-base font-semibold">
                                 <Checkbox onChange={validateHandler} checked={isCheck} />
                                 {" "}By submitting this form , you accept and agree to our  <Link to={"/terms-and-conditions"} className="text-blue-600">Terms of Use.</Link>
-                            </h3>
+                            </h1>
                         </div>
                         <div className="form-footer-right w-full lg:w-1/4 flex items-end">
                             <button type="submit" onClick={submitHandler} disabled={!isCheck} className={`rounded-3xl w-full lg:w-[80] lg:h-[80%] text-white p-1 ${isCheck ? "bg-primaryBtn hover:bg-hoverBtn cursor-pointer" : "bg-slate-400 cursor-not-allowed"}`}>SUBMIT</button>

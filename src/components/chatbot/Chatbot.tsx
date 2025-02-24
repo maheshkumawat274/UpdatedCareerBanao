@@ -219,6 +219,8 @@ const Chatbot: React.FC = () => {
     setShowPopup(false); // Hide popup if chat is opened
   };
 
+ 
+
   const sendMessage = () => {
     if (!inputValue.trim()) return;
 
@@ -238,7 +240,7 @@ const Chatbot: React.FC = () => {
         ...prev,
         {
           sender: "chatbot",
-          text: "Could you please help me with your <br>NAME:<br> PHONE NUMBER: ?",
+          text: "Could you please provide your <br>NAME: ?",
         },
       ]);
       setStep(2);
@@ -247,7 +249,7 @@ const Chatbot: React.FC = () => {
         ...prev,
         {
           sender: "chatbot",
-          text: "Are you connected to any other counselor?",
+          text: "Could you please provide your <br>PHONE NUMBER: ?",
         },
       ]);
       setStep(3);
@@ -256,11 +258,38 @@ const Chatbot: React.FC = () => {
         ...prev,
         {
           sender: "chatbot",
+          text: "Which state are you from?",
+        },
+      ]);
+      setStep(4);
+    } else if (step === 4) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          sender: "chatbot",
+          text: "Which city are you from?",
+        },
+      ]);
+      setStep(5);
+    } else if (step === 5) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          sender: "chatbot",
+          text: "Are you connected to any other counselor?",
+        },
+      ]);
+      setStep(6);
+    } else if (step === 6) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          sender: "chatbot",
           text:
             "Thank you for reaching out to us!<br>Our Program expert CareerBanao Mentor will contact you shortly.<br>Meanwhile, please do not share your number with any other source to avoid multiple calls.",
         },
       ]);
-      setStep(4);
+      setStep(7);
     }
 
     setInputValue("");
@@ -344,7 +373,7 @@ const Chatbot: React.FC = () => {
           </div>
 
           {/* Chat Footer */}
-          {step < 4 && (
+          {step < 7 && (
             <div className="flex items-center px-2 sm:px-4 py-2 bg-gray-100 rounded-b-lg">
               <div className="relative flex-grow">
                 <input

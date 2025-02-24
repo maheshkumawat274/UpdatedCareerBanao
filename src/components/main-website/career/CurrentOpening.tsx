@@ -26,7 +26,7 @@ function CurrentOpening() {
   return (
      <div className="bg-[#EDEDE9] p-6 font-poppins">
         <div id="currentOpening" className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Current Openings</h2>
+          <h1 className="text-3xl font-bold text-gray-800 mb-4">Current Openings</h1>
           <p className="text-gray-600 text-lg">
             Check out all the openings here. We'll be happy to hear from you. If
             you're interested to work with us, just send across your resume to us.

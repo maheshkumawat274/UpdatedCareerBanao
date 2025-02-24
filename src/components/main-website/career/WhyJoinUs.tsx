@@ -62,7 +62,7 @@ const WhyJoinUs: React.FC = () => {
     // </div>
     <div className='bg-[#EDEDE9] font-poppins'>
       <div className="text-center pt-8">
-        <h2 className="text-3xl font-semibold uppercase">Why Join Us</h2>
+        <h1 className="text-3xl font-semibold uppercase">Why Join Us</h1>
       </div>
       <div className='py-4 pb-8 px-0 lg:px-[200px]' style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
       

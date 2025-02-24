@@ -53,17 +53,17 @@
 //                 <div className="contact-left font-sans my-auto w-full lg:w-2/4 text-center ">
 //                     <div className='w-full lg:w-3/4'>
 //                         <IoLocation size={20} className='inline-block text-center text-purple-700' />
-//                         <h2 className='text-black m-0 mt-1 text-[18px] font-[500]'>Address</h2>
+//                         <h1 className='text-black m-0 mt-1 text-[18px] font-[500]'>Address</h1>
 //                         <p className='text-[14px] mb-8 text-[#afafb6]'>Spring Meadows Business Park, Sector 63,Noida, Uttar Pradesh 201301</p>
 //                     </div>
 //                     <div className='w-full lg:w-3/4'>
 //                         <FaPhoneAlt size={20} className='inline-block text-center text-purple-700' />
-//                         <h2 className='text-black m-0 mt-1 text-[18px] font-[500]'>Phone</h2>
+//                         <h1 className='text-black m-0 mt-1 text-[18px] font-[500]'>Phone</h1>
 //                         <p className='text-[14px] mb-8 text-[#afafb6]'>+91 8750092628</p>
 //                     </div>
 //                     <div className='w-full lg:w-3/4'>
 //                         <IoMailSharp size={20} className='inline-block text-center text-purple-700' />
-//                         <h2 className='text-black m-0 mt-1 text-[18px] font-[500]'>Email</h2>
+//                         <h1 className='text-black m-0 mt-1 text-[18px] font-[500]'>Email</h2>
 //                         <p className='text-[14px] mb-8 text-[#afafb6]'>infocareerbanao@gmail.com</p>
 //                     </div>
 
@@ -121,19 +121,19 @@ const Contact = () => {
           <div className="contact-left font-sans my-auto w-full  lg:w-2/4 text-center">
             <div className="w-full lg:w-3/4">
               <IoLocation size={20} className="inline-block text-center text-purple-700" />
-              <h2 className="text-black m-0 mt-1 text-[18px] font-[500]">Address</h2>
+              <h1 className="text-black m-0 mt-1 text-[18px] font-[500]">Address</h1>
               <p className="text-[14px] mb-8 text-[#afafb6]">
                 Spring Meadows Business Park, Sector 63, Noida, Uttar Pradesh 201301
               </p>
             </div>
             <div className="w-full lg:w-3/4">
               <FaPhoneAlt size={20} className="inline-block text-center text-purple-700" />
-              <h2 className="text-black m-0 mt-1 text-[18px] font-[500]">Phone</h2>
+              <h1 className="text-black m-0 mt-1 text-[18px] font-[500]">Phone</h1>
               <p className="text-[14px] mb-8 text-[#afafb6]">+91 8750092628</p>
             </div>
             <div className="w-full lg:w-3/4">
               <IoMailSharp size={20} className="inline-block text-center text-purple-700" />
-              <h2 className="text-black m-0 mt-1 text-[18px] font-[500]">Email</h2>
+              <h1 className="text-black m-0 mt-1 text-[18px] font-[500]">Email</h1>
               <p className="text-[14px] mb-8 text-[#afafb6]">infocareerbanao@gmail.com</p>
             </div>
           </div>

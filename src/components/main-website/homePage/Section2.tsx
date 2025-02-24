@@ -81,7 +81,7 @@ const Section2 = () => {
               src="./logo/iilm.png"
               alt="Products"
             />
-          </div>
+        </div>
         </div>
       </div>
     </div>

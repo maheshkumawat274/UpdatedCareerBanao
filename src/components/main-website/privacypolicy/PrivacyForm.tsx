@@ -137,8 +137,8 @@ function PrivacyForm() {
 
     return (
         <div className="Contact-for font-poppins bg-[#EDEDE9] mt-4">
-            <h2 className="font-normal m-0 text-2xl sm:text-3xl text-center">Get in touch with our </h2>
-            <h2 className="text-1xl sm:text-2xl m-0 font-semibold text-center">expert counsellors</h2>
+            <h1 className="font-normal m-0 text-2xl sm:text-3xl text-center">Get in touch with our </h1>
+            <h1 className="text-1xl sm:text-2xl m-0 font-semibold text-center">expert counsellors</h1>
 
             <div className="form">
                 <div className="flex flex-col" >

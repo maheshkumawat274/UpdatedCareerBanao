@@ -7,7 +7,7 @@ const Section7: React.FC = () => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate('/review'); // Navigate to the review section
+    navigate('/review'); 
   };
 
   return (

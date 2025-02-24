@@ -43,7 +43,7 @@ const JobCard = ({ data }: any) => {
         <div
           className="bg-white shadow-lg rounded-lg p-6 w-80 transform transition-transform hover:scale-105 hover:shadow-2xl"
         >
-          <h3 className="text-lg font-bold text-gray-800 mb-2">{data.job_title}</h3>
+          <h1 className="text-lg font-bold text-gray-800 mb-2">{data.job_title}</h1>
           <p className="text-sm text-gray-600 mb-1">
             <strong>Designation:</strong> {data.job_designation}
           </p>

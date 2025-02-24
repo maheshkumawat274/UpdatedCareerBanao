@@ -63,9 +63,9 @@ const Meeting: React.FC = () => {
       <div className="flex flex-col pb-4 md:flex-row items-center justify-between gap-5">
         {/* Left Content */}
         <div className="w-full md:w-1/2 space-y-5">
-          <h2 className="text-purple-700 font-semibold text-2xl md:text-2xl">
+          <h1 className="text-purple-700 font-semibold text-2xl md:text-2xl">
            Experience real conversations with no filters
-          </h2>
+          </h1>
           <p className="text-lg text-gray-700">
            Try our Video Counselling for free!
           </p>

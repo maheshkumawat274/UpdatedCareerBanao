@@ -117,7 +117,7 @@
 //         </div>
 
 //         <div className="flex-1">
-//           <h2 className="font-bold text-md text-gray-900">{collegeName}</h2>
+//           <h1 className="font-bold text-md text-gray-900">{collegeName}</h1>
 //           <div className="flex items-center gap-1 text-sm text-gray-600 mt-1">
 //             <MapPinIcon className="h-4 w-4 text-orange-500" />
 //             {collegeAddress}
@@ -290,7 +290,7 @@ function ExamCard({ data, isLoading }: ExamCardType) {
         </div>
 
         <div className="flex-1">
-          <h2 className="font-bold text-md text-gray-900">{collegeName}</h2>
+          <h1 className="font-bold text-md text-gray-900">{collegeName}</h1>
           <div className="flex items-center gap-1 text-sm text-gray-600 mt-1">
             <MapPinIcon className="h-4 w-4 text-purple-700" />
             {collegeAddress}

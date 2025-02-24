@@ -16,9 +16,9 @@ const CollegeFinder: React.FC = () => {
       };
   return (
     <div className="bg-gradient-to-r mt-5 font-poppins from-[#983fd4] to-[#e46ab3] text-white pt-4 sm:pt-16 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-24 rounded-lg shadow-lg">
-      <h2 className="text-2xl sm:text-3xl md:text-4xl text-white font-semibold mb-6 text-center">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl text-white font-semibold mb-6 text-center">
         Find Your Dream College
-      </h2>
+      </h1>
       <p className="text-lg lg:text-xl font-light text-left sm:text-center mb-12 max-w-3xl mx-auto">
         Take the first step towards your future by exploring a wide range of
         top-tier colleges. Compare programs, campuses, and opportunities to
@@ -27,7 +27,7 @@ const CollegeFinder: React.FC = () => {
       <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
         {/* Left Card */}
         <div className="bg-white text-gray-900 rounded-lg shadow-md p-6 w-full lg:w-1/3 transform transition-transform hover:scale-105">
-          <h3 className="text-2xl font-bold mb-4 text-center">Explore Colleges</h3>
+          <h1 className="text-2xl font-bold mb-4 text-center">Explore Colleges</h1>
           <p className="text-base text-gray-700 mb-6 text-center">
             Discover detailed information about colleges, including their
             programs, campus life, rankings, and much more.
@@ -50,7 +50,7 @@ const CollegeFinder: React.FC = () => {
 
         {/* Right Card */}
         <div className="bg-white text-gray-900 rounded-lg shadow-md p-6 w-full lg:w-1/3 transform transition-transform hover:scale-105">
-          <h3 className="text-2xl font-bold mb-4 text-center">Career Guidance</h3>
+          <h1 className="text-2xl font-bold mb-4 text-center">Career Guidance</h1>
           <p className="text-base text-gray-700 mb-6 text-center">
             Get personalized career advice to help you choose the best program
             and college to achieve your goals.
