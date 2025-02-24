@@ -7,7 +7,7 @@ const Applybtn = () => {
   class="font-sans flex justify-center gap-2 items-center mx-auto shadow-xl text-lg text-gray-50 bg-primaryBtn backdrop-blur-md lg:font-semibold isolation-auto before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-pink-400 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden border-2 rounded-full group"
   type="submit"
 >
-  <p className='text-sm'>Apply now</p>
+  <p className='text-sm'>Apply Now</p>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 19"
