@@ -39,7 +39,7 @@ const Footer = () => {
                 </Link>
               </div>
               <div className="footer-menu">
-                <h1 className="footer-menu-name mt-5">Contact info</h1>
+                <h1 className="footer-menu-name">Contact info</h1>
                 <ul id="menu-get-started" className="footer-menu-list">
                   <li className="menu-item menu-item-type-post_type menu-item-object-product">
                     <PhoneOutlined
@@ -154,8 +154,8 @@ const Footer = () => {
                   Get in Touch{" "}
                 </Link>
               </div>
-              <div className="footer-call-to-action mt-2">
-                <h1 className="footer-call-to-action-title"> Call Us</h1>
+              <div className="mt-3">
+                <h1> Call Us</h1>
                 <p className="footer-call-to-action-link-wrapper">
                   {" "}
                   <Link
