@@ -14,6 +14,7 @@ import PrivacyForm from "src/components/main-website/privacypolicy/PrivacyForm";
 import Section7 from "src/components/main-website/homePage/Section7";
 import CollegeCards from "src/components/main-website/homePage/CollegeCards.";
 import StagesSection from "src/components/main-website/homePage/StagesSection";
+import Blogs from "src/components/main-website/blogs/Blogs";
 function HomePage() {
   return (
     <div className="relative p-[20px] overflow-x-hidden">
@@ -32,6 +33,7 @@ function HomePage() {
       <Section6 />
       <Section3 />
       <Section7/>
+      <Blogs/>
       <div className="mt-7">
       <PrivacyForm/>
       </div>
