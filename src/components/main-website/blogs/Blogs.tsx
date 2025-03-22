@@ -54,6 +54,13 @@ const Blogs = () => {
       link:"https://enquiry.careerbanao.org/?utm_source=website&utm_medium=quantum_blog&utm_campaign=latest%20updates"
     }
   ];
+  const handleClick = (url: string) => {
+    const newTab = window.open(url, "_blank", "noopener,noreferrer");
+    if (newTab) {
+      newTab.opener = null;
+    }
+  };
+  
 
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-center py-10 font-poppins">
@@ -81,7 +88,7 @@ const Blogs = () => {
               {blogData[0].title}
             </h1>
             <p className="text-md text-gray-500 mt-2">{blogData[0].description}</p>
-            <a href={blogData[0].link}>
+            <a onClick={() => handleClick(blogData[0].link)}>
             <button className="mt-2 px-4 py-2 bg-primaryBtn hover:bg-hoverBtn text-white text-sm rounded">
               Visit more
             </button>
@@ -125,7 +132,7 @@ const Blogs = () => {
         </h1>
         {/* Description (Show full content) */}
         <p className="text-sm text-gray-500 mt-1">{blog.description}</p>
-        <a href={blog.link}>
+        <a onClick={() => handleClick(blog.link)}>
         <button className="mt-2 px-4 py-2 bg-primaryBtn hover:bg-hoverBtn text-white text-sm rounded">
           Visit more
         </button>

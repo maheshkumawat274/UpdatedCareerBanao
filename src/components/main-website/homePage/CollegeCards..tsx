@@ -222,6 +222,14 @@ const settings = {
   ]
 };
 
+const handleClick = (url: string) => {
+  const newTab = window.open(url, "_blank", "noopener,noreferrer");
+  if (newTab) {
+    newTab.opener = null;
+  }
+};
+
+
 const CollegeCards: React.FC = () => {
   return (
     <div className="bg-[#EDEDE9] font-poppins mt-14 px-0 sm:px-4">
@@ -253,7 +261,7 @@ const CollegeCards: React.FC = () => {
                     </li>
                   ))}
                 </ul>
-                <a href={college.link}>
+                <a onClick={() => handleClick(college.link)}>
                   <button className="bg-primaryBtn hover:bg-hoverBtn text-white py-2 px-4 rounded-lg text-sm font-medium w-full transition">
                     <FaAward className="inline-block mr-2" /> Visit More
                   </button>
