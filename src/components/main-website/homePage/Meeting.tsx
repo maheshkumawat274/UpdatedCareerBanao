@@ -3,25 +3,22 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import UnivercitiesLogoSlider from "./UnivercitiesLogoSlider";
-// import { ContactForm } from "./Section5";
-import { useNavigate } from "react-router-dom";
+import { ContactForm } from "./Section5";
+import { useState } from "react";
 
 const Meeting: React.FC = () => {
-  const navigate = useNavigate()
-  // const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
-  // const hideForm = () => {
-  //   setShowForm(false);
-  // };
+  const hideForm = () => {
+    setShowForm(false);
+  };
 
-  // const submitHandler = (values:any) => {
-  //   console.log("Form Submitted", values);
-  //   // Handle form submission here, like making an API call
-  // };
+  const submitHandler = (values:any) => {
+    console.log("Form Submitted", values);
+    // Handle form submission here, like making an API call
+  };
 
-  const Contacthandle = () =>{
-    navigate('/contact')
-  }
+  
   const sliderData = [
     "Which University aligns with my career goals? Ask Our Expert Counsellors.",
     "Unlock your potential with guidance from experienced counsellors.",
@@ -70,18 +67,18 @@ const Meeting: React.FC = () => {
            Try our Video Counselling for free!
           </p>
           <div>
-           {/* <button onClick={() => setShowForm(true)} className="px-5 py-3 bg-purple-700 text-white rounded-lg shadow-md hover:bg-pink-500">
-            BOOK NOW
-           </button> */}
-           <button onClick={Contacthandle} className="px-5 py-3 bg-purple-700 text-white rounded-lg shadow-md hover:bg-pink-500">
+           <button onClick={() => setShowForm(true)} className="px-5 py-3 bg-purple-700 text-white rounded-lg shadow-md hover:bg-pink-500">
             BOOK NOW
            </button>
-           {/* <ContactForm
+           {/* <button  className="px-5 py-3 bg-purple-700 text-white rounded-lg shadow-md hover:bg-pink-500">
+            BOOK NOW
+           </button> */}
+           <ContactForm
             showForm={showForm}
             hideForm={hideForm}
             submitHandler={submitHandler}
             referFriend={false} 
-           /> */}
+           />
           </div>
           <div className=" " style={{overflow: "hidden"  }}>
         <div className="w-full">

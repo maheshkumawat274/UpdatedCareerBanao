@@ -64,10 +64,10 @@ const Blogs = () => {
 
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-center py-10 font-poppins">
-      <span className="text-md md:text-lg font-bold text-black flex items-center gap-1">
+      <span className="text-md md:text-lg font-poppins font-bold text-gray-700 flex items-center gap-1">
         <IonIcon icon={schoolOutline} /> Admission Updates
       </span>
-      <h2 className="text-4xl sm:text-5xl md:text-7xl text-center chelsea-market-regular font-bold text-black md:mb-16 mb-10">
+      <h2 className="text-4xl sm:text-5xl md:text-65xl font-poppins text-center font-bold text-gray-700 md:mb-16 mb-10">
         Latest Updates
       </h2>
 

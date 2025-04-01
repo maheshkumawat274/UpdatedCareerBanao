@@ -6,8 +6,8 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { menuConfig } from 'src/utils/constants';
 import HeaderMain from "./HeaderMain";
-import HomePopUp2 from "src/components/merito/HomePopup2";
 import SignPopup from "src/components/merito/SignPopup";
+import HomePopUp from '../homePage/HomePopUp';
 
 function Header() {
   const isLoginSignUpPopUp = useSelector((state:any)=> state.loginSignUpPopUp);
@@ -27,7 +27,7 @@ function Header() {
   return ( 
     <div>
       <ToastContainer pauseOnHover={false}/>
-      {showHomePopup && <HomePopUp2/>}
+      {showHomePopup && <HomePopUp/>}
       {/* <NavBar/> */}
        <HeaderMain/>
       <SignPopup modalIsOpen={isLoginSignUpPopUp} closeModal={closeModal}/>

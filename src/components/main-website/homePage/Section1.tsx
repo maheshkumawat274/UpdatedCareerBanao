@@ -36,32 +36,28 @@
 // export default Section1;
 
 
-// import useFetch from "hooks/useFetch";
-import { useNavigate } from "react-router-dom";
+import useFetch from "hooks/useFetch";
 import "./home.css";
-// import BaseUrl from "utils/baseurl";
-// import { ContactForm } from "./Section5";
-// import { useState } from "react";
+import BaseUrl from "utils/baseurl";
+import { ContactForm } from "./Section5";
+import { useState } from "react";
 
 const Section1 = () => {
-  const navigate = useNavigate()
-  // const [data] = useFetch(`${BaseUrl}/getWhatsAppUrl`);
+  const [data] = useFetch(`${BaseUrl}/getWhatsAppUrl`);
 
 
-    // const [showForm, setShowForm] = useState(false);
+    const [showForm, setShowForm] = useState(false);
   
-    // const hideForm = () => {
-    //   setShowForm(false);
-    // };
+    const hideForm = () => {
+      setShowForm(false);
+    };
   
-    // const submitHandler = (values:any) => {
-    //   console.log("Form Submitted", values);
-    //   // Handle form submission here, like making an API call
-    // };
+    const submitHandler = (values:any) => {
+      console.log("Form Submitted", values);
+      // Handle form submission here, like making an API call
+    };
   
-    const Contacthandle = ()=>{
-      navigate('/contact')
-    }
+    
   return (
     <div className="section1 font-poppins flex pb-[5rem]">
       {/* Section Container */}
@@ -90,19 +86,18 @@ const Section1 = () => {
 
             {/*contact form add*/}
             <button
-                // onClick={() => setShowForm(true)}
-                onClick={Contacthandle}
+                onClick={() => setShowForm(true)}
                 type="button"
                 className="border-2 border-purple-700 px-8 text-gray-700 p-2 hover:bg-purple-700 rounded-md hover:text-white text-[16px] font-semibold transition-all duration-300"
               >
                 Talk to College Expert
               </button>
-              {/* <ContactForm
+              <ContactForm
                 showForm={showForm}
                 hideForm={hideForm}
                 submitHandler={submitHandler}
                 referFriend={false} 
-              /> */}
+              />
           </div>
         </div>
 
