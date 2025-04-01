@@ -45,11 +45,12 @@
 /* Dropdown Menu Styling */
 .ant-dropdown-menu {
   background: #ffffff !important;
-  border-radius: 8px !important;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2) !important;
   padding: 8px 0;
   position: relative;
-  min-width: 250px;
+  left: 55px;
+  top: 10px;
+  min-width: 200px;
   gap: 5px;
 }
 
@@ -57,19 +58,18 @@
 .ant-dropdown-menu-item {
   color: #333333 !important; 
   font-weight: 600;
-  font-size: 15px;
   display:flex;
-
   padding: 8px 5px !important;
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-  border-bottom: 1px solid rgb(139, 136, 136);
+  
 }
 
 .ant-dropdown-menu-item:hover {
-  background-color: rgba(0, 0, 0, 0.1) !important; 
-  transform: scale(1.05);
-  border-radius: 6px;
+  /* background-color: rgba(0, 0, 0, 0.1) !important;  */
+  /* transform: scale(1.05); */
+  /* border-radius: 6px; */
   cursor: pointer;
+  
 }
 
 
@@ -78,7 +78,13 @@
   color: #333333 !important;
   text-decoration: none;
   display: flex;
-  padding-left: 60px;
+  padding-left: 10px;
+  font-size: 15px;
+  border-bottom: 1px solid rgb(221, 216, 216);
+}
+.ant-dropdown-menu-item a:hover {
+  padding-left: 20px;
+  color: purple !important;
 }
 
 /* Dropdown Arrow Styling */
@@ -86,7 +92,7 @@
   content: '';
   position: absolute;
   top: -8px;
-  left: 50%;
+  left: 10%;
   transform: translateX(-50%);
   width: 0;
   height: 0;

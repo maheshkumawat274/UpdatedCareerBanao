@@ -24,6 +24,7 @@ import {useSelector } from "react-redux";
 import { Dropdown } from "antd"
 import { menuConfig } from "src/utils/constants";
 import Applybtn from "./Applybtn";
+import { IoIosArrowDropdown } from "react-icons/io";
 const HeaderMain: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -120,7 +121,7 @@ const HeaderMain: React.FC = () => {
   }
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "Admission", path: "/admissions" },
+    { name: "Admission", path: "/admissions", icon: <IoIosArrowDropdown />  },
     { name: "College Finder", path: "/CollegeFinder" },
     { name: "Contact Us", path: "/contact" }
   ];
@@ -183,11 +184,13 @@ const HeaderMain: React.FC = () => {
         </div>
       </div>
 
+      
       {/* Main Header */}
-      <div className={`main-header bg-gradient-to-r from-[#983fd4] to-[#e46ab3] px-4 flex justify-between items-center shadow transition-transform duration-300 ${isScrolled ? "fixed top-0 w-full z-20" : ""}`}>
+      {/* bg-gradient-to-r from-[#983fd4] to-[#e46ab3] */}
+      <div className={`main-header bg-primaryBtn px-4 flex justify-between items-center shadow transition-transform duration-300 ${isScrolled ? "fixed top-0 w-full z-20" : ""}`}>
         {/* Logo */}
         <div className="header-section flex justify-between items-center text-white px-4 py-3 rounded-t-lg">
-            <div className="flex items-center gap-2  text-[32px] font-semibold">
+            <div className="flex items-center gap-2 text-[32px] font-semibold">
               <img
                 src="./logo/CBlogo.jpg"
                 alt="CareerBanao"
@@ -201,21 +204,21 @@ const HeaderMain: React.FC = () => {
 
         <nav className="hidden nav-header font-semibold md:flex gap-8 text-[18px]">
       {menuItems.map((item, index) => {
-  if (item.name === "Admission") {
-    return (
-      <Dropdown
-        key={index}
-        overlayClassName="custom-dropdown"
-        menu={{ items: admissionItems }}
-        trigger={["hover"]}
-        placement="bottomCenter"
-      >
-        <div className="px-4 py-2 hover:bg-[#983fd4] text-white rounded transition cursor-pointer">
-          <p>{item.name}</p>
-        </div>
-      </Dropdown>
-    );
-  }
+        if (item.name === "Admission") {
+          return (
+            <Dropdown
+              key={index}
+              overlayClassName="custom-dropdown"
+              menu={{ items: admissionItems }}
+              trigger={["hover"]}
+              placement="bottomCenter"
+            >
+              <div className="px-4 py-2 text-white rounded transition cursor-pointer">
+                <p className="flex gap-1 border-b-2 border-transparent hover:border-white transition-all duration-300">{item.name} </p>
+              </div>
+            </Dropdown>
+          );
+        }
         if (item.name === "College Finder") {
           return (
             <React.Fragment key={index}>
@@ -223,7 +226,7 @@ const HeaderMain: React.FC = () => {
                 to={item.path}
                 className="px-4 py-2 hover:bg-[#983fd4] text-white rounded transition"
               >
-                <p>{item.name}</p>
+                <p className="border-b-2 border-transparent hover:border-white transition-all duration-300">{item.name}</p>
               </Link>
 
               {/* Counselling Dropdown */}
@@ -234,7 +237,7 @@ const HeaderMain: React.FC = () => {
                 placement="bottomCenter"
               >
                 <div className="px-4 py-2 hover:bg-[#983fd4] text-white rounded transition cursor-pointer">
-                  <p>Counselling</p>
+                  <p className="border-b-2 border-transparent hover:border-white transition-all duration-300">Counselling</p>
                 </div>
               </Dropdown>
 
@@ -251,7 +254,7 @@ const HeaderMain: React.FC = () => {
             to={item.path}
             className="px-4 py-2 hover:bg-[#983fd4] text-white rounded transition"
           >
-            <p>{item.name}</p>
+            <p className="border-b-2 border-transparent hover:border-white transition-all duration-300">{item.name}</p>
           </Link>
         );
       })}

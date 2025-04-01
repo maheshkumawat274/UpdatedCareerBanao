@@ -93,7 +93,7 @@ const Section1 = () => {
                 // onClick={() => setShowForm(true)}
                 onClick={Contacthandle}
                 type="button"
-                className="border-2 border-purple-700 px-8 text-gray-700 p-2 hover:bg-purple-700 rounded-md hover:text-white text-[16px] font-semibold"
+                className="border-2 border-purple-700 px-8 text-gray-700 p-2 hover:bg-purple-700 rounded-md hover:text-white text-[16px] font-semibold transition-all duration-300"
               >
                 Talk to College Expert
               </button>
