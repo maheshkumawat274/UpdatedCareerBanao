@@ -1,5 +1,5 @@
 import useFetch from "hooks/useFetch";
-import CounselingLayout from "components/main-website/counseling/CounselingLayout";
+import CounselingLayout from "src/components/main-website/counseling/maincounselingpage/CounselingLayout";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";

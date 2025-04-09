@@ -25,6 +25,7 @@ import { Dropdown } from "antd"
 import { menuConfig } from "src/utils/constants";
 import Applybtn from "./Applybtn";
 import { IoIosArrowDropdown } from "react-icons/io";
+// import { key } from "ionicons/icons";
 const HeaderMain: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -73,39 +74,50 @@ const HeaderMain: React.FC = () => {
     },
   ]
 
-   let counsellingItems = [
-       {
-         key: "1",
-         label: (
-           <Link to={"/counselling/engineering"} onClick={() => setIsMenuOpen(false)}>
-             Engineering
-           </Link>
-         ),
-         title:menuConfig.counsEng
-       },
-       {
-         key: "2",
-         label: (
-           <Link to={"/counselling/management"} onClick={() => setIsMenuOpen(false)}>
-             Management
-           </Link>
-         ),
-         title:menuConfig.counsManag
-       },
-       {
-         key: "3",
-         label: (
-           <Link to={"/counselling/medical"} onClick={() => setIsMenuOpen(false)}>
-             Medical
-           </Link>
-         ),
-         title:menuConfig.counsMed
-       },
-     ]
+  let counsellingItems = [
+    {
+      key: "1",
+      label: <Link to={"/counselling/engineering"}>Engineering</Link>
+    },
+    {
+      key: "2",
+      label: <Link to={"/counselling/management"}>Management</Link>
+    },
+
+  ]
+  //  let counsellingItems = [
+  //      {
+  //        key: "1",
+  //        label: (
+  //          <Link to={"/counselling/engineering"} onClick={() => setIsMenuOpen(false)}>
+  //            Engineering
+  //          </Link>
+  //        ),
+  //        title:menuConfig.counsEng
+  //      },
+  //      {
+  //        key: "2",
+  //        label: (
+  //          <Link to={"/counselling/management"} onClick={() => setIsMenuOpen(false)}>
+  //            Management
+  //          </Link>
+  //        ),
+  //        title:menuConfig.counsManag
+  //      },
+  //      {
+  //        key: "3",
+  //        label: (
+  //          <Link to={"/counselling/medical"} onClick={() => setIsMenuOpen(false)}>
+  //            Medical
+  //          </Link>
+  //        ),
+  //        title:menuConfig.counsMed
+  //      },
+  //    ]
 
   // Fetch the list from Redux state
   const admlist = useSelector((state: any) => state.navList.admissionList);
-  const couslist = useSelector((state: any) => state.navList.counsellingList);
+  // const couslist = useSelector((state: any) => state.navList.counsellingList);
 
   
   if(admlist){
@@ -114,11 +126,11 @@ const HeaderMain: React.FC = () => {
     ))
   }
   // Filter items based on couslist
-  if (couslist) {
-    counsellingItems = counsellingItems.filter((item) =>
-      couslist.find((listItem: any) => item.title === listItem.module_name)
-    );
-  }
+  // if (couslist) {
+  //   counsellingItems = counsellingItems.filter((item) =>
+  //     couslist.find((listItem: any) => item.title === listItem.module_name)
+  //   );
+  // }
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "Admission", path: "/admissions", icon: <IoIosArrowDropdown />  },

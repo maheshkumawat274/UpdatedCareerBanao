@@ -1,22 +1,21 @@
 
-import { useDispatch, useSelector } from 'react-redux';
-import { setShowPopUp } from 'src/redux/loginSignupSlice';
+import { useSelector } from 'react-redux';
+// import { setShowPopUp } from 'src/redux/loginSignupSlice';
 import { ToastContainer } from 'react-toastify';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { menuConfig } from 'src/utils/constants';
 import HeaderMain from "./HeaderMain";
-import SignPopup from "src/components/merito/SignPopup";
 import HomePopUp from '../homePage/HomePopUp';
 
 function Header() {
-  const isLoginSignUpPopUp = useSelector((state:any)=> state.loginSignUpPopUp);
-  const dispatch = useDispatch();
+  // const isLoginSignUpPopUp = useSelector((state:any)=> state.loginSignUpPopUp);
+  // const dispatch = useDispatch();
   const [showHomePopup,setShowHomePopup] = useState(false)
   const location = useLocation()
-  const closeModal = () => {
-    dispatch(setShowPopUp());
-  };
+  // const closeModal = () => {
+  //   dispatch(setShowPopUp());
+  // };
   const homepopup:ApplicationConfigType[] = useSelector((state: any) => state.navList.data);
 
   useEffect(()=>{
@@ -30,7 +29,6 @@ function Header() {
       {showHomePopup && <HomePopUp/>}
       {/* <NavBar/> */}
        <HeaderMain/>
-      <SignPopup modalIsOpen={isLoginSignUpPopUp} closeModal={closeModal}/>
     </div>
   )
 }

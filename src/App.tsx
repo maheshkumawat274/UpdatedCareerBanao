@@ -19,8 +19,8 @@ import ScrollTop from "./components/main-website/ScrollTop";
 import UniversityLayout from "./pages/landingpage/UniversityLayout";
 import TopContent from "./components/main-website/admissions/landingpage/review/TopContent";
 import ReviewRoutes from "./routes/ReviewRoutes";
-import FloatingEnquiryButton from "./components/merito/FloatingEnquiryButton";
 import Contact from "./components/main-website/contact";
+import FloatingEnquiryButton from "./components/main-website/Enquirybtn";
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -77,9 +77,14 @@ function App() {
             <Route path={path} element={<Element />} key={i} />
           ))
         }
-        {
+        {/* {
           protectedRoutes.map(({ path, protected: Protected, element: Element }, i) => (
             <Route path={path} element={<Protected Component={Element} />} key={i} />
+          ))
+        } */}
+        {
+          protectedRoutes.map(({ path, element: Element }, i) => (
+            <Route path={path} element={<Element />} key={i} />
           ))
         }
         <Route path="/" element={<MainLayoutVideo />}>
