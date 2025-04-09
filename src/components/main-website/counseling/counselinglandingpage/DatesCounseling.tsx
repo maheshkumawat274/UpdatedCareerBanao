@@ -6,7 +6,7 @@ interface DateItem {
 }
 
 const ImportantDatesSection: React.FC = () => {
-  const [importantDates, setImportantDates] = useState<DateItem[]>([
+  const [importantDates] = useState<DateItem[]>([
     {
       event: "Online Registration & Payment",
       date: "July 5 - 15, 2024",

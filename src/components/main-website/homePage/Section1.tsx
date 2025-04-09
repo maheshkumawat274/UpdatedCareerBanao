@@ -36,14 +36,14 @@
 // export default Section1;
 
 
-import useFetch from "hooks/useFetch";
+// import useFetch from "hooks/useFetch";
 import "./home.css";
-import BaseUrl from "utils/baseurl";
+// import BaseUrl from "utils/baseurl";
 import { ContactForm } from "./Section5";
 import { useState } from "react";
 
 const Section1 = () => {
-  const [data] = useFetch(`${BaseUrl}/getWhatsAppUrl`);
+  // const [data] = useFetch(`${BaseUrl}/getWhatsAppUrl`);
 
 
     const [showForm, setShowForm] = useState(false);

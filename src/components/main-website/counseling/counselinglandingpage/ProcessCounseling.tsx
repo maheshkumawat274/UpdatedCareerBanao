@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 interface Step {
   id: number;
@@ -13,7 +13,7 @@ interface ProcessData {
 
 const ProcessSection: React.FC = () => {
   // Initial static data
-  const [process, setProcess] = useState<ProcessData>({
+  const [process] = useState<ProcessData>({
     title: "WBJEE Counselling Process",
     steps: [
       {

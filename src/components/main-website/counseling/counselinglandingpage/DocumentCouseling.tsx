@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 // Required Documents section
 const DocumentCounseling: React.FC = () => {
-  const [name, setName] = useState("WBJEE");
-  const [documents, setDocuments] = useState<string[]>([
+  const [name] = useState("WBJEE");
+  const [documents] = useState<string[]>([
     "WBJEE Rank Card",
     "WBJEE Admit Card",
     "Class 10th Mark Sheet and Certificate",
