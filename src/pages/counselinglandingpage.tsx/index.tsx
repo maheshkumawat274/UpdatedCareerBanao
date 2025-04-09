@@ -1,4 +1,5 @@
 
+import AboutCounseling from "src/components/main-website/counseling/counselinglandingpage/AboutCounseling"
 import ContactCounseling from "src/components/main-website/counseling/counselinglandingpage/ContactCounseling"
 import { HeroSectionCounseling } from "src/components/main-website/counseling/counselinglandingpage/CounselingHero"
 import ImportantDatesSection from "src/components/main-website/counseling/counselinglandingpage/DatesCounseling"
@@ -12,6 +13,7 @@ const CounselingLandingPageMain = () => {
   return (
     <>
      <HeroSectionCounseling/>
+     <AboutCounseling/>
      <KeyPointsSection/>
      <ProcessSection/>
      <EligibilitySection/>
