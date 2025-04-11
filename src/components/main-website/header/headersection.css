@@ -1,0 +1,102 @@
+@media (max-width:1188px) and (min-width:1014px){
+  .header-section h1{
+    font-size: 25px;
+    font-weight: 600;
+    padding-top: 8px;
+    margin-bottom: 5px;
+  }
+  .nav-header{
+    gap: 5px;
+  }
+}
+
+@media (max-width:1000px) and (min-width:769px){
+    
+    .header-section h1{
+      font-size: 18px;
+      font-weight: 600;
+      padding-top: 8px;
+      margin-bottom: 5px;
+    }
+}
+@media (max-width: 1014px) and (min-width: 768px) {
+  .nav-header {
+    gap: 0px; 
+  }
+  .header-section h1{
+    display: none;
+  }
+}
+@media (max-width: 845px) and (min-width: 801px) {
+  .nav-header p{
+    font-size: 14px;
+  }
+}
+@media (max-width: 801px) and (min-width: 768px) {
+  .nav-header p{
+    font-size: 15px;
+  }
+}
+@media (max-width: 774px) and (min-width: 768px) {
+  .nav-header p{
+    font-size: 14px;
+  }
+}
+/* Dropdown Menu Styling */
+.ant-dropdown-menu {
+  background: #ffffff !important;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2) !important;
+  padding: 8px 0;
+  position: relative;
+  left: 55px;
+  top: 10px;
+  min-width: 200px;
+  gap: 5px;
+}
+
+/* Dropdown Items */
+.ant-dropdown-menu-item {
+  color: #333333 !important; 
+  font-weight: 600;
+  display:flex;
+  padding: 8px 5px !important;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  
+}
+
+.ant-dropdown-menu-item:hover {
+  /* background-color: rgba(0, 0, 0, 0.1) !important;  */
+  /* transform: scale(1.05); */
+  /* border-radius: 6px; */
+  cursor: pointer;
+  
+}
+
+
+/* Dropdown Item Links */
+.ant-dropdown-menu-item a {
+  color: #333333 !important;
+  text-decoration: none;
+  display: flex;
+  padding-left: 10px;
+  font-size: 15px;
+  border-bottom: 1px solid rgb(221, 216, 216);
+}
+.ant-dropdown-menu-item a:hover {
+  padding-left: 20px;
+  color: purple !important;
+}
+
+/* Dropdown Arrow Styling */
+.ant-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 10%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 8px solid #ffffff; 
+}
