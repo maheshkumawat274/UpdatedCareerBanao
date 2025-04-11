@@ -13,9 +13,9 @@ const AboutCounseling : React.FC = () => {
   };
 
   return (
-    <section className="w-full px-4 py-10 md:px-16 bg-white text-gray-800">
-      <div className="max-w-5xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-purple-700">
+    <section className="w-full px-2 sm:px-4 text-gray-800">
+      <div className="mx-auto px-4">
+        <h1 className="text-2xl md:text-4xl font-bold mb-4 text-purple-700">
           {data.title}
         </h1>
 
@@ -30,7 +30,7 @@ const AboutCounseling : React.FC = () => {
             href={data.officialWebsite}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-purple-700 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-pink-800 transition duration-300"
+            className="bg-purple-700 text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-pink-500 transition duration-300"
           >
             Enroll now
           </a>

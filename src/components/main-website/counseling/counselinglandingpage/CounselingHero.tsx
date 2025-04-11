@@ -8,7 +8,7 @@ export const HeroSectionCounseling: React.FC = () => {
   };
 
   return (
-    <div className="relative px-4 py-16 md:py-24 overflow-hidden">
+    <div className="relative px-2 sm:px-4 py-24 overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-gray-800 rounded-full" />
@@ -21,7 +21,7 @@ export const HeroSectionCounseling: React.FC = () => {
           <span className="inline-block px-3 py-1 bg-purple-700 text-blue-100 text-sm font-medium rounded-full mb-4">
             {CounselingData.name} Counselling
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-700 mb-6">
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-700 mb-6">
             {CounselingData.title}
           </h1>
           <p className="text-xl text-gray-700 mb-8">

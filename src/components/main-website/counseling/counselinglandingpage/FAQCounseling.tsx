@@ -27,13 +27,13 @@ const FAQCounseling: React.FC = () => {
   ];
 
   return (
-    <div className="py-16 bg-white">
+    <div className="py-16 ">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full mb-4">
             Frequently Asked Questions
           </span>
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Common Queries</h2>
+          <h1 className="text-2xl sm:text-4xl font-bold text-purple-700 mb-4">Common Queries</h1>
           <p className="text-lg text-gray-600">
             Find answers to commonly asked questions about {name} counselling
           </p>
@@ -47,7 +47,7 @@ const FAQCounseling: React.FC = () => {
                 className="group bg-gray-50 p-6 rounded-lg [&_summary::-webkit-details-marker]:hidden"
               >
                 <summary className="flex items-center justify-between cursor-pointer">
-                  <h3 className="text-lg font-medium text-gray-900">{item.question}</h3>
+                  <h1 className="text-lg font-medium text-gray-900">{item.question}</h1>
                   <span className="ml-6 flex-shrink-0 transition duration-300 group-open:rotate-180">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

@@ -30,7 +30,7 @@ const ContactCounseling: React.FC = () => {
                     />
                   </svg>
                   <div>
-                    <h3 className="text-sm font-medium text-gray-500">Email</h3>
+                    <h1 className="text-sm font-medium text-gray-500">Email</h1>
                     <p className="text-gray-900">{contactInfo.email}</p>
                   </div>
                 </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 interface DateItem {
   event: string;
@@ -29,59 +29,65 @@ const ImportantDatesSection: React.FC = () => {
     },
   ]);
 
-  // TODO: Replace hardcoded data with API fetch in future using setImportantDates()
-
   return (
-    <div id="dates" className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full mb-4">
+    <div id="dates" className="py-16 ">
+      <div className="text-center">
+      <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full mb-4">
             Mark Your Calendar
           </span>
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Important Dates</h2>
-          <p className="text-lg text-gray-600">
-            Key deadlines for WBJEE counselling process
+          <h1 className="text-2xl sm:text-4xl font-bold text-purple-700 mb-4">
+            Important Dates
+          </h1>
+          <p className="text-lg text-gray-600 mb-8">
+            Don't miss out on any major deadlines for WBJEE Counselling.
           </p>
-        </div>
+      </div>
+      <div className="container mx-auto px-4 sm:px-8 flex flex-col lg:flex-row items-center gap-10">
+        
+        {/* Left Content */}
+        <div className="w-full lg:w-1/2">
+         
 
-        <div className="max-w-4xl mx-auto overflow-hidden rounded-lg border border-gray-200">
-          <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+          <div className="space-y-6">
             {importantDates.map((dateItem, index) => (
               <div
                 key={index}
-                className={`p-6 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} flex items-start`}
+                className="flex items-start bg-purple-50 rounded-lg p-4 shadow-sm hover:shadow-md transition duration-200"
               >
-                <div className="mr-4 flex-shrink-0 mt-1">
+                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-purple-100 text-purple-700 mr-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-6 h-6 text-blue-600"
+                    className="w-6 h-6"
                   >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                      strokeWidth={2}
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                     />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-1">
+                  <h4 className="text-lg font-semibold text-gray-800">
                     {dateItem.event}
-                  </h3>
-                  <p className="text-blue-600 font-semibold">{dateItem.date}</p>
+                  </h4>
+                  <p className="text-sm text-purple-600 font-medium">{dateItem.date}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mt-8 text-center">
-          <p className="text-gray-600 text-sm">
-            * Dates are tentative and subject to change. Please refer to the official website for the latest updates.
-          </p>
+        {/* Right Image */}
+        <div className="w-full lg:w-1/2">
+          <img
+            src="https://img.freepik.com/free-vector/college-admission-concept-illustration_114360-8128.jpg" // Replace with your own if needed
+            alt="Students reporting"
+            className="w-full h-auto rounded-xl"
+          />
         </div>
       </div>
     </div>

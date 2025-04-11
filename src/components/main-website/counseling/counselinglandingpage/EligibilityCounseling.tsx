@@ -2,15 +2,9 @@ import { useEffect, useState } from "react";
 
 export const EligibilitySection: React.FC = () => {
   const [eligibility, setEligibility] = useState<string[]>([]);
-  const [fees, setFees] = useState({
-    general: "",
-    reserved: "",
-    female: "",
-  });
   const [name, setName] = useState("");
 
   useEffect(() => {
-    // ✅ Static data for now
     const staticData = {
       name: "WBJEE",
       eligibility: [
@@ -20,39 +14,25 @@ export const EligibilitySection: React.FC = () => {
         "Minimum 45% marks in PCM (40% for reserved categories)",
         "West Bengal domicile (for certain seat categories)",
       ],
-      fees: {
-        general: "₹500",
-        reserved: "₹250",
-        female: "₹300",
-      },
     };
 
     setName(staticData.name);
     setEligibility(staticData.eligibility);
-    setFees(staticData.fees);
-
-    // 🔒 Uncomment this if you're fetching from an API in the future
-    /*
-    fetch("/api/counseling/wbjee")
-      .then(res => res.json())
-      .then(data => {
-        setName(data.name);
-        setEligibility(data.eligibility);
-        setFees(data.fees);
-      })
-      .catch(err => console.error("Failed to fetch eligibility data", err));
-    */
   }, []);
 
   return (
-    <div className="py-16 bg-white">
+    <div className="px-4">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row gap-12">
-          <div className="md:w-1/2">
-            <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full mb-4">
+            <div className="text-center">
+            <span className="inline-block px-3 text-center py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full mb-4">
               Eligibility Criteria
             </span>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Who Can Apply?</h2>
+            <h1 className="text-2xl md:text-4xl text-center font-bold text-purple-700 mb-4 sm:mb-0">Who Can Apply?</h1>
+            </div>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+          {/* Left Side: Eligibility Content */}
+          <div className="md:w-1/2">
+            
             <p className="text-lg text-gray-600 mb-8">
               Check if you meet the eligibility requirements for {name} counselling
             </p>
@@ -80,25 +60,13 @@ export const EligibilitySection: React.FC = () => {
             </ul>
           </div>
 
-          <div className="md:w-1/2 bg-blue-50 rounded-lg p-8">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Fee Structure</h3>
-            <div className="space-y-4">
-              <div className="bg-white p-4 rounded border border-gray-200">
-                <span className="text-sm text-gray-500">General Category</span>
-                <p className="text-lg font-medium text-gray-900">{fees.general}</p>
-              </div>
-              <div className="bg-white p-4 rounded border border-gray-200">
-                <span className="text-sm text-gray-500">Reserved Category</span>
-                <p className="text-lg font-medium text-gray-900">{fees.reserved}</p>
-              </div>
-              <div className="bg-white p-4 rounded border border-gray-200">
-                <span className="text-sm text-gray-500">Female Candidates</span>
-                <p className="text-lg font-medium text-gray-900">{fees.female}</p>
-              </div>
-            </div>
-            <p className="mt-4 text-sm text-gray-600">
-              * Fees mentioned are indicative and subject to change as per the official notification
-            </p>
+          {/* Right Side: Image */}
+          <div className="md:w-1/2">
+            <img
+              src="../logo/Eligibility_criteria_banner1.svg" // 👈 Replace with your actual image path
+              alt="Eligibility Illustration"
+              className="w-full rounded-xl"
+            />
           </div>
         </div>
       </div>

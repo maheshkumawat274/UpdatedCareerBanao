@@ -30,14 +30,14 @@ const DocumentCounseling: React.FC = () => {
   */
 
   return (
-    <div className="py-16 bg-gray-50">
+    <div className="">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full mb-4">
               Be Prepared
             </span>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Required Documents</h2>
+            <h1 className="text-2xl sm:text-4xl font-bold text-purple-700 mb-4">Required Documents</h1>
             <p className="text-lg text-gray-600">
               Make sure you have the following documents ready for {name} counselling
             </p>
@@ -83,7 +83,7 @@ const DocumentCounseling: React.FC = () => {
                   />
                 </svg>
                 <div className="ml-3">
-                  <h4 className="text-sm font-medium text-yellow-800">Important Note</h4>
+                  <h1 className="text-sm font-medium text-yellow-800">Important Note</h1>
                   <p className="mt-1 text-sm text-yellow-700">
                     All documents must be original with self-attested photocopies. Candidates belonging to reserved categories must carry valid category certificates as per the prescribed format.
                   </p>
