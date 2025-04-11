@@ -1,5 +1,17 @@
 import { motion } from 'framer-motion';
 
+const counselingData = {
+  title: 'Navigate Your College Admission Journey',
+  description:
+    'Comprehensive guidance for engineering and management entrance exam counselling including JoSAA, CSAB, UPTAC, WBJEE and more to help you secure your dream college.',
+  buttonText: 'Explore Counselling Options',
+  imageSrc: '../logo/about.jpg',
+  imageSubtitle: {
+    title: '2025-26 Admissions',
+    subtitle: 'Counselling starts soon',
+  },
+};
+
 const CounselingHome: React.FC = () => {
   return (
     <section className="">
@@ -11,19 +23,19 @@ const CounselingHome: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-700 mb-4">
-              Navigate Your
-              <span className="text-pink-500"> College Admission</span> Journey
+              {counselingData.title.split('College Admission')[0]}
+              <span className="text-pink-500"> College Admission</span>
+              {counselingData.title.split('College Admission')[1]}
             </h1>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Comprehensive guidance for engineering and management entrance exam counselling
-              including JoSAA, CSAB, UPTAC, WBJEE and more to help you secure your dream college.
+              {counselingData.description}
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <a
                 href="#counseling-cards"
                 className="bg-primaryBtn hover:bg-hoverBtn text-white font-medium px-8 py-3 rounded-full transition-all inline-flex items-center justify-center"
               >
-                Explore Counselling Options
+                {counselingData.buttonText}
                 <svg
                   className="w-5 h-5 ml-2"
                   fill="none"
@@ -39,12 +51,6 @@ const CounselingHome: React.FC = () => {
                   />
                 </svg>
               </a>
-              {/* <a
-                href="#about"
-                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-medium px-8 py-3 rounded-full transition-all inline-flex items-center justify-center"
-              >
-                College Predictor
-              </a> */}
             </div>
           </motion.div>
         </div>
@@ -58,13 +64,17 @@ const CounselingHome: React.FC = () => {
             <div className="absolute -top-6 -left-6 w-24 h-24 bg-yellow-300 rounded-full opacity-70 z-0" />
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-300 rounded-full opacity-70 z-0" />
             <img
-              src="../logo/about.jpg"
+              src={counselingData.imageSrc}
               alt="Students discussing college admissions"
               className="w-full h-[400px] rounded-xl shadow-2xl relative z-10"
             />
             <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-lg shadow-lg z-20">
-              <div className="text-sm font-semibold text-blue-600">2025-26 Admissions</div>
-              <div className="text-xs text-gray-500">Counselling starts soon</div>
+              <div className="text-sm font-semibold text-blue-600">
+                {counselingData.imageSubtitle.title}
+              </div>
+              <div className="text-xs text-gray-500">
+                {counselingData.imageSubtitle.subtitle}
+              </div>
             </div>
           </motion.div>
         </div>
