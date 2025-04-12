@@ -3,7 +3,7 @@ import { Mail, Phone, MessageCircle } from "lucide-react";
 
 const ContactCounseling: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-100 to-blue-100 p-4">
+    <div className="flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-lg overflow-hidden max-w-6xl w-full flex flex-col md:flex-row">
         
         {/* Left Side - Contact Info */}
