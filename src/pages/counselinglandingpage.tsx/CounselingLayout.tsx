@@ -3,11 +3,15 @@ import { HeroSectionCounseling } from "src/components/main-website/counseling/co
 import CounselingLandingPageMain from ".";
 import SidebarCounseling from "./SidebarCounseling";
 
-const CounselingLayoutpage = () => {
+type CounselingLayoutProps = {
+  data: any; // You can replace `any` with a more specific type later
+};
+const CounselingLayoutpage: React.FC<CounselingLayoutProps> = ({data}) => {
+  
   return (
     <>
       <div>
-        <HeroSectionCounseling />
+        <HeroSectionCounseling data = {data.sections.hero}/>
         <div className="flex flex-col md:flex-row">
           {/* Main Content */}
           <div
@@ -16,7 +20,7 @@ const CounselingLayoutpage = () => {
               scrollbarWidth: "thin",
             }}
           >
-            <CounselingLandingPageMain />
+            <CounselingLandingPageMain data = {data.sections}/>
           </div>
           {/* Sidebar */}
           <div

@@ -1,4 +1,5 @@
-import { Sec1Counseling } from "src/components/main-website/counseling/sidebar/Sec1Counseling"
+
+import Sec1Counseling from "src/components/main-website/counseling/sidebar/Sec1Counseling"
 import { Sec2Counseling } from "src/components/main-website/counseling/sidebar/Sec2Counseling"
 import Sec3Counseling from "src/components/main-website/counseling/sidebar/Sec3Counseling"
 import { Sec4Counseling } from "src/components/main-website/counseling/sidebar/Sec4Counseling"

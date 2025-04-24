@@ -1,55 +1,43 @@
-import React, { useState } from "react";
+import React from "react";
 
 interface DateItem {
   event: string;
   date: string;
 }
 
-const ImportantDatesSection: React.FC = () => {
-  const [importantDates] = useState<DateItem[]>([
-    {
-      event: "Online Registration & Payment",
-      date: "July 5 - 15, 2024",
-    },
-    {
-      event: "Choice Filling & Locking",
-      date: "July 16 - 20, 2024",
-    },
-    {
-      event: "1st Round Seat Allotment",
-      date: "July 25, 2024",
-    },
-    {
-      event: "2nd Round Seat Allotment",
-      date: "August 5, 2024",
-    },
-    {
-      event: "Physical Reporting at Institutes",
-      date: "August 10 - 15, 2024",
-    },
-  ]);
+interface CounselingData {
+  name: string;
+  dates: DateItem[];
+}
+
+interface ImportantDatesProps {
+  data: CounselingData[];
+}
+
+const ImportantDatesSection: React.FC<ImportantDatesProps> = ({ data }) => {
+  const info = data?.[0];
+
+  if (!info || !info.dates) return null;
 
   return (
-    <div id="dates" className="py-16 ">
+    <div id="dates" className="py-16">
       <div className="text-center">
-      <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full mb-4">
-            Mark Your Calendar
-          </span>
-          <h1 className="text-2xl sm:text-4xl font-bold text-purple-700 mb-4">
-            Important Dates
-          </h1>
-          <p className="text-lg text-gray-600 mb-8">
-            Don't miss out on any major deadlines for WBJEE Counselling.
-          </p>
+        <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full mb-4">
+          Mark Your Calendar
+        </span>
+        <h1 className="text-2xl sm:text-4xl font-bold text-purple-700 mb-4">
+          Important Dates
+        </h1>
+        <p className="text-lg text-gray-600 mb-8">
+          Don't miss out on any major deadlines for {info.name || 'Counseling'}.
+        </p>
       </div>
-      <div className="container mx-auto px-4 sm:px-8 flex flex-col lg:flex-row items-center gap-10">
-        
-        {/* Left Content */}
-        <div className="w-full lg:w-1/2">
-         
 
+      <div className="container mx-auto px-4 sm:px-8 flex flex-col lg:flex-row items-center gap-10">
+        {/* Dates List */}
+        <div className="w-full lg:w-1/2">
           <div className="space-y-6">
-            {importantDates.map((dateItem, index) => (
+            {info.dates.map((dateItem, index) => (
               <div
                 key={index}
                 className="flex items-start bg-purple-50 rounded-lg p-4 shadow-sm hover:shadow-md transition duration-200"
@@ -84,7 +72,7 @@ const ImportantDatesSection: React.FC = () => {
         {/* Right Image */}
         <div className="w-full lg:w-1/2">
           <img
-            src="https://img.freepik.com/free-vector/college-admission-concept-illustration_114360-8128.jpg" // Replace with your own if needed
+            src="https://img.freepik.com/free-vector/college-admission-concept-illustration_114360-8128.jpg"
             alt="Students reporting"
             className="w-full h-auto rounded-xl"
           />

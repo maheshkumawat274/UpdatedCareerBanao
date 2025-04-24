@@ -1,101 +1,66 @@
 
+import axios from 'axios';
 import { motion } from 'framer-motion';
-
-
-const processSteps= [
-  {
-    id: 1,
-    title: "Exam Registration",
-    description: "Register for entrance exams like JEE Main, NEET, WBJEE, etc. based on your career goals.",
-    icon: "📝",
-  },
-  {
-    id: 2,
-    title: "Counselling Registration",
-    description: "After results, register for counselling on the respective portal with your rank card and personal details.",
-    icon: "🖥️",
-  },
-  {
-    id: 3,
-    title: "Choice Filling",
-    description: "Fill your college and branch preferences in order of priority during the choice filling window.",
-    icon: "📋",
-  },
-  {
-    id: 4,
-    title: "Seat Allotment",
-    description: "Wait for seat allocation, pay the required fees, and download your provisional admission letter.",
-    icon: "🎉",
-  },
-];
-
-const infoItems= [
-  {
-    id: 1,
-    title: "Expert Guidance",
-    description: "Our experienced counselors provide personalized advice on college selections based on your rank and preferences.",
-    icon: "👨‍🏫",
-  },
-  {
-    id: 2,
-    title: "Rank Predictor",
-    description: "Use our advanced algorithm to predict your potential rank and identify colleges where you have a good chance of admission.",
-    icon: "📊",
-  },
-  {
-    id: 3,
-    title: "College Comparison",
-    description: "Compare multiple colleges side by side including placements, fees, facilities, and academic reputation.",
-    icon: "⚖️",
-  },
-  {
-    id: 4,
-    title: "Live Updates",
-    description: "Get real-time updates about counselling dates, seat vacancies, and important announcements to never miss a deadline.",
-    icon: "🔔",
-  },
-];
-
-const counselingFeatures= [
-  {
-    id: 1,
-    title: "Seat Matrix Analysis",
-    description: "Detailed analysis of available seats across colleges to maximize your chances of getting your preferred course and college.",
-    icon: "📈",
-  },
-  {
-    id: 2,
-    title: "College Reviews",
-    description: "Authentic reviews and feedback from current students and alumni to help you make informed decisions.",
-    icon: "⭐",
-  },
-  {
-    id: 3,
-    title: "Document Checklist",
-    description: "Comprehensive checklist of required documents for each counselling process to keep you prepared.",
-    icon: "📄",
-  },
-  {
-    id: 4,
-    title: "Fee Structure Guide",
-    description: "Detailed information about fee structures, scholarships, education loans, and financial assistance options.",
-    icon: "💰",
-  },
-  {
-    id: 5,
-    title: "Campus Insights",
-    description: "Virtual campus tours and insights into infrastructure, hostels, labs, and other facilities.",
-    icon: "🏫",
-  },
-  {
-    id: 6,
-    title: "Career Path Guidance",
-    description: "Expert advice on selecting branches that align with your interests, abilities, and future career goals.",
-    icon: "🛣️",
-  },
-];
+import { useEffect, useState } from 'react';
 
 const InfoSection: React.FC = () => {
+
+  type CounselingType = {
+    id:number
+   title:string;
+   description:string;
+   icon:string;
+  }
+  type CounselinginfoType = {
+    id:number
+    title:string;
+    description:string;
+    icon:string;
+   }
+   type CounselingfeatureType = {
+    id:number
+    title:string;
+    description:string;
+    icon:string;
+   }
+
+   const [cardinfo, setCardinfo] = useState<CounselinginfoType[]>([]);
+    
+      useEffect(() => {
+        axios.get('http://localhost:3000/api/info-items')
+          .then((res) => {
+            setCardinfo(res.data); 
+            console.log(res, "mahesh")// If your API returns array
+          })
+          .catch((err) => {
+            console.error('Error fetching counseling data:', err);
+          });
+      }, []);
+
+  const [cardprocess, setCardprocess] = useState<CounselingType[]>([]);
+  
+    useEffect(() => {
+      axios.get('http://localhost:3000/api/process-steps')
+        .then((res) => {
+          setCardprocess(res.data); // If your API returns array
+        })
+        .catch((err) => {
+          console.error('Error fetching counseling data:', err);
+        });
+    }, []);
+    
+      const [cardfeatures, setCardfeatures] = useState<CounselingfeatureType[]>([]);
+      
+        useEffect(() => {
+          axios.get('http://localhost:3000/api/counseling-features')
+            .then((res) => {
+              setCardfeatures(res.data); // If your API returns array
+            })
+            .catch((err) => {
+              console.error('Error fetching counseling data:', err);
+            });
+        }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -137,16 +102,20 @@ const InfoSection: React.FC = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {infoItems.map((item :any) => (
+            {cardinfo.map((item :any) => (
               <motion.div
                 key={item.id}
                 variants={itemVariants}
-                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
               >
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">{item.title}</h3>
+                <div className="flex items-center mb-4">
+                  <div className="bg-blue-100 p-3 rounded-full mr-4">
+                    <span className="text-2xl">{item.icon}</span>
+                  </div>
+                  <h1 className="text-xl font-semibold text-gray-800">{item.title}</h1>
+                </div>
                 <p className="text-gray-600">{item.description}</p>
               </motion.div>
             ))}
@@ -156,9 +125,9 @@ const InfoSection: React.FC = () => {
         {/* How It Works */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               How College Admission <span className="text-primaryBtn">Works</span>
-            </h2>
+            </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Understanding the counseling process is essential for securing admission to your dream college.
               Here's a step-by-step guide to navigate the journey.
@@ -172,7 +141,7 @@ const InfoSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           >
-            {processSteps.map((step :any) => (
+            {cardprocess.map((step :any) => (
               <motion.div
                 key={step.id}
                 variants={itemVariants}
@@ -183,10 +152,10 @@ const InfoSection: React.FC = () => {
                     {step.id}
                   </div>
                   <div className="text-4xl mb-4">{step.icon}</div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3">{step.title}</h3>
+                  <h1 className="text-xl font-semibold text-gray-800 mb-3">{step.title}</h1>
                   <p className="text-gray-600">{step.description}</p>
                 </div>
-                {step.id < processSteps.length && (
+                {step.id < cardprocess.length && (
                   <div className="hidden lg:block absolute top-1/2 left-full w-8 h-1 bg-blue-300 transform -translate-y-1/2 -ml-4" />
                 )}
               </motion.div>
@@ -197,9 +166,9 @@ const InfoSection: React.FC = () => {
         {/* Additional Features */}
         <div id="features">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               Our <span className="text-primaryBtn">Special Features</span>
-            </h2>
+            </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Beyond basic counselling, we offer additional tools and services to enhance your college selection
               and application process.
@@ -213,7 +182,7 @@ const InfoSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {counselingFeatures.map((feature :any) => (
+            {cardfeatures.map((feature :any) => (
               <motion.div
                 key={feature.id}
                 variants={itemVariants}
@@ -223,7 +192,7 @@ const InfoSection: React.FC = () => {
                   <div className="bg-blue-100 p-3 rounded-full mr-4">
                     <span className="text-2xl">{feature.icon}</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-800">{feature.title}</h3>
+                  <h1 className="text-xl font-semibold text-gray-800">{feature.title}</h1>
                 </div>
                 <p className="text-gray-600">{feature.description}</p>
               </motion.div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 interface Step {
   id: number;
@@ -11,53 +11,16 @@ interface ProcessData {
   steps: Step[];
 }
 
-const ProcessSection: React.FC = () => {
-  // Initial static data
-  const [process] = useState<ProcessData>({
-    title: "WBJEE Counselling Process",
-    steps: [
-      {
-        id: 1,
-        title: "Registration",
-        description:
-          "Register on the WBJEE counselling portal with your WBJEE roll number and other required details.",
-      },
-      {
-        id: 2,
-        title: "Fee Payment",
-        description:
-          "Pay the registration fee online through the available payment methods.",
-      },
-      {
-        id: 3,
-        title: "Choice Filling",
-        description:
-          "Select and prioritize your preferred colleges and courses from the available options.",
-      },
-      {
-        id: 4,
-        title: "Seat Allotment",
-        description:
-          "Seats are allotted based on rank, category, and choices made. Check your allotment status online.",
-      },
-      {
-        id: 5,
-        title: "Physical Reporting",
-        description:
-          "Report to the allotted institute with original documents for verification and admission.",
-      },
-    ],
-  });
+type CounselingProcessProps = {
+  data?: ProcessData[]; // Accepting an array now
+};
 
-  // 👉 Future API Logic Goes Here
-  // useEffect(() => {
-  //   fetch("https://your-api-url.com/api/counselling-process")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setProcess(data); // Make sure API response matches ProcessData structure
-  //     })
-  //     .catch((err) => console.error("Error fetching data:", err));
-  // }, []);
+const ProcessSection: React.FC<CounselingProcessProps> = ({ data }) => {
+  const process = data?.[0]; // safely accessing first item
+
+  if (!process || !process.steps) {
+    return <p className="text-center text-gray-500">Loading process steps...</p>;
+  }
 
   return (
     <div id="process" className="pb-16">
@@ -66,7 +29,9 @@ const ProcessSection: React.FC = () => {
           <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full mb-4">
             Step-by-Step Guide
           </span>
-          <h1 className="text-2xl sm:text-4xl font-bold text-purple-700 mb-4">{process.title}</h1>
+          <h1 className="text-2xl sm:text-4xl font-bold text-purple-700 mb-4">
+            {process.title}
+          </h1>
           <p className="text-lg text-gray-600">
             Follow these steps to complete your counselling process
           </p>

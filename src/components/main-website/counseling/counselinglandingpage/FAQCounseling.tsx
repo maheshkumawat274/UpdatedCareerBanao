@@ -1,33 +1,15 @@
 import React from "react";
 
-const FAQCounseling: React.FC = () => {
-  const name = "JOSAA";
 
-  const faq = [
-    {
-      question: "What is JOSAA counselling?",
-      answer:
-        "JOSAA is a joint seat allocation process for admissions to NITs, IIITs, and GFTIs based on ranks obtained in JEE Main and JEE Advanced exams.",
-    },
-    {
-      question: "How many rounds of counselling are there in JOSAA?",
-      answer:
-        "Typically, JOSAA conducts 6-7 rounds of counselling, including a special round after the main rounds.",
-    },
-    {
-      question: "Can I participate in JOSAA with only a JEE Main score?",
-      answer:
-        "Yes, you can participate in JOSAA counselling with only a JEE Main score for NITs, IIITs, and GFTIs. However, for IITs, you need a valid JEE Advanced score.",
-    },
-    {
-      question: "What happens if I don't pay the acceptance fee after seat allocation?",
-      answer:
-        "If you don't pay the acceptance fee within the stipulated time, your allocated seat will be cancelled and offered to other candidates in subsequent rounds.",
-    },
-  ];
+type CounselingFaqData = {    // dynamic name e.g., "JOSAA"
+  data: any;     // FAQ array
+};
 
+const FAQCounseling: React.FC<CounselingFaqData> = ({ data }) => {
+  const staticdata = data[0]
+  console.log(staticdata,"ljihsdbvihnerfvne")
   return (
-    <div className="py-16 ">
+    <div className="py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full mb-4">
@@ -35,13 +17,13 @@ const FAQCounseling: React.FC = () => {
           </span>
           <h1 className="text-2xl sm:text-4xl font-bold text-purple-700 mb-4">Common Queries</h1>
           <p className="text-lg text-gray-600">
-            Find answers to commonly asked questions about {name} counselling
+            Find answers to commonly asked questions about {staticdata.name} counselling
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
           <div className="space-y-4">
-            {faq.map((item, index) => (
+            {staticdata.faq.map((item:string, index:number) => (
               <details
                 key={index}
                 className="group bg-gray-50 p-6 rounded-lg [&_summary::-webkit-details-marker]:hidden"

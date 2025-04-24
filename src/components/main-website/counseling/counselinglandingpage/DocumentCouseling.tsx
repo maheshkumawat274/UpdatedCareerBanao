@@ -1,33 +1,11 @@
-import React, { useState } from "react";
 
+type CounselingDocumentData = {
+  data: any;
+}
 // Required Documents section
-const DocumentCounseling: React.FC = () => {
-  const [name] = useState("WBJEE");
-  const [documents] = useState<string[]>([
-    "WBJEE Rank Card",
-    "WBJEE Admit Card",
-    "Class 10th Mark Sheet and Certificate",
-    "Class 12th Mark Sheet and Certificate",
-    "Category Certificate (if applicable)",
-    "Domicile Certificate (if applicable)",
-    "Income Certificate (if applicable)",
-    "Passport Size Photographs",
-    "Aadhaar Card",
-    "Medical Fitness Certificate"
-  ]);
-
-  // 👇 Future API logic - use this when dynamic data is ready
-  /*
-  useEffect(() => {
-    fetch("/api/required-documents")
-      .then((res) => res.json())
-      .then((data) => {
-        setName(data.name);
-        setDocuments(data.documents);
-      })
-      .catch((err) => console.error("Error fetching documents:", err));
-  }, []);
-  */
+const DocumentCounseling: React.FC<CounselingDocumentData> = ({data}) => {
+  const staticdata = data[0];
+  console.log(staticdata,'hdoiuheirhi')
 
   return (
     <div className="">
@@ -39,13 +17,13 @@ const DocumentCounseling: React.FC = () => {
             </span>
             <h1 className="text-2xl sm:text-4xl font-bold text-purple-700 mb-4">Required Documents</h1>
             <p className="text-lg text-gray-600">
-              Make sure you have the following documents ready for {name} counselling
+              Make sure you have the following documents ready for {staticdata.name} counselling
             </p>
           </div>
 
           <div className="bg-white rounded-lg shadow p-8">
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {documents.map((doc, index) => (
+              {staticdata.documents.map((doc: string, index:number) => (
                 <li key={index} className="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

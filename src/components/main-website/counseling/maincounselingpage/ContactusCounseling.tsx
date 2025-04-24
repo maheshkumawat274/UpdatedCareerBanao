@@ -21,25 +21,42 @@ const ContactusCounseling: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would send data to a backend server
-    console.log('Form submitted:', formData);
-    setFormSubmitted(true);
-
-    // Reset form data after 3 seconds
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        examType: '',
-        rank: '',
-        message: '',
+  
+    try {
+      const response = await fetch('http://localhost:3000/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+  
+      if (response.ok) {
+        console.log('Form submitted successfully');
+        setFormSubmitted(true);
+        console.log(response.ok)
+  
+        setTimeout(() => {
+          setFormSubmitted(false);
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            examType: '',
+            rank: '',
+            message: '',
+          });
+        }, 3000);
+      } else {
+        console.error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
+  
 
   return (
     <section className="py-16 bg-gradient-to-br from-purple-300 to-white" id="counselor">

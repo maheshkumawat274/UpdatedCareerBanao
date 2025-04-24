@@ -21,6 +21,7 @@ import TopContent from "./components/main-website/admissions/landingpage/review/
 import ReviewRoutes from "./routes/ReviewRoutes";
 import Contact from "./components/main-website/contact";
 import FloatingEnquiryButton from "./components/main-website/Enquirybtn";
+import CounselingLanding from "./pages/counselinglandingpage.tsx/CounselingLanding";
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -84,7 +85,7 @@ function App() {
         } */}
         {
           protectedRoutes.map(({ path, element: Element }, i) => (
-            <Route path={path} element={<Element />} key={i} />
+            <Route path={path} element={<Element/>} key={i} />
           ))
         }
         <Route path="/" element={<MainLayoutVideo />}>
@@ -107,6 +108,7 @@ function App() {
             }
           />
         ))}
+        <Route path="/counseling/:slug" element={<CounselingLanding/>}/>
         <Route path="/apply_now" element={<Contact/>}/>
       </Routes>
       <Chatbot/>
