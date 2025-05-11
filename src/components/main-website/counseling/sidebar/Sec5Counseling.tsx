@@ -1,16 +1,24 @@
-import { useState } from "react";
-
+import axios from "axios";
+import { useEffect, useState } from "react";
+type VideosType = {
+ url : string
+}
 const Sec5Counseling: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
-
-  const videos = [
-    "https://www.youtube.com/embed/cgJAwWfWW2g?si=PaqGlM9AN4APzSek",
-    "https://www.youtube.com/embed/pvcrDGzVS28?si=ICIUWropT4GxdFW9",
-    "https://www.youtube.com/embed/u9n4T7OcRjA?si=-VLrEUhJbfHtzUhy",
-    "https://www.youtube.com/embed/4ayOAtUHwZM?si=01eL-Lpn8wmaYACW",
-    "https://www.youtube.com/embed/Ako9mZC7uJE?si=gE6TORKwq7eFPFMh"
-  ];
-  const visibleVideos = showAll ? videos : videos.slice(0, 3);
+  const [VideosData, setVideosData] = useState<VideosType[]>([]);
+  useEffect(() => {
+      axios.get('http://localhost:3000/sidebar/videos')
+        .then((res) => {
+          setVideosData(res.data); // Assuming it's an array
+        })
+        .catch((err) => {
+          console.error('Error fetching Videos data:', err);
+        });
+    }, []);
+  
+    if (!VideosData.length) return <p className="p-4">Loading...</p>;
+  
+  const visibleVideos = showAll ? VideosData : VideosData.slice(0, 3);
 
   return (
     <div className="bg-gray-100 p-6 mt-2 rounded-lg">
@@ -19,7 +27,7 @@ const Sec5Counseling: React.FC = () => {
         {visibleVideos.map((video, index) => (
           <div key={index} className="h-[30vh]">
             <iframe
-              src={video}
+              src={video.url}
               title={`${index + 1}`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               className="w-full h-full rounded-lg shadow-lg"

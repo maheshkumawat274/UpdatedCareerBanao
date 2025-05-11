@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 
 const ContactusCounseling: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -58,14 +59,25 @@ const ContactusCounseling: React.FC = () => {
   };
   
 
+  const location = useLocation();
+
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
   return (
     <section className="py-16 bg-gradient-to-br from-purple-300 to-white" id="counselor">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               Talk to Our <span className="text-purple-700">Expert Counselors</span>
-            </h2>
+            </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Get personalized advice on college selection, branch preferences, and complete
               guidance through your admission counselling process.

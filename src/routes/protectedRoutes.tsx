@@ -2,7 +2,7 @@
 // import ProtectedRoutes from "pages/main-website/protected";
 // import Counselling from "pages/main-website/protected/counselling";
 
-import CounselingLayoutpage from "src/pages/counselinglandingpage.tsx/CounselingLayout";
+import CounselingLayoutpage from "src/pages/counselinglandingpage/CounselingLayout";
 import CounsellingPage from "src/pages/main-website/counselling";
 
 const protectedRoutes = [

@@ -7,7 +7,7 @@ type FormData = {
   email: string;
   state: string;
   district: string;
-  rank: string;
+  rankscore: string;
   interest: string;
 };
 
@@ -18,10 +18,41 @@ const ContactFormCounseling: React.FC<{ isOpen: boolean; onClose: () => void }> 
     formState: { errors },
   } = useForm<FormData>();
 
-  const onSubmit = (data: FormData) => {
-    console.log("Form Data:", data);
-    alert("Form submitted successfully!");
+  const onSubmit = async (data: FormData) => {
+    try {
+      const response = await fetch("http://localhost:3000/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      console.log(data,'su bmitdfgh')
+      const contentType = response.headers.get("content-type");
+      const isJson = contentType && contentType.includes("application/json");
+  
+      if (response.ok) {
+        const result = isJson ? await response.json() : await response.text();
+        console.log("✅ Success Response:", result);
+        alert("Form submitted successfully!");
+        onClose();
+      } else {
+        const errorData = isJson ? await response.json() : await response.text();
+        console.error("❌ Error Response:", errorData);
+  
+        const message = isJson
+          ? errorData?.message || "Submission failed"
+          : errorData || "Submission failed";
+  
+        alert(`Submission failed: ${message}`);
+      }
+    } catch (error) {
+      console.error("🔥 Catch block error:", error);
+      alert("Something went wrong. Please check the console.");
+    }
   };
+  
+  
 
   return (
     <>
@@ -160,12 +191,12 @@ const ContactFormCounseling: React.FC<{ isOpen: boolean; onClose: () => void }> 
                 <div className="w-full">
                   <label className="block text-sm font-medium">Your Jee Rank</label>
                   <input
-                    {...register("rank", { required: "Rank is required" })}
+                    {...register("rankscore", { required: "Rank is required" })}
                     type="text"
                     className="w-full mt-1 p-2 border rounded-md"
                     placeholder="Enter your rank"
                   />
-                  {errors.rank && <p className="text-red-500 text-sm">{errors.rank.message}</p>}
+                  {errors.rankscore && <p className="text-red-500 text-sm">{errors.rankscore.message}</p>}
                 </div>
 
                 <div className="w-full">

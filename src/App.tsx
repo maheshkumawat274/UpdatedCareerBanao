@@ -21,7 +21,8 @@ import TopContent from "./components/main-website/admissions/landingpage/review/
 import ReviewRoutes from "./routes/ReviewRoutes";
 import Contact from "./components/main-website/contact";
 import FloatingEnquiryButton from "./components/main-website/Enquirybtn";
-import CounselingLanding from "./pages/counselinglandingpage.tsx/CounselingLanding";
+import CounselingLanding from "./pages/counselinglandingpage/CounselingLanding";
+import CounsellingPage from "./pages/main-website/counselling";
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -109,6 +110,7 @@ function App() {
           />
         ))}
         <Route path="/counseling/:slug" element={<CounselingLanding/>}/>
+        <Route path="/contactus" element={<CounsellingPage/>}/>
         <Route path="/apply_now" element={<Contact/>}/>
       </Routes>
       <Chatbot/>

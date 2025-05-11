@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 type CounselingType = {
   id: number;
+  name:string
   title: string;
   description: string;
   icon: string;
@@ -14,6 +15,7 @@ type CounselingType = {
 const CounselingCards: React.FC = () => {
   const [cardData, setCardData] = useState<CounselingType[]>([]);
 
+ 
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -21,43 +23,45 @@ const CounselingCards: React.FC = () => {
           axios.get('http://localhost:3000/api/counseling-cards'),
           axios.get('http://localhost:3000/api/counseling_collections'),
         ]);
-
+  
         const cards = cardsRes.data;
         const collections = collectionsRes.data;
-
-        // Create a map with normalized collection titles for matching
-        const collectionMap: Map<string, string> = new Map(
-          collections.map((item: any) => {
-            const normalizedTitle = item.title.trim().toLowerCase();
-            return [normalizedTitle, item.slug];
-          })
-        );
-        
-
+        console.log(collections, 'all');
+  
         const mergedData = cards.map((card: any) => {
-          const normalizedCardTitle = card.title.trim().toLowerCase();
+          const normalizedCardName = card.name.trim().toLowerCase(); // name ke basis pe normalize
+  
           let matchedSlug: string | null = null;
-
-          // Try to match card title with any collection title
-          for (const [collectionTitle, slug] of collectionMap.entries()) {
-            if (normalizedCardTitle.includes(collectionTitle)) {
-              matchedSlug = slug;
+  
+          for (const collection of collections) {
+            const normalizedCollectionTitle = collection.title.trim().toLowerCase();
+  
+            // Ab name se match kar rahe
+            if (
+              normalizedCardName.includes(normalizedCollectionTitle) || 
+              normalizedCollectionTitle.includes(normalizedCardName)
+            ) {
+              matchedSlug = collection.slug;
               break;
             }
           }
-
+  
+          console.log('Matched Slug for', card.name, ':', matchedSlug);
+  
           return { ...card, slug: matchedSlug };
         });
-
+  
         setCardData(mergedData);
       } catch (err) {
         console.error('Error fetching counseling data:', err);
       }
     };
-
+  
     fetchData();
   }, []);
-
+  
+  
+  
   return (
     <section id="counseling-cards">
       <div className="container mx-auto px-4">
@@ -84,12 +88,17 @@ const CounselingCards: React.FC = () => {
               <div className="bg-white rounded-xl shadow-lg overflow-hidden h-full flex flex-col transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                 <div className="p-6 bg-primaryBtn hover:bg-hoverBtn text-white">
                   <div className="flex justify-between items-center">
+                    <div className='flex gap-2 justify-center items-center'>
                     <span className="text-4xl">{card.icon}</span>
+                    <div className='border-2 border-gray-400 px-4 rounded-md'>
+                      <p className='text-sm'>{card.name}</p>
+                    </div>
+                    </div>
                     <span className="bg-white/20 px-4 py-1 rounded-full text-sm">
                       {Number(card.id) <= 2 ? 'Central' : 'State'}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold mt-4">{card.title}</h3>
+                  <h1 className="text-xl font-bold mt-4">{card.title}</h1>
                 </div>
                 <div className="p-6 flex-grow flex flex-col">
                   <p className="text-gray-600 mb-6">{card.description}</p>
